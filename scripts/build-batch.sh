@@ -151,12 +151,32 @@ echo "==> Generating Pages function"
 mkdir -p "$ROOT/functions"
 
 cat > "$ROOT/functions/[[path]].js" <<'EOF'
+async function fetchAsset(context, assetPath, url) {
+  let response = await context.env.ASSETS.fetch(
+    new Request(new URL(assetPath, url.origin).toString(), context.request)
+  );
+
+  if ([301, 302, 307, 308].includes(response.status)) {
+    const location = response.headers.get("Location");
+
+    if (location) {
+      const followUrl = new URL(location, url.origin);
+
+      response = await context.env.ASSETS.fetch(
+        new Request(followUrl.toString(), context.request)
+      );
+    }
+  }
+
+  return response;
+}
+
 export async function onRequest(context) {
   const url = new URL(context.request.url);
   const host = url.hostname.toLowerCase().replace(/^www\./, "");
   let pathname = url.pathname || "/";
 
-  // 1) Для pages.dev отдаём файлы напрямую: /_batch/, /50pribyli/ и т.д.
+  // 1) Для pages.dev: тест батча, /_batch/, /50pribyli/
   if (host.endsWith(".pages.dev")) {
     let assetPath = pathname;
 
@@ -168,9 +188,7 @@ export async function onRequest(context) {
       assetPath += "index.html";
     }
 
-    return context.env.ASSETS.fetch(
-      new Request(new URL(assetPath, url.origin).toString(), context.request)
-    );
+    return fetchAsset(context, assetPath, url);
   }
 
   // 2) Рабочий режим для .ru доменов
@@ -180,7 +198,7 @@ export async function onRequest(context) {
 
   const slug = host.replace(/\.ru$/, "");
 
-  // Если прилетел старый путь /sites/..., отдаём главную этого домена
+  // Старые мусорные пути /sites/... показывают главную текущего домена
   if (pathname.startsWith("/sites/")) {
     pathname = "/";
   }
@@ -193,31 +211,19 @@ export async function onRequest(context) {
     assetPath = `/${slug}/index.html`;
   } else if (pathname.startsWith(`/${slug}/`)) {
     assetPath = pathname;
+
     if (assetPath.endsWith("/")) {
       assetPath += "index.html";
     }
   } else {
     assetPath = `/${slug}${pathname}`;
+
     if (assetPath.endsWith("/")) {
       assetPath += "index.html";
     }
   }
 
-  let response = await context.env.ASSETS.fetch(
-    new Request(new URL(assetPath, url.origin).toString(), context.request)
-  );
-
-  if ([301, 302, 307, 308].includes(response.status)) {
-    const location = response.headers.get("Location");
-    if (location) {
-      const followUrl = new URL(location, url.origin);
-      response = await context.env.ASSETS.fetch(
-        new Request(followUrl.toString(), context.request)
-      );
-    }
-  }
-
-  return response;
+  return fetchAsset(context, assetPath, url);
 }
 EOF
 

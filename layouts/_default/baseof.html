@@ -12,6 +12,25 @@
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="{{ "css/site.css" | relURL }}">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- Open Graph / WhatsApp / Telegram -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Finstar Capital">
+  <meta property="og:title" content="Финстар Капитал — Золотоматы">
+  <meta property="og:description" content="Инвестиционный проект на базе реальных активов, фондовой структуры и инфраструктурной модели для квалифицированных инвесторов.">
+  <meta property="og:image" content="https://50pribyli.ru/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="{{ .Permalink }}">
+
+  <!-- Twitter / X preview -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Финстар Капитал — Золотоматы">
+  <meta name="twitter:description" content="Инвестиционный проект на базе реальных активов, фондовой структуры и инфраструктурной модели для квалифицированных инвесторов.">
+  <meta name="twitter:image" content="https://50pribyli.ru/og-image.jpg">
+
 </head>
 <body>
   {{ block "main" . }}{{ end }}

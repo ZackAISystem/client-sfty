@@ -1,6 +1,3 @@
-cd ~/zack-ai/zack-factory/finstar-goldex
-
-cat > layouts/index.html <<'EOF'
 {{ define "main" }}
   {{ $slug := .Params.slug }}
 
@@ -24,4 +21,3 @@ cat > layouts/index.html <<'EOF'
   {{ partial "lead-modal.html" $site }}
   {{ partial "blocks/footer.html" $site }}
 {{ end }}
-EOF

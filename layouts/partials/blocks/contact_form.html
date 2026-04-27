@@ -9,7 +9,7 @@
 
         <img
           class="contact-form__img"
-          src="/img/template_1/contact/cta-house.png"
+          src="{{ .contact_form_image_src_fixed }}"
           alt=""
           loading="lazy"
         >
@@ -17,22 +17,22 @@
 
       <!-- RIGHT: text + button -->
       <div class="contact-form__right">
-        <h2 class="contact-form__title">{{ .contact_form_title_agent }}</h2>
+        <h2 class="contact-form__title">{{ .contact_form_title }}</h2>
 
         <p class="contact-form__text">
-          {{ .contact_form_text_agent }}
+          {{ .contact_form_text }}
         </p>
 
         <a
-  class="contact-form__btn js-open-lead"
-  href="#contact"
-  data-source="contact_form"
-  data-modal-title="{{ .contact_form_title_agent }}"
-  data-cta-text="{{ .contact_form_button_text_fixed }}"
-  data-cta-color="var(--contact-panel-bg)"
->
-  {{ .contact_form_button_text_fixed }}
-</a>
+          class="contact-form__btn js-open-lead"
+          href="#contact"
+          data-source="contact_form"
+          data-modal-title="{{ .contact_form_title }}"
+          data-cta-text="{{ .contact_form_cta }}"
+          data-cta-color="#267898"
+        >
+          {{ .contact_form_cta }}
+        </a>
       </div>
 
     </div>

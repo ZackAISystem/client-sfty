@@ -1,0 +1,75 @@
+<section class="trust" id="trust">
+  <div class="container trust__container">
+
+    <h2 class="trust__title">
+      {{ .trust_title_text }}
+    </h2>
+
+    <div class="trust__grid">
+
+      <!-- Card 1 -->
+      <article class="trust-card">
+        <img
+          class="trust-card__icon"
+          src="{{ .trust_1_icon_src_fixed }}"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+        >
+
+        <div class="trust-card__body">
+          <h3 class="trust-card__title">{{ .trust_1_title }}</h3>
+
+          <ul class="trust-card__list">
+            {{ if .trust_1_value1 }}<li>{{ .trust_1_value1 }}</li>{{ end }}
+            {{ if .trust_1_value2 }}<li>{{ .trust_1_value2 }}</li>{{ end }}
+            {{ if .trust_1_value3 }}<li>{{ .trust_1_value3 }}</li>{{ end }}
+          </ul>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="trust-card">
+        <img
+          class="trust-card__icon"
+          src="{{ .trust_2_icon_src_fixed }}"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+        >
+
+        <div class="trust-card__body">
+          <h3 class="trust-card__title">{{ .trust_2_title }}</h3>
+
+          <ul class="trust-card__list">
+            {{ if .trust_2_value1 }}<li>{{ .trust_2_value1 }}</li>{{ end }}
+            {{ if .trust_2_value2 }}<li>{{ .trust_2_value2 }}</li>{{ end }}
+            {{ if .trust_2_value3 }}<li>{{ .trust_2_value3 }}</li>{{ end }}
+          </ul>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="trust-card">
+        <img
+          class="trust-card__icon"
+          src="{{ .trust_3_icon_src_fixed }}"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+        >
+
+        <div class="trust-card__body">
+          <h3 class="trust-card__title">{{ .trust_3_title }}</h3>
+
+          <ul class="trust-card__list">
+            {{ if .trust_3_value1 }}<li>{{ .trust_3_value1 }}</li>{{ end }}
+            {{ if .trust_3_value2 }}<li>{{ .trust_3_value2 }}</li>{{ end }}
+            {{ if .trust_3_value3 }}<li>{{ .trust_3_value3 }}</li>{{ end }}
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>

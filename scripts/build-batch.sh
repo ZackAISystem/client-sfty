@@ -154,33 +154,49 @@ cat > "$ROOT/functions/[[path]].js" <<'EOF'
 export async function onRequest(context) {
   const url = new URL(context.request.url);
   const host = url.hostname.toLowerCase().replace(/^www\./, "");
+  let pathname = url.pathname || "/";
 
+  // 1) Для pages.dev отдаём файлы напрямую: /_batch/, /50pribyli/ и т.д.
+  if (host.endsWith(".pages.dev")) {
+    let assetPath = pathname;
+
+    if (assetPath === "/") {
+      assetPath = "/_batch/index.html";
+    }
+
+    if (assetPath.endsWith("/")) {
+      assetPath += "index.html";
+    }
+
+    return context.env.ASSETS.fetch(
+      new Request(new URL(assetPath, url.origin).toString(), context.request)
+    );
+  }
+
+  // 2) Рабочий режим для .ru доменов
   if (!host.endsWith(".ru")) {
     return new Response(`Unsupported host: ${host}`, { status: 404 });
   }
 
   const slug = host.replace(/\.ru$/, "");
-  let pathname = url.pathname || "/";
+
+  // Если прилетел старый путь /sites/..., отдаём главную этого домена
+  if (pathname.startsWith("/sites/")) {
+    pathname = "/";
+  }
 
   let assetPath;
 
-  // Главная домена
   if (pathname === "/") {
     assetPath = `/${slug}/index.html`;
-  }
-  // Если браузер уже попал на /slug или /slug/
-  else if (pathname === `/${slug}` || pathname === `/${slug}/`) {
+  } else if (pathname === `/${slug}` || pathname === `/${slug}/`) {
     assetPath = `/${slug}/index.html`;
-  }
-  // Если браузер уже на /slug/что-то
-  else if (pathname.startsWith(`/${slug}/`)) {
+  } else if (pathname.startsWith(`/${slug}/`)) {
     assetPath = pathname;
     if (assetPath.endsWith("/")) {
       assetPath += "index.html";
     }
-  }
-  // Любой другой путь внутри сайта
-  else {
+  } else {
     assetPath = `/${slug}${pathname}`;
     if (assetPath.endsWith("/")) {
       assetPath += "index.html";
@@ -191,8 +207,6 @@ export async function onRequest(context) {
     new Request(new URL(assetPath, url.origin).toString(), context.request)
   );
 
-  // Если ASSETS вернул редирект — догоняем его внутри worker,
-  // чтобы браузер не менял URL на /slug/
   if ([301, 302, 307, 308].includes(response.status)) {
     const location = response.headers.get("Location");
     if (location) {

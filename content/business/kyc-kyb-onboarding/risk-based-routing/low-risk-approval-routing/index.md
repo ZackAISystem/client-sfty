@@ -1,0 +1,7 @@
+---
+title: "biz_kyc_kyb_onboarding_risk_based_routing_low_risk_approval_routing"
+data_slug: "biz_kyc_kyb_onboarding_risk_based_routing_low_risk_approval_routing"
+template: "template_22"
+domain_main: "sfty.ai/business/kyc-kyb-onboarding/risk-based-routing/low-risk-approval-routing"
+---
+

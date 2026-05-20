@@ -1,0 +1,27 @@
+{{ $d := .data }}
+
+<section class="final-cta section section--light" id="final">
+  <div class="container">
+    <div class="final-cta__panel">
+
+      <div class="final-cta__visual" aria-hidden="true">
+        <img src="/img/final/final-sfty.png" alt="">
+      </div>
+
+      <div class="final-cta__content">
+        {{ with $d.final_title }}
+          <h2 class="final-cta__title">{{ . }}</h2>
+        {{ end }}
+
+        {{ with $d.final_description }}
+          <p class="final-cta__description">{{ . }}</p>
+        {{ end }}
+
+        {{ with $d.final_cta }}
+          <a class="final-cta__button" href="#">{{ . }}</a>
+        {{ end }}
+      </div>
+
+    </div>
+  </div>
+</section>

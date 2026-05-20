@@ -1,0 +1,112 @@
+{{ $d := .data }}
+{{ $slug := lower (or .slug .site_slug .Site.Params.slug .Site.Params.site_slug "") }}
+{{ $isGov := or (in $slug "gov") (in $slug "regulator") (in $slug "authority") }}
+{{ $iconPrefix := cond $isGov "gov" "biz" }}
+
+<section class="why-sfty section section--light" id="why-sfty">
+  <div class="container">
+    {{ with $d.why_sfty_title }}
+      <h2 class="section-title section-title--center">{{ . }}</h2>
+    {{ end }}
+
+    {{ with $d.why_sfty_description }}
+      <p class="section-description section-description--center">{{ . }}</p>
+    {{ end }}
+
+    <div class="why-sfty__grid">
+
+      {{ if or $d.why_sfty_card_1_title $d.why_sfty_card_1_description }}
+        <article class="why-card">
+          <div class="why-card__icon-wrap">
+            <img
+              src="{{ printf "/img/why_sfty/%s-why1.png" $iconPrefix }}"
+              alt=""
+              class="why-card__icon"
+              loading="lazy"
+            >
+          </div>
+
+          {{ with $d.why_sfty_card_1_title }}
+            <h3 class="why-card__title">{{ . }}</h3>
+          {{ end }}
+
+          <span class="why-card__divider" aria-hidden="true"></span>
+
+          {{ with $d.why_sfty_card_1_description }}
+            <p class="why-card__text">{{ . }}</p>
+          {{ end }}
+        </article>
+      {{ end }}
+
+      {{ if or $d.why_sfty_card_2_title $d.why_sfty_card_2_description }}
+        <article class="why-card">
+          <div class="why-card__icon-wrap">
+            <img
+              src="{{ printf "/img/why_sfty/%s-why2.png" $iconPrefix }}"
+              alt=""
+              class="why-card__icon"
+              loading="lazy"
+            >
+          </div>
+
+          {{ with $d.why_sfty_card_2_title }}
+            <h3 class="why-card__title">{{ . }}</h3>
+          {{ end }}
+
+          <span class="why-card__divider" aria-hidden="true"></span>
+
+          {{ with $d.why_sfty_card_2_description }}
+            <p class="why-card__text">{{ . }}</p>
+          {{ end }}
+        </article>
+      {{ end }}
+
+      {{ if or $d.why_sfty_point_3 $d.why_sfty_card_3_description }}
+        <article class="why-card">
+          <div class="why-card__icon-wrap">
+            <img
+              src="{{ printf "/img/why_sfty/%s-why3.png" $iconPrefix }}"
+              alt=""
+              class="why-card__icon"
+              loading="lazy"
+            >
+          </div>
+
+          {{ with $d.why_sfty_point_3 }}
+            <h3 class="why-card__title">{{ . }}</h3>
+          {{ end }}
+
+          <span class="why-card__divider" aria-hidden="true"></span>
+
+          {{ with $d.why_sfty_card_3_description }}
+            <p class="why-card__text">{{ . }}</p>
+          {{ end }}
+        </article>
+      {{ end }}
+
+      {{ if or $d.why_sfty_point_4 $d.why_sfty_card_4_description }}
+        <article class="why-card">
+          <div class="why-card__icon-wrap">
+            <img
+              src="{{ printf "/img/why_sfty/%s-why4.png" $iconPrefix }}"
+              alt=""
+              class="why-card__icon"
+              loading="lazy"
+            >
+          </div>
+
+          {{ with $d.why_sfty_point_4 }}
+            <h3 class="why-card__title">{{ . }}</h3>
+          {{ end }}
+
+          <span class="why-card__divider" aria-hidden="true"></span>
+
+          {{ with $d.why_sfty_card_4_description }}
+            <p class="why-card__text">{{ . }}</p>
+          {{ end }}
+        </article>
+      {{ end }}
+
+    </div>
+  </div>
+</section>

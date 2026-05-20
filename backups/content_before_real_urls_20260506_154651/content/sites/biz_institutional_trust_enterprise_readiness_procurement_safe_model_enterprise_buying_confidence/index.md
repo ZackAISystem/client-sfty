@@ -1,0 +1,5 @@
+---
+title: "biz_institutional_trust_enterprise_readiness_procurement_safe_model_enterprise_buying_confidence"
+slug: "biz_institutional_trust_enterprise_readiness_procurement_safe_model_enterprise_buying_confidence"
+template: "template_23"
+---

@@ -1,75 +1,59 @@
-<section class="trust" id="trust">
-  <div class="container trust__container">
+{{ $d := .data }}
 
-    <h2 class="trust__title">
-      {{ .trust_title_text }}
-    </h2>
+{{ $iconMap := dict
+  "KYC" "img/trust/biz-trust-kyc-icon.png"
+  "KYB" "img/trust/biz-trust-kyb-icon.png"
+  "KYT" "img/trust/biz-trust-kyt-icon.png"
+  "Travel Rule Workflows" "img/trust/biz-trust-travel-rule-icon.png"
+  "Rules Monitoring" "img/trust/biz-trust-rules-monitoring-icon.png"
+  "Audit Trail" "img/trust/biz-trust-audit-icon.png"
+
+  "VASP Supervision" "img/trust/gov-trust-vasp-icon.png"
+  "KYT Monitoring" "img/trust/gov-trust-kyt-icon.png"
+  "Travel Rule" "img/trust/gov-trust-travel-rule.png"
+  "Case Management" "img/trust/gov-trust-case-icon.png"
+  "Sovereign Deployment" "img/trust/gov-trust-sovereign-icon.png"
+  "Reporting" "img/trust/gov-trust-reporting.png"
+}}
+
+<section class="trust section section--light" id="trust">
+  <div class="container">
+    {{ with $d.trust_title }}
+      <h2 class="trust__title">{{ . }}</h2>
+    {{ end }}
 
     <div class="trust__grid">
+      {{ range $i := seq 1 6 }}
+        {{ $label := index $d (printf "trust_card_%d_label" $i) }}
+        {{ $value := index $d (printf "trust_card_%d_value" $i) }}
+        {{ $icon := "" }}
 
-      <!-- Card 1 -->
-      <article class="trust-card">
-        <img
-          class="trust-card__icon"
-          src="{{ .trust_1_icon_src_fixed }}"
-          alt=""
-          aria-hidden="true"
-          loading="lazy"
-        >
+        {{ with $label }}
+          {{ $icon = index $iconMap . }}
+        {{ end }}
 
-        <div class="trust-card__body">
-          <h3 class="trust-card__title">{{ .trust_1_title }}</h3>
+        {{ if or $label $value }}
+          <article class="trust-card">
+            {{ with $icon }}
+              <div class="trust-card__icon-box" aria-hidden="true">
+                <img
+                  class="trust-card__icon"
+                  src="{{ . | relURL }}"
+                  alt=""
+                >
+              </div>
+            {{ end }}
 
-          <ul class="trust-card__list">
-            {{ if .trust_1_value1 }}<li>{{ .trust_1_value1 }}</li>{{ end }}
-            {{ if .trust_1_value2 }}<li>{{ .trust_1_value2 }}</li>{{ end }}
-            {{ if .trust_1_value3 }}<li>{{ .trust_1_value3 }}</li>{{ end }}
-          </ul>
-        </div>
-      </article>
+            {{ with $label }}
+              <h3 class="trust-card__label">{{ . }}</h3>
+            {{ end }}
 
-      <!-- Card 2 -->
-      <article class="trust-card">
-        <img
-          class="trust-card__icon"
-          src="{{ .trust_2_icon_src_fixed }}"
-          alt=""
-          aria-hidden="true"
-          loading="lazy"
-        >
-
-        <div class="trust-card__body">
-          <h3 class="trust-card__title">{{ .trust_2_title }}</h3>
-
-          <ul class="trust-card__list">
-            {{ if .trust_2_value1 }}<li>{{ .trust_2_value1 }}</li>{{ end }}
-            {{ if .trust_2_value2 }}<li>{{ .trust_2_value2 }}</li>{{ end }}
-            {{ if .trust_2_value3 }}<li>{{ .trust_2_value3 }}</li>{{ end }}
-          </ul>
-        </div>
-      </article>
-
-      <!-- Card 3 -->
-      <article class="trust-card">
-        <img
-          class="trust-card__icon"
-          src="{{ .trust_3_icon_src_fixed }}"
-          alt=""
-          aria-hidden="true"
-          loading="lazy"
-        >
-
-        <div class="trust-card__body">
-          <h3 class="trust-card__title">{{ .trust_3_title }}</h3>
-
-          <ul class="trust-card__list">
-            {{ if .trust_3_value1 }}<li>{{ .trust_3_value1 }}</li>{{ end }}
-            {{ if .trust_3_value2 }}<li>{{ .trust_3_value2 }}</li>{{ end }}
-            {{ if .trust_3_value3 }}<li>{{ .trust_3_value3 }}</li>{{ end }}
-          </ul>
-        </div>
-      </article>
-
+            {{ with $value }}
+              <p class="trust-card__value">{{ . }}</p>
+            {{ end }}
+          </article>
+        {{ end }}
+      {{ end }}
     </div>
   </div>
 </section>

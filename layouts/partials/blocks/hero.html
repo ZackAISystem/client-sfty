@@ -1,59 +1,146 @@
-<section class="hero">
-  <div class="container hero__inner">
+{{ $d := .data }}
 
-    <!-- LEFT -->
-    <div class="hero__left">
+<section class="hero" id="hero">
+  <div class="container hero__inner">
+    <div class="hero__content">
       <h1 class="hero__title">
-        <span class="hero__title-main">{{ .hero_title_main_agent }}</span><br>
-        <span class="hero__title-accent">{{ .hero_title_accent_agent }}</span>
+        {{ with $d.hero_title }}
+          <span class="hero__title-main">{{ . }}</span>
+        {{ end }}
+
+        {{ with $d.hero_title_accent }}
+          <span class="hero__title-accent">{{ . }}</span>
+        {{ end }}
       </h1>
 
-      <div class="hero__subtitle">{{ .hero_subtitle_agent }}</div>
-      <div class="hero__desc">{{ .hero_description_agent }}</div>
+      {{ with $d.hero_subtitle }}
+        <p class="hero__subtitle">{{ . }}</p>
+      {{ end }}
 
-      <a
-        class="hero__cta js-open-lead"
-        href="#contact"
-        data-modal-title="{{ .contact_form_title }}"
-        data-cta-text="{{ .hero_cta }}"
-        data-cta-color="#039757"
-        data-source="hero"
-      >
-        {{ .hero_cta }}
-      </a>
-    </div>
+      <div class="hero__actions">
+        {{ with $d.hero_cta }}
+          <a class="hero__btn hero__btn--primary" href="#workflow">{{ . }}</a>
+        {{ end }}
 
-    <!-- RIGHT -->
-    <div class="hero__right">
-      <div class="hero__media">
-
-        <!-- большой % фоном -->
-        <div class="hero__percent-bg" aria-hidden="true">%</div>
-
-        <img
-          class="hero__image"
-          src="{{ .hero_image_main_src_fixed }}"
-          alt="График и монеты"
-          loading="eager"
+        <div
+          class="hero__ask"
+          id="heroAsk"
+          data-placeholder="{{ $d.ask_sfty_placeholder | htmlEscape }}"
+          data-msg-1="{{ $d.ask_sfty_chip_1_message | htmlEscape }}"
+          data-msg-2="{{ $d.ask_sfty_chip_2_message | htmlEscape }}"
+          data-msg-3="{{ $d.ask_sfty_chip_3_message | htmlEscape }}"
+          data-chip-1="{{ $d.ask_sfty_chip_1_label | htmlEscape }}"
+          data-chip-2="{{ $d.ask_sfty_chip_2_label | htmlEscape }}"
+          data-chip-3="{{ $d.ask_sfty_chip_3_label | htmlEscape }}"
         >
-
-        <!-- Fact card -->
-        <div class="hero__fact">
-          <img
-            class="hero__fact-icon"
-            src="{{ .hero_image_percent_src_fixed }}"
-            alt=""
-            aria-hidden="true"
-            loading="eager"
+          <button
+            class="hero__ask-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="heroAskPanel"
           >
-          <div class="hero__fact-text">
-            <div class="hero__fact-value">{{ .hero_fact_value_fixed }}</div>
-            <div class="hero__fact-label">{{ .hero_fact_label_fixed }}</div>
-          </div>
-        </div>
+            <span class="hero__ask-label">
+              {{ with $d.hero_ask_cta }}{{ . }}{{ else }}Ask SFTY{{ end }}
+            </span>
 
+            <span class="hero__ask-panel" id="heroAskPanel">
+              <span class="hero__ask-chip">
+                {{ with $d.ask_sfty_chip_1_label }}{{ . }}{{ else }}Ask SFTY{{ end }}
+              </span>
+
+              <span class="hero__ask-input">
+                <span class="hero__ask-typed" id="heroAskTyped"></span>
+                <span class="hero__ask-caret" aria-hidden="true"></span>
+              </span>
+            </span>
+
+            <span class="hero__ask-icon">
+              <img src="{{ "img/hero/sfty-neon.png" | relURL }}" alt="SFTY icon">
+            </span>
+          </button>
+        </div>
       </div>
     </div>
 
+    <div class="hero__visual" aria-hidden="true">
+      <div class="hero__map-wrap">
+        <img
+          class="hero__map"
+          src="{{ "img/hero/world-map.png" | relURL }}"
+          alt=""
+        >
+
+        <svg class="hero__flow" viewBox="0 0 980 520" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="heroFlowGradient" x1="678" y1="268" x2="308" y2="198" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#00E59E"/>
+              <stop offset="55%" stop-color="#7FE7FF"/>
+              <stop offset="100%" stop-color="#FFFFFF"/>
+            </linearGradient>
+          </defs>
+
+          <path class="hero__flow-path-soft" d="M 678 268 C 606 198, 486 160, 308 198" />
+          <path class="hero__flow-path" d="M 678 268 C 606 198, 486 160, 308 198" />
+
+          <circle class="hero__flow-pulse" cx="678" cy="268" r="8" />
+          <circle class="hero__flow-node" cx="678" cy="268" r="7" />
+
+          <g class="hero__flow-tag hero__flow-tag--dubai">
+            <rect
+              x="693"
+              y="252"
+              width="56"
+              height="24"
+              rx="12"
+              fill="#16202C"
+              fill-opacity="0.96"
+              stroke="#314154"
+              stroke-width="1"
+            />
+            <text
+              x="721"
+              y="267"
+              text-anchor="middle"
+              fill="#FFFFFF"
+              font-size="12"
+              font-weight="600"
+              font-family="Montserrat, Arial, sans-serif"
+            >
+              Dubai
+            </text>
+          </g>
+
+          <circle class="hero__flow-pulse hero__flow-pulse--ny" cx="308" cy="198" r="8" />
+          <circle class="hero__flow-node hero__flow-node--ny" cx="308" cy="198" r="7" />
+
+          <g class="hero__flow-tag hero__flow-tag--ny">
+            <rect
+              x="266"
+              y="212"
+              width="84"
+              height="24"
+              rx="12"
+              fill="#16202C"
+              fill-opacity="0.96"
+              stroke="#314154"
+              stroke-width="1"
+            />
+            <text
+              x="308"
+              y="227"
+              text-anchor="middle"
+              fill="#FFFFFF"
+              font-size="12"
+              font-weight="600"
+              font-family="Montserrat, Arial, sans-serif"
+            >
+              New York
+            </text>
+          </g>
+
+          <circle class="hero__flow-packet" r="5" />
+        </svg>
+      </div>
+    </div>
   </div>
 </section>

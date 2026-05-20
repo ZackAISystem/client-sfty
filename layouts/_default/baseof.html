@@ -1,9 +1,10 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+
+  <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ default "SFTY AI" site.Title }}</title>
 
   <!-- Montserrat font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,27 +13,489 @@
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="{{ "css/site.css" | relURL }}">
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/favicon.png">
 
   <!-- Open Graph / WhatsApp / Telegram -->
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Finstar Capital">
-  <meta property="og:title" content="Финстар Капитал — Золотоматы">
-  <meta property="og:description" content="Инвестиционный проект на базе реальных активов, фондовой структуры и инфраструктурной модели для квалифицированных инвесторов.">
-  <meta property="og:image" content="https://50pribyli.ru/og-image.jpg">
+  <meta property="og:site_name" content="SFTY AI">
+  <meta property="og:title" content="{{ if .Title }}{{ .Title }}{{ else }}SFTY AI{{ end }}">
+  <meta property="og:description" content="Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.">
+  <meta property="og:image" content="{{ "og-image.jpg" | absURL }}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:url" content="{{ .Permalink }}">
 
   <!-- Twitter / X preview -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Финстар Капитал — Золотоматы">
-  <meta name="twitter:description" content="Инвестиционный проект на базе реальных активов, фондовой структуры и инфраструктурной модели для квалифицированных инвесторов.">
-  <meta name="twitter:image" content="https://50pribyli.ru/og-image.jpg">
-
+  <meta name="twitter:title" content="{{ if .Title }}{{ .Title }}{{ else }}SFTY AI{{ end }}">
+  <meta name="twitter:description" content="Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.">
+  <meta name="twitter:image" content="{{ "og-image.jpg" | absURL }}">
 </head>
+
 <body>
   {{ block "main" . }}{{ end }}
+
+  <!-- Header scroll state -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const header = document.querySelector(".site-header");
+
+      if (!header) return;
+
+      let ticking = false;
+
+      function updateHeader() {
+        if (window.scrollY > 80) {
+          header.classList.add("site-header--scrolled");
+        } else {
+          header.classList.remove("site-header--scrolled");
+        }
+
+        ticking = false;
+      }
+
+      function requestTick() {
+        if (!ticking) {
+          window.requestAnimationFrame(updateHeader);
+          ticking = true;
+        }
+      }
+
+      updateHeader();
+      window.addEventListener("scroll", requestTick, { passive: true });
+    });
+  </script>
+
+  <!-- Hero Ask SFTY running prompt -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const heroAsk = document.getElementById("heroAsk");
+
+      if (!heroAsk) return;
+
+      const button = heroAsk.querySelector(".hero__ask-toggle");
+      const typedEl = document.getElementById("heroAskTyped");
+      const chipEl = heroAsk.querySelector(".hero__ask-chip");
+
+      if (!button || !typedEl || !chipEl) return;
+
+      function readAttr(name) {
+        return (heroAsk.getAttribute(name) || "").trim();
+      }
+
+      const prompts = [
+        {
+          chip: readAttr("data-chip-1") || "Supervise VASPs",
+          message: readAttr("data-msg-1")
+        },
+        {
+          chip: readAttr("data-chip-2") || "Case workflows",
+          message: readAttr("data-msg-2")
+        },
+        {
+          chip: readAttr("data-chip-3") || "Risk signals",
+          message: readAttr("data-msg-3")
+        }
+      ].filter(function (item) {
+        return item.message && item.message.length > 0;
+      });
+
+      let isOpen = false;
+      let typingTimeout = null;
+      let cycleTimeout = null;
+      let messageIndex = 0;
+      let charIndex = 0;
+
+      function clearTimers() {
+        if (typingTimeout) {
+          clearTimeout(typingTimeout);
+          typingTimeout = null;
+        }
+
+        if (cycleTimeout) {
+          clearTimeout(cycleTimeout);
+          cycleTimeout = null;
+        }
+      }
+
+      function setChipForMessage(index) {
+        if (!prompts.length) return;
+
+        const current = prompts[index % prompts.length];
+        chipEl.textContent = current.chip;
+      }
+
+      function typeMessage(text, done) {
+        clearTimers();
+
+        typedEl.textContent = "";
+        charIndex = 0;
+
+        function step() {
+          if (!isOpen) return;
+
+          typedEl.textContent = text.slice(0, charIndex + 1);
+          charIndex++;
+
+          if (charIndex < text.length) {
+            typingTimeout = setTimeout(step, 46);
+          } else {
+            cycleTimeout = setTimeout(function () {
+              if (done) done();
+            }, 2200);
+          }
+        }
+
+        step();
+      }
+
+      function startCycle() {
+        if (!prompts.length || !isOpen) return;
+
+        const current = prompts[messageIndex % prompts.length];
+
+        setChipForMessage(messageIndex);
+
+        typeMessage(current.message, function () {
+          if (!isOpen) return;
+
+          messageIndex = (messageIndex + 1) % prompts.length;
+          startCycle();
+        });
+      }
+
+      function openAsk() {
+        if (isOpen) return;
+
+        isOpen = true;
+        messageIndex = 0;
+
+        heroAsk.classList.add("is-open");
+        button.setAttribute("aria-expanded", "true");
+
+        clearTimers();
+        typedEl.textContent = "";
+
+        if (prompts.length) {
+          setChipForMessage(0);
+
+          setTimeout(function () {
+            startCycle();
+          }, 420);
+        }
+      }
+
+      function closeAsk() {
+        if (!isOpen) return;
+
+        isOpen = false;
+
+        heroAsk.classList.remove("is-open");
+        button.setAttribute("aria-expanded", "false");
+
+        clearTimers();
+        typedEl.textContent = "";
+
+        if (prompts.length) {
+          chipEl.textContent = prompts[0].chip;
+        }
+      }
+
+      if (prompts.length) {
+        chipEl.textContent = prompts[0].chip;
+      }
+
+      button.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        if (isOpen) {
+          closeAsk();
+        } else {
+          openAsk();
+        }
+      });
+
+      document.addEventListener("click", function (event) {
+        if (!heroAsk.contains(event.target)) {
+          closeAsk();
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeAsk();
+        }
+      });
+    });
+  </script>
+
+  <!-- Ask SFTY block running prompt + manual typing + voice input -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".ask-sfty").forEach(function (section) {
+        const bar = section.querySelector(".ask-sfty__bar");
+        const input = section.querySelector(".ask-sfty__input");
+        const inlineChip = section.querySelector(".ask-sfty__inline-chip");
+        const chipButtons = Array.from(section.querySelectorAll(".ask-sfty__chips button"));
+        const micButton = section.querySelector(".ask-sfty__mic");
+
+        if (!bar || !input || !inlineChip || !chipButtons.length) return;
+
+        const defaultMessage = bar.dataset.defaultMessage || input.getAttribute("placeholder") || "";
+
+        const prompts = chipButtons
+          .map(function (button) {
+            return {
+              label: (button.dataset.label || button.textContent || "").trim(),
+              message: (button.dataset.message || "").trim(),
+              button: button
+            };
+          })
+          .filter(function (item) {
+            return item.message.length > 0;
+          });
+
+        if (!prompts.length) return;
+
+        let promptIndex = 0;
+        let charIndex = 0;
+        let typingTimer = null;
+        let cycleTimer = null;
+        let isAutoRunning = true;
+        let recognition = null;
+        let isListening = false;
+
+        function clearTimers() {
+          if (typingTimer) {
+            clearTimeout(typingTimer);
+            typingTimer = null;
+          }
+
+          if (cycleTimer) {
+            clearTimeout(cycleTimer);
+            cycleTimer = null;
+          }
+        }
+
+        function clearActiveChips() {
+          chipButtons.forEach(function (button) {
+            button.classList.remove("is-active");
+          });
+        }
+
+        function setInlineChip(label) {
+          if (label && label.trim() !== "") {
+            inlineChip.textContent = label;
+            inlineChip.hidden = false;
+          } else {
+            inlineChip.textContent = "";
+            inlineChip.hidden = true;
+          }
+        }
+
+        function setActivePrompt(item) {
+          setInlineChip(item.label);
+
+          chipButtons.forEach(function (button) {
+            button.classList.toggle("is-active", button === item.button);
+          });
+        }
+
+        function typeIntoInput(text, done) {
+          clearTimers();
+
+          input.value = "";
+          charIndex = 0;
+
+          function step() {
+            if (!isAutoRunning) return;
+
+            input.value = text.slice(0, charIndex + 1);
+            charIndex++;
+
+            if (charIndex < text.length) {
+              typingTimer = setTimeout(step, 52);
+            } else {
+              cycleTimer = setTimeout(function () {
+                if (done) done();
+              }, 2400);
+            }
+          }
+
+          step();
+        }
+
+        function runCycle() {
+          if (!isAutoRunning) return;
+
+          const current = prompts[promptIndex % prompts.length];
+
+          setActivePrompt(current);
+
+          typeIntoInput(current.message, function () {
+            if (!isAutoRunning) return;
+
+            promptIndex = (promptIndex + 1) % prompts.length;
+            runCycle();
+          });
+        }
+
+        function applyChipInstant(item) {
+          clearTimers();
+
+          isAutoRunning = false;
+
+          setActivePrompt(item);
+          input.value = item.message || "";
+          input.focus();
+        }
+
+        function restartAutoCycle() {
+          clearTimers();
+
+          isAutoRunning = true;
+          promptIndex = 0;
+          charIndex = 0;
+
+          input.value = "";
+          input.setAttribute("placeholder", defaultMessage);
+
+          setInlineChip("");
+          clearActiveChips();
+
+          setTimeout(runCycle, 450);
+        }
+
+        function enterManualMode(clearAutoText) {
+          const wasAutoRunning = isAutoRunning;
+
+          clearTimers();
+          isAutoRunning = false;
+          clearActiveChips();
+
+          setInlineChip("Ask SFTY");
+
+          if (clearAutoText && wasAutoRunning) {
+            input.value = "";
+          }
+
+          input.setAttribute("placeholder", "Type your question...");
+        }
+
+        function startVoiceInput() {
+          clearTimers();
+          isAutoRunning = false;
+          clearActiveChips();
+
+          setInlineChip("Ask SFTY");
+          input.value = "";
+          input.setAttribute("placeholder", "Listening...");
+          input.focus();
+
+          const SpeechRecognition =
+            window.SpeechRecognition ||
+            window.webkitSpeechRecognition;
+
+          if (!SpeechRecognition) {
+            input.setAttribute("placeholder", "Type your question...");
+            return;
+          }
+
+          if (!recognition) {
+            recognition = new SpeechRecognition();
+            recognition.lang = "en-US";
+            recognition.interimResults = true;
+            recognition.continuous = false;
+
+            recognition.onstart = function () {
+              isListening = true;
+              section.classList.add("ask-sfty--listening");
+            };
+
+            recognition.onresult = function (event) {
+              let transcript = "";
+
+              for (let i = event.resultIndex; i < event.results.length; i++) {
+                transcript += event.results[i][0].transcript;
+              }
+
+              input.value = transcript.trim();
+              setInlineChip("Ask SFTY");
+            };
+
+            recognition.onerror = function () {
+              isListening = false;
+              section.classList.remove("ask-sfty--listening");
+              input.setAttribute("placeholder", "Type your question...");
+              setInlineChip("Ask SFTY");
+            };
+
+            recognition.onend = function () {
+              isListening = false;
+              section.classList.remove("ask-sfty--listening");
+
+              if (!input.value.trim()) {
+                input.setAttribute("placeholder", "Type your question...");
+                setInlineChip("Ask SFTY");
+              }
+            };
+          }
+
+          if (isListening) {
+            recognition.stop();
+          } else {
+            recognition.start();
+          }
+        }
+
+        chipButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            const item = {
+              label: (this.dataset.label || this.textContent || "").trim(),
+              message: (this.dataset.message || "").trim(),
+              button: this
+            };
+
+            applyChipInstant(item);
+          });
+        });
+
+        if (micButton) {
+          micButton.addEventListener("click", function (event) {
+            event.preventDefault();
+            startVoiceInput();
+          });
+        }
+
+        input.addEventListener("focus", function () {
+          enterManualMode(true);
+        });
+
+        input.addEventListener("input", function () {
+          clearTimers();
+          isAutoRunning = false;
+          clearActiveChips();
+
+          setInlineChip("Ask SFTY");
+
+          if (this.value.trim() === "") {
+            input.setAttribute("placeholder", "Type your question...");
+          }
+        });
+
+        input.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            restartAutoCycle();
+            this.blur();
+          }
+        });
+
+        input.setAttribute("placeholder", "");
+        setTimeout(runCycle, 650);
+      });
+    });
+  </script>
 </body>
 </html>

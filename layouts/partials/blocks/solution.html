@@ -1,0 +1,66 @@
+{{ $d := .data }}
+
+<section class="solution section section--light" id="solution">
+  <div class="container solution__inner">
+    <div class="solution__content">
+      {{ with $d.solution_eyebrow }}
+        <p class="solution__eyebrow">{{ . }}</p>
+      {{ end }}
+
+      <h2 class="solution__title">
+        {{ with $d.solution_title }}
+          <span class="solution__title-main">{{ . }}</span>
+        {{ end }}
+        {{ with $d.solution_title_accent }}
+          <span class="solution__title-accent">{{ . }}</span>
+        {{ end }}
+      </h2>
+
+      {{ with $d.solution_description }}
+        <p class="solution__description">{{ . }}</p>
+      {{ end }}
+
+      <ul class="solution__points">
+        {{ range $i := seq 1 4 }}
+          {{ with index $d (printf "solution_point_%d" $i) }}
+            <li>{{ . }}</li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </div>
+
+    <div class="solution-visual" aria-label="SFTY control layer diagram">
+      <div class="solution-visual__canvas">
+
+        <div class="solution-visual__inputs">
+          {{ range $i := seq 1 5 }}
+            {{ with index $d (printf "solution_visual_input_%d" $i) }}
+              <div class="solution-visual__input solution-visual__input--{{ $i }}">
+                <span class="solution-visual__input-label">{{ . }}</span>
+                <span class="solution-visual__input-line" aria-hidden="true"></span>
+              </div>
+            {{ end }}
+          {{ end }}
+        </div>
+
+        {{ with $d.solution_visual_layer_label }}
+          <div class="solution-visual__layer-wrap">
+            <div class="solution-visual__layer">{{ . }}</div>
+          </div>
+        {{ end }}
+
+        <div class="solution-visual__outputs">
+          {{ range $i := seq 1 4 }}
+            {{ with index $d (printf "solution_visual_output_%d" $i) }}
+              <div class="solution-visual__output solution-visual__output--{{ $i }}">
+                <span class="solution-visual__output-line" aria-hidden="true"></span>
+                <span class="solution-visual__output-pill">{{ . }}</span>
+              </div>
+            {{ end }}
+          {{ end }}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

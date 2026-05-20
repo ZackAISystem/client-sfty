@@ -1,0 +1,5 @@
+---
+title: "biz_compliance_workflow_automation_management_dashboards_transaction_monitoring_dashboard"
+slug: "biz_compliance_workflow_automation_management_dashboards_transaction_monitoring_dashboard"
+template: "template_23"
+---

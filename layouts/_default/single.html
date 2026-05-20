@@ -1,8 +1,37 @@
-{{/* Global fallback single template */}}
 {{ define "main" }}
-  {{/* If this is our "sites" section, use the dynamic engine */}}
-  {{ if eq .Section "sites" }}
-    {{ partial "sites_dynamic_single.html" . }}
+  {{ $dataSlug := default .Params.slug .Params.data_slug }}
+
+  {{ if $dataSlug }}
+    {{ $siteData := index site.Data.sites $dataSlug }}
+
+    {{ if not $siteData }}
+      <main class="site-page site-page--missing">
+        <section class="section">
+          <div class="container">
+            <h1>Missing site data</h1>
+            <p>No JSON found for data_slug: {{ $dataSlug }}</p>
+          </div>
+        </section>
+      </main>
+    {{ else }}
+      {{ $templateName := default "template_1" $siteData.template }}
+      {{ $templateData := index site.Data.templates $templateName }}
+
+      {{ $fallbackBlocks := slice "header" "hero" "trust" "problem" "solution" "workflow" "why_sfty" "authority" "ask_sfty" "faq" "final" "footer" }}
+      {{ $blocks := $fallbackBlocks }}
+
+      {{ with $templateData }}
+        {{ with .blocks }}
+          {{ $blocks = . }}
+        {{ end }}
+      {{ end }}
+
+      <main class="site-page" data-slug="{{ $siteData.slug }}" data-template="{{ $templateName }}">
+        {{ range $blocks }}
+          {{ partial (printf "blocks/%s.html" .) (dict "data" $siteData "page" $ "block" .) }}
+        {{ end }}
+      </main>
+    {{ end }}
   {{ else }}
     <div class="container" style="padding:40px 20px">
       <h1>{{ .Title }}</h1>

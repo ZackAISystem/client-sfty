@@ -1,6 +1,20 @@
 {{ define "main" }}
-  <div class="container" style="padding:40px 20px">
-    <h1>{{ .Title }}</h1>
-    {{ .Content }}
-  </div>
+  <main class="default-list">
+    <section class="section section--light">
+      <div class="container">
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+
+        {{ if .Pages }}
+          <div class="page-list">
+            {{ range .Pages }}
+              <a class="page-list__item" href="{{ .RelPermalink }}">
+                {{ .Title }}
+              </a>
+            {{ end }}
+          </div>
+        {{ end }}
+      </div>
+    </section>
+  </main>
 {{ end }}

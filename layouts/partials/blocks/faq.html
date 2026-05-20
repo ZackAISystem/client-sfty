@@ -1,0 +1,48 @@
+{{ $d := .data }}
+
+<section class="faq section section--light" id="faq">
+  <div class="container faq__inner">
+    <div class="faq__intro">
+      {{ with $d.faq_eyebrow }}
+        <p class="faq__eyebrow">{{ . }}</p>
+      {{ end }}
+
+      <h2 class="faq__title">
+        {{ with $d.faq_title }}
+          <span>{{ . }}</span>
+        {{ end }}
+        {{ with $d.faq_title_accent }}
+          <span class="faq__title-accent">{{ . }}</span>
+        {{ end }}
+      </h2>
+
+      {{ with $d.faq_description }}
+        <p class="faq__description">{{ . }}</p>
+      {{ end }}
+    </div>
+
+    <div class="faq__list">
+      {{ range $i := seq 1 5 }}
+        {{ $question := index $d (printf "faq_%d_question" $i) }}
+        {{ $answer := index $d (printf "faq_%d_answer" $i) }}
+
+        {{ if or $question $answer }}
+          <details class="faq-item" {{ if eq $i 2 }}open{{ end }}>
+            {{ with $question }}
+              <summary>
+                <span class="faq-item__dot" aria-hidden="true"></span>
+                <span class="faq-item__question">{{ . }}</span>
+              </summary>
+            {{ end }}
+
+            {{ with $answer }}
+              <div class="faq-item__answer">
+                <p>{{ . }}</p>
+              </div>
+            {{ end }}
+          </details>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,5 @@
+---
+title: "biz_institutional_trust_enterprise_readiness_procurement_safe_model_implementation_risk_reduction"
+slug: "biz_institutional_trust_enterprise_readiness_procurement_safe_model_implementation_risk_reduction"
+template: "template_13"
+---

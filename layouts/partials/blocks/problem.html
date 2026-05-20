@@ -1,0 +1,42 @@
+{{ $d := .data }}
+
+<section class="problem" id="problem">
+  <div class="container problem__inner">
+    <div class="problem__content">
+      {{ with $d.problem_title }}
+        <h2 class="problem__title">{{ . }}</h2>
+      {{ end }}
+
+      {{ with $d.problem_description }}
+        <p class="problem__description">{{ . }}</p>
+      {{ end }}
+
+      {{ with $d.problem_cta }}
+        <a class="problem__cta" href="#solution">{{ . }}</a>
+      {{ end }}
+    </div>
+
+    <div class="problem__list">
+      {{ range $i := seq 1 4 }}
+        {{ $label := index $d (printf "problem_point_%d_label" $i) }}
+        {{ $value := index $d (printf "problem_point_%d_value" $i) }}
+
+        {{ if or $label $value }}
+          <article class="problem-row">
+            <span class="problem-row__dot" aria-hidden="true"></span>
+
+            <div class="problem-row__content">
+              {{ with $label }}
+                <h3 class="problem-row__label">{{ . }}</h3>
+              {{ end }}
+
+              {{ with $value }}
+                <p class="problem-row__value">{{ . }}</p>
+              {{ end }}
+            </div>
+          </article>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>

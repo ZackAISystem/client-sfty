@@ -1,0 +1,5 @@
+---
+title: "biz_compliance_workflow_automation_workflow_standardization_case_workflow_standardization"
+slug: "biz_compliance_workflow_automation_workflow_standardization_case_workflow_standardization"
+template: "template_8"
+---

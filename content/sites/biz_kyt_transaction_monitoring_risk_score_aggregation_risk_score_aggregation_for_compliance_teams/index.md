@@ -1,0 +1,5 @@
+---
+title: "biz_kyt_transaction_monitoring_risk_score_aggregation_risk_score_aggregation_for_compliance_teams"
+slug: "biz_kyt_transaction_monitoring_risk_score_aggregation_risk_score_aggregation_for_compliance_teams"
+template: "template_14"
+---

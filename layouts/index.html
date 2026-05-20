@@ -2,22 +2,38 @@
   {{ $slug := .Params.slug }}
 
   {{ if not $slug }}
-    {{ $slug = "50pribyli" }}
+    {{ $slug = "gov_supervisory_oversight_supervisory_reporting" }}
   {{ end }}
 
-  {{ $site := index site.Data.sites $slug }}
+  {{ $siteData := index site.Data.sites $slug }}
 
-  {{ if not $site }}
-    {{ errorf "Site data not found for slug: %s" $slug }}
+  {{ if not $siteData }}
+    <main class="site-page site-page--missing">
+      <section class="section section--light">
+        <div class="container">
+          <h1>Missing homepage data</h1>
+          <p>No JSON found for homepage slug: <strong>{{ $slug }}</strong></p>
+          <p>Open a generated page under <code>/sites/&lt;slug&gt;/</code>.</p>
+        </div>
+      </section>
+    </main>
+  {{ else }}
+    {{ $templateName := default "template_1" $siteData.template }}
+    {{ $templateData := index site.Data.templates $templateName }}
+
+    {{ $fallbackBlocks := slice "header" "hero" "trust" "problem" "solution" "workflow" "why_sfty" "authority" "ask_sfty" "faq" "final" "footer" }}
+    {{ $blocks := $fallbackBlocks }}
+
+    {{ with $templateData }}
+      {{ with .blocks }}
+        {{ $blocks = . }}
+      {{ end }}
+    {{ end }}
+
+    <main class="site-page site-page--home" data-slug="{{ $siteData.slug }}" data-template="{{ $templateName }}">
+      {{ range $blocks }}
+        {{ partial (printf "blocks/%s.html" .) (dict "data" $siteData "page" $ "block" .) }}
+      {{ end }}
+    </main>
   {{ end }}
-
-  {{ partial "blocks/header.html" $site }}
-  {{ partial "blocks/hero.html" $site }}
-  {{ partial "blocks/why_us.html" $site }}
-  {{ partial "blocks/how_it_works.html" $site }}
-  {{ partial "blocks/use_cases.html" $site }}
-  {{ partial "blocks/trust.html" $site }}
-  {{ partial "blocks/contact_form.html" $site }}
-  {{ partial "lead-modal.html" $site }}
-  {{ partial "blocks/footer.html" $site }}
 {{ end }}

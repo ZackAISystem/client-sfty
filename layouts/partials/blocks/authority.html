@@ -1,0 +1,42 @@
+{{ $d := .data }}
+
+<section class="authority section section--dark" id="authority">
+  <div class="container authority__inner">
+    <div class="authority__content">
+      {{ with $d.authority_eyebrow }}
+        <p class="authority__eyebrow">{{ . }}</p>
+      {{ end }}
+
+      {{ with $d.authority_title }}
+        <h2 class="authority__title">{{ . }}</h2>
+      {{ end }}
+
+      {{ with $d.authority_description }}
+        <p class="authority__description">{{ . }}</p>
+      {{ end }}
+
+      {{ with $d.authority_cta_label }}
+        <a class="authority__link" href="#final">{{ . }}</a>
+      {{ end }}
+    </div>
+
+    <div class="authority__grid">
+      {{ range $i := seq 1 4 }}
+        {{ $title := index $d (printf "authority_card_%d_title" $i) }}
+        {{ $description := index $d (printf "authority_card_%d_description" $i) }}
+
+        {{ if or $title $description }}
+          <article class="authority-card authority-card--{{ $i }}">
+            {{ with $title }}
+              <h3 class="authority-card__title">{{ . }}</h3>
+            {{ end }}
+
+            {{ with $description }}
+              <p class="authority-card__text">{{ . }}</p>
+            {{ end }}
+          </article>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>

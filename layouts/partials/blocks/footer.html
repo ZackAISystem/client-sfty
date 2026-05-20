@@ -1,43 +1,99 @@
-<footer class="site-footer" id="contact">
-  <div class="container site-footer__container">
+{{ $d := .data }}
 
-    <!-- TOP ROW -->
-    <div class="site-footer__top">
-      <!-- LEFT: logo -->
-      <div class="site-footer__brand">
-        <img
-          class="site-footer__logo"
-          src="/img/template_1/footer/logo-finstar.png"
-          alt="Финстар Капитал"
-          loading="lazy"
-        >
+<footer class="site-footer" id="footer">
+  <div class="container site-footer__inner">
+
+    <div class="site-footer__left">
+      <a class="site-footer__logo" href="/" aria-label="SFTY home">
+        <img src="/img/footer/sfty-logo-1.png" alt="SFTY.AI">
+      </a>
+
+      {{ with $d.footer_description }}
+        <p class="site-footer__description">{{ . }}</p>
+      {{ end }}
+
+      <div class="site-footer__columns">
+        <div class="site-footer__column">
+          {{ with $d.footer_column_1_title }}<h3>{{ . }}</h3>{{ end }}
+          {{ range $i := seq 1 5 }}
+            {{ with index $d (printf "footer_column_1_link_%d_label" $i) }}
+              <a href="{{ if eq . "Platform" }}#hero{{ else if eq . "SFTY Control Layer" }}#solution{{ else if eq . "Ask SFTY" }}#ask-sfty{{ else if eq . "Workflow Automation" }}#workflow{{ else if eq . "Evidence & Reporting" }}#authority{{ else }}#hero{{ end }}">{{ . }}</a>
+            {{ end }}
+          {{ end }}
+        </div>
+
+        <div class="site-footer__column">
+          {{ with $d.footer_column_2_title }}<h3>{{ . }}</h3>{{ end }}
+          {{ range $i := seq 1 5 }}
+            {{ with index $d (printf "footer_column_2_link_%d_label" $i) }}
+              <a href="{{ if eq . "Solutions" }}#solution{{ else if eq . "Business" }}#why-sfty{{ else if eq . "Government" }}#authority{{ else if eq . "Travel Rule" }}#workflow{{ else if eq . "KYC / KYB / KYT" }}#problem{{ else }}#solution{{ end }}">{{ . }}</a>
+            {{ end }}
+          {{ end }}
+        </div>
+
+        <div class="site-footer__column">
+          {{ with $d.footer_column_3_title }}<h3>{{ . }}</h3>{{ end }}
+          {{ range $i := seq 1 4 }}
+            {{ with index $d (printf "footer_column_3_link_%d_label" $i) }}
+              <a href="{{ if eq . "Company" }}#hero{{ else if eq . "About" }}#why-sfty{{ else if eq . "Contact" }}#final{{ else if eq . "Request Demo" }}#final{{ else }}#hero{{ end }}">{{ . }}</a>
+            {{ end }}
+          {{ end }}
+        </div>
+
+        <div class="site-footer__column">
+          {{ with $d.footer_column_4_title }}<h3>{{ . }}</h3>{{ end }}
+          {{ range $i := seq 1 5 }}
+            {{ with index $d (printf "footer_column_4_link_%d_label" $i) }}
+              <a href="#footer">{{ . }}</a>
+            {{ end }}
+          {{ end }}
+        </div>
       </div>
 
-      <!-- CENTER: address -->
-      <div class="site-footer__address">
-        {{ .footer_address_fixed }}
+      {{ with $d.footer_legal_notice }}
+        <p class="site-footer__notice">{{ . }}</p>
+      {{ end }}
+    </div>
+
+    <div class="site-footer__right">
+      <div class="site-footer__contact">
+        {{ with $d.footer_contact_title }}
+          <p>{{ . }}</p>
+        {{ end }}
+
+        {{ with $d.footer_cta }}
+          <a class="site-footer__cta" href="#final">
+            <span>{{ . }}</span>
+            <span class="site-footer__cta-arrow" aria-hidden="true"></span>
+          </a>
+        {{ end }}
       </div>
 
-      <!-- RIGHT: phone + email -->
-      <div class="site-footer__contacts">
-        <div class="site-footer__phone">{{ .footer_phone_fixed }}</div>
-        <div class="site-footer__email">{{ .footer_email_fixed }}</div>
+      <div class="site-footer__socials" aria-label="Social links">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+          <img src="/img/footer/instagram.svg" alt="">
+        </a>
+
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <img src="/img/footer/linkedin.svg" alt="">
+        </a>
+
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+          <img src="/img/footer/facebook.svg" alt="">
+        </a>
+
+        <a href="https://telegram.org/" target="_blank" rel="noopener" aria-label="Telegram">
+          <img src="/img/footer/telegram.svg" alt="">
+        </a>
+
+        <a href="https://www.whatsapp.com/" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <img src="/img/footer/whatsapp.svg" alt="">
+        </a>
       </div>
-    </div>
 
-    <!-- SLOGAN -->
-    <div class="site-footer__slogan">
-      {{ .footer_slogan_fixed }}
-    </div>
-
-    <!-- LICENSE -->
-    <div class="site-footer__license">
-      {{ .footer_license_fixed }}
-    </div>
-
-    <!-- DISCLAIMER -->
-    <div class="site-footer__disclaimer">
-      {{ .footer_disclaimer_fixed }}
+      {{ with $d.footer_copyright }}
+        <p class="site-footer__copyright">{{ . }}</p>
+      {{ end }}
     </div>
 
   </div>

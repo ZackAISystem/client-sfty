@@ -1,0 +1,73 @@
+{{ $d := .data }}
+
+<section class="ask-sfty section section--dark" id="ask-sfty">
+  <div class="container ask-sfty__inner">
+
+    <h2 class="ask-sfty__title">
+      {{ with $d.ask_sfty_title_main }}
+        <span>{{ . }}</span>
+      {{ end }}
+
+      {{ with $d.ask_sfty_title_accent }}
+        <span class="ask-sfty__title-accent">{{ . }}</span>
+      {{ end }}
+    </h2>
+
+    <div
+      class="ask-sfty__bar"
+      data-default-message="{{ $d.ask_sfty_placeholder | htmlEscape }}"
+    >
+      <span class="ask-sfty__inline-chip" hidden></span>
+
+      <input
+        class="ask-sfty__input"
+        type="text"
+        value=""
+        placeholder="{{ $d.ask_sfty_placeholder }}"
+        aria-label="Ask SFTY"
+        autocomplete="off"
+      >
+
+      <button class="ask-sfty__mic" type="button" aria-label="Voice input">
+        <img src="/img/ask_sfty/voice-icon.png" alt="">
+      </button>
+    </div>
+
+    <div class="ask-sfty__chips">
+      {{ if or $d.ask_sfty_chip_1_label $d.ask_sfty_chip_1_message }}
+        <button
+          type="button"
+          data-label="{{ $d.ask_sfty_chip_1_label | htmlEscape }}"
+          data-message="{{ $d.ask_sfty_chip_1_message | htmlEscape }}"
+        >
+          {{ $d.ask_sfty_chip_1_label }}
+        </button>
+      {{ end }}
+
+      {{ if or $d.ask_sfty_chip_2_label $d.ask_sfty_chip_2_message }}
+        <button
+          type="button"
+          data-label="{{ $d.ask_sfty_chip_2_label | htmlEscape }}"
+          data-message="{{ $d.ask_sfty_chip_2_message | htmlEscape }}"
+        >
+          {{ $d.ask_sfty_chip_2_label }}
+        </button>
+      {{ end }}
+
+      {{ if or $d.ask_sfty_chip_3_label $d.ask_sfty_chip_3_message }}
+        <button
+          type="button"
+          data-label="{{ $d.ask_sfty_chip_3_label | htmlEscape }}"
+          data-message="{{ $d.ask_sfty_chip_3_message | htmlEscape }}"
+        >
+          {{ $d.ask_sfty_chip_3_label }}
+        </button>
+      {{ end }}
+    </div>
+
+    {{ with $d.ask_sfty_helper_text }}
+      <p class="ask-sfty__helper">{{ . }}</p>
+    {{ end }}
+
+  </div>
+</section>

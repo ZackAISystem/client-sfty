@@ -1,0 +1,5 @@
+---
+title: "biz_institutional_trust_enterprise_readiness_enterprise_integration_case_management_integration"
+slug: "biz_institutional_trust_enterprise_readiness_enterprise_integration_case_management_integration"
+template: "template_20"
+---

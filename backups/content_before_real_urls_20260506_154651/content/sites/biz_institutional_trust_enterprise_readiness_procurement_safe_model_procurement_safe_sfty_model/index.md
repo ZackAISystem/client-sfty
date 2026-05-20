@@ -1,0 +1,5 @@
+---
+title: "biz_institutional_trust_enterprise_readiness_procurement_safe_model_procurement_safe_sfty_model"
+slug: "biz_institutional_trust_enterprise_readiness_procurement_safe_model_procurement_safe_sfty_model"
+template: "template_12"
+---

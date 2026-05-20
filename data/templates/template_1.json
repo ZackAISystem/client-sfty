@@ -1,4 +1,17 @@
 {
   "name": "template_1",
-  "blocks": ["header","hero","how_it_works","why_us","use_cases","trust","contact_form","footer"]
+  "blocks": [
+    "header",
+    "hero",
+    "trust",
+    "problem",
+    "solution",
+    "workflow",
+    "why_sfty",
+    "authority",
+    "ask_sfty",
+    "faq",
+    "final",
+    "footer"
+  ]
 }

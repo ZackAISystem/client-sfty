@@ -1,30 +1,25 @@
-<section class="section--header">
-  <div class="container header__row">
+{{ $d := .data }}
 
-    <nav class="header__nav header__nav--left">
-      <a class="nav__link" href="{{ .header_menu_href_1_fixed }}">{{ .header_menu_item_1_fixed }}</a>
-      <a class="nav__link" href="{{ .header_menu_href_2_fixed }}">{{ .header_menu_item_2_fixed }}</a>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-header__brand" href="/" aria-label="SFTY home">
+      <img
+        src="/img/header/sfty-logo.png"
+        alt="SFTY.AI"
+        class="site-header__logo"
+      >
+    </a>
+
+    <nav class="site-header__nav" aria-label="Main navigation">
+      {{ with $d.header_menu_item_1 }}<a href="#">{{ . }}</a>{{ end }}
+      {{ with $d.header_menu_item_2 }}<a href="#">{{ . }}</a>{{ end }}
+      {{ with $d.header_menu_item_3 }}<a href="#">{{ . }}</a>{{ end }}
+      {{ with $d.header_menu_item_4 }}<a href="#">{{ . }}</a>{{ end }}
+      {{ with $d.header_menu_item_5 }}<a href="#ask-sfty">{{ . }}</a>{{ end }}
     </nav>
 
-    <div class="brand">
-      <img class="brand__logo-img" src="{{ .header_logo_src_fixed }}" alt="{{ .header_logo_alt_fixed }}">
-    </div>
-
-    <nav class="header__nav header__nav--right">
-      <a class="nav__link" href="{{ .header_menu_href_3_fixed }}">{{ .header_menu_item_3_fixed }}</a>
-      <a class="nav__link" href="{{ .header_menu_href_4_fixed }}">{{ .header_menu_item_4_fixed }}</a>
-    </nav>
-
+    {{ with $d.header_cta }}
+      <a class="site-header__cta" href="#final">{{ . }}</a>
+    {{ end }}
   </div>
-
-  <a
-    class="btn btn--primary header__cta"
-    href="/pdf/zpif-zolotomaty-1.pdf"
-    target="_blank"
-    rel="noopener"
-    download="zpif-zolotomaty-1.pdf"
-  >
-    {{ .header_cta }}
-  </a>
-
-</section>
+</header>

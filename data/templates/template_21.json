@@ -1,0 +1,17 @@
+{
+  "name": "template_21",
+  "blocks": [
+    "header",
+    "hero",
+    "authority",
+    "solution",
+    "trust",
+    "problem",
+    "workflow",
+    "why_sfty",
+    "ask_sfty",
+    "faq",
+    "final",
+    "footer"
+  ]
+}

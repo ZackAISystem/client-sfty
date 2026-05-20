@@ -1,0 +1,37 @@
+{{ $d := .data }}
+
+<section class="workflow section section--dark" id="workflow">
+  <div class="container workflow__inner">
+    <div class="workflow__intro">
+      {{ with $d.workflow_eyebrow }}<p class="eyebrow">{{ . }}</p>{{ end }}
+
+      {{ with $d.workflow_title }}
+        <h2 class="section-title">{{ . }}</h2>
+      {{ end }}
+
+      {{ with $d.workflow_description }}
+        <p class="section-description">{{ . }}</p>
+      {{ end }}
+
+      {{ with $d.workflow_cta_label }}
+        <a class="inline-link" href="#ask-sfty">{{ . }}</a>
+      {{ end }}
+    </div>
+
+    <div class="workflow__steps">
+      {{ range $i := seq 1 5 }}
+        {{ $number := index $d (printf "workflow_step_%d_number" $i) }}
+        {{ $title := index $d (printf "workflow_step_%d_title" $i) }}
+        {{ $description := index $d (printf "workflow_step_%d_description" $i) }}
+
+        {{ if or $number $title $description }}
+          <article class="workflow-card">
+            {{ with $number }}<span class="workflow-card__number">{{ . }}</span>{{ end }}
+            {{ with $title }}<h3 class="workflow-card__title">{{ . }}</h3>{{ end }}
+            {{ with $description }}<p class="workflow-card__description">{{ . }}</p>{{ end }}
+          </article>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>

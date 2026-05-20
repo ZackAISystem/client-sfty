@@ -28,14 +28,7 @@ echo "==> build-batch: $BATCH_NAME"
 echo "==> Using slug file: $SLUG_FILE"
 
 mkdir -p "$BUILD_ROOT"
-rsync -a \
-  --exclude ".git" \
-  --exclude "public" \
-  --exclude "resources" \
-  --exclude "node_modules" \
-  --exclude ".hugo_build.lock" \
-  "$ROOT/" "$BUILD_ROOT/"
-
+cp -R "$ROOT/." "$BUILD_ROOT/"
 rm -rf "$BUILD_ROOT/.git"
 rm -rf "$BUILD_ROOT/public"
 rm -rf "$BUILD_ROOT/resources"

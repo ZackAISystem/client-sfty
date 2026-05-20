@@ -2,20 +2,17 @@
   "slug": "biz_aml_compliance_operations_sanctions_screening_crypto_sanctions_screening",
   "domain_main": "https://cryptosanctionsscreening.com",
   "template": "template_20",
-
   "header_menu_item_1": "Business",
   "header_menu_item_2": "Government",
   "header_menu_item_3": "Platform",
   "header_menu_item_4": "About",
   "header_menu_item_5": "Ask SFTY",
   "header_cta": "Review Workflow",
-
   "hero_title": "Streamline Crypto Sanctions Screening",
   "hero_title_accent": "Compliance Control Layer for VASPs",
   "hero_subtitle": "SFTY Business centralizes sanctions screening workflows by connecting provider outputs into one audit-ready platform with case management and alert triage for crypto compliance teams.",
   "hero_cta": "Explore workflow",
   "hero_ask_cta": "Ask SFTY",
-
   "trust_title": "Enterprise compliance capabilities",
   "trust_card_1_label": "KYC",
   "trust_card_1_value": "Identity checks connected to onboarding decisions",
@@ -29,7 +26,6 @@
   "trust_card_5_value": "Regulatory changes mapped to internal rule",
   "trust_card_6_label": "Audit Trail",
   "trust_card_6_value": "Decision logs and evidence for every review",
-
   "problem_title": "Sanctions screening slows compliance workflows",
   "problem_description": "Crypto compliance teams struggle with disconnected sanctions data from multiple providers, making risk detection and alert triage manual and time-consuming. This fragmentation weakens audit trails and complicates defensible decision-making across customers, wallets and transactions.",
   "problem_cta": "See the workflow",
@@ -41,7 +37,6 @@
   "problem_point_3_value": "Regulatory changes are hard to map into internal workflows",
   "problem_point_4_label": "Weak audit trail",
   "problem_point_4_value": "Evidence and decision history are difficult to reconstruct later",
-
   "solution_eyebrow": "Business solution",
   "solution_title": "SFTY connects sanctions",
   "solution_title_accent": "alerts into cases",
@@ -60,7 +55,6 @@
   "solution_visual_output_2": "Decisions",
   "solution_visual_output_3": "Evidence",
   "solution_visual_output_4": "Reports",
-
   "workflow_eyebrow": "Workflow",
   "workflow_title": "From sanctions screening to case evidence",
   "workflow_description": "SFTY captures sanctions screening results and routes alerts through risk rules, case creation, review, decision logging and evidence preservation for audit readiness.",
@@ -80,7 +74,6 @@
   "workflow_step_5_number": "05",
   "workflow_step_5_title": "Evidence",
   "workflow_step_5_description": "Logs, decisions and reports stay ready for audit",
-
   "why_sfty_title": "Not another screening tool. One compliance layer",
   "why_sfty_description": "SFTY connects fragmented sanctions screening alerts into unified workflows, case management, decision logs and audit-ready evidence for clearer operational control and reporting.",
   "why_sfty_card_1_title": "Provider-neutral layer",
@@ -91,7 +84,6 @@
   "why_sfty_card_3_description": "Preserve evidence, reviewer actions and decision history",
   "why_sfty_point_4": "Enterprise visibility",
   "why_sfty_card_4_description": "Give compliance, risk and leadership one operating view",
-
   "authority_eyebrow": "Audit-ready infrastructure",
   "authority_title": "Built for sanctions screening workflows",
   "authority_description": "SFTY provides VASPs with a controlled compliance layer that preserves evidence, orchestrates providers, supports bank due diligence and enables enterprise-grade deployment.",
@@ -104,7 +96,6 @@
   "authority_card_3_description": "Prepare clearer compliance evidence for banks, partners and external review",
   "authority_card_4_title": "Enterprise deployment",
   "authority_card_4_description": "Support private environments, permissions, integrations and internal governance",
-
   "ask_sfty_title_main": "Ask SFTY about",
   "ask_sfty_title_accent": "audit-ready workflows",
   "ask_sfty_placeholder": "How can SFTY support sanctions screening and case workflows?",
@@ -115,7 +106,6 @@
   "ask_sfty_chip_2_label": "Audit evidence",
   "ask_sfty_chip_3_label": "Compliance workflow",
   "ask_sfty_helper_text": "AI assistant for product, deployment and compliance questions",
-
   "faq_eyebrow": "FAQ",
   "faq_title": "Questions compliance teams",
   "faq_title_accent": "ask about SFTY",
@@ -130,11 +120,9 @@
   "faq_4_answer": "Yes. SFTY integrates with multiple sanctions screening providers, consolidating outputs into one operational layer while enforcing access controls and governance across workflows.",
   "faq_5_question": "Does SFTY replace our sanctions screening providers?",
   "faq_5_answer": "No. SFTY does not replace sanctions providers; it aggregates and structures their outputs into reviewable workflows and audit-ready evidence for stronger compliance control.",
-
   "final_title": "Connect sanctions alerts into structured workflows",
   "final_description": "Review how SFTY centralizes sanctions screening outputs into case management, audit evidence and streamlined alert triage for VASPs.",
   "final_cta": "Review your stack",
-
   "footer_description": "Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.",
   "footer_column_1_title": "Platform",
   "footer_column_1_link_1_label": "Platform",

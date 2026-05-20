@@ -2,20 +2,17 @@
   "slug": "gov_fiu_aml_intelligence_suspicious_transaction_reporting",
   "domain_main": "https://fiureportinghub.com",
   "template": "template_2",
-
   "header_menu_item_1": "Government",
   "header_menu_item_2": "Business",
   "header_menu_item_3": "Platform",
   "header_menu_item_4": "About",
   "header_menu_item_5": "Ask SFTY",
   "header_cta": "Request Demo",
-
   "hero_title": "Connect Suspicious Transaction Signals",
   "hero_title_accent": "FIU and AML Intelligence Workflows",
   "hero_subtitle": "SFTY helps regulatory teams link suspicious transactions with VASP data, case evidence, and supervisory reporting in a secure, audit-ready investigation platform.",
   "hero_cta": "Review workflow",
   "hero_ask_cta": "Ask SFTY",
-
   "trust_title": "VASP supervision capabilities",
   "trust_card_1_label": "VASP Supervision",
   "trust_card_1_value": "Market participants, licensing data and risk profiles",
@@ -29,7 +26,6 @@
   "trust_card_5_value": "On-premise or private cloud for sensitive data",
   "trust_card_6_label": "Reporting",
   "trust_card_6_value": "Supervisory outputs, evidence and regulatory reports",
-
   "problem_title": "Suspicious transaction reviews suffer delays",
   "problem_description": "FIU teams struggle to connect fragmented signals, VASP data and ownership context into a coherent case workflow. This disconnection slows suspicious transaction reviews and weakens the ability to produce defensible evidence for regulatory reporting.",
   "problem_cta": "Review supervisory workflow",
@@ -41,7 +37,6 @@
   "problem_point_3_value": "Decisions are harder to explain without connected logs and case history",
   "problem_point_4_label": "Cross-agency gaps",
   "problem_point_4_value": "Regulatory teams lack one shared operating layer for supervision",
-
   "solution_eyebrow": "The SFTY approach",
   "solution_title": "SFTY connects suspicious",
   "solution_title_accent": "transaction signals to cases",
@@ -60,7 +55,6 @@
   "solution_visual_output_2": "Cases",
   "solution_visual_output_3": "Actions",
   "solution_visual_output_4": "Reports",
-
   "workflow_eyebrow": "Workflow",
   "workflow_title": "From suspicious transaction signals to reports",
   "workflow_description": "SFTY moves suspicious activity alerts through VASP context, case review, evidence collection and supervisory reporting within a structured FIU investigation workflow.",
@@ -80,7 +74,6 @@
   "workflow_step_5_number": "05",
   "workflow_step_5_title": "Record",
   "workflow_step_5_description": "Evidence, actions and outcomes stay available for review",
-
   "why_sfty_title": "Not another analytics tool. One evidence-ready layer",
   "why_sfty_description": "SFTY gives FIUs a secure supervisory layer that connects suspicious transaction signals, VASP context, cases, evidence and reporting for structured AML intelligence workflows.",
   "why_sfty_card_1_title": "Market-level visibility",
@@ -91,7 +84,6 @@
   "why_sfty_card_3_description": "Move from alerts to investigations, actions and reporting",
   "why_sfty_point_4": "Supervisory posture",
   "why_sfty_card_4_description": "Understand not only single risks, but the condition of the market",
-
   "authority_eyebrow": "Authority & deployment trust",
   "authority_title": "Built for sovereign supervision",
   "authority_description": "SFTY enables regulators to manage suspicious transaction reporting with secure deployment, controlled access and evidence-grade logging in a procurement-safe government environment.",
@@ -104,7 +96,6 @@
   "authority_card_3_description": "Control who can view, review, escalate and act across teams and agencies",
   "authority_card_4_title": "Procurement-safe architecture",
   "authority_card_4_description": "Support phased implementation, documentation, integrations and governance review",
-
   "ask_sfty_title_main": "Ask SFTY about",
   "ask_sfty_title_accent": "supervisory workflows",
   "ask_sfty_placeholder": "Ask SFTY how suspicious transaction signals connect to case evidence",
@@ -115,7 +106,6 @@
   "ask_sfty_chip_2_label": "Case workflows",
   "ask_sfty_chip_3_label": "Risk signals",
   "ask_sfty_helper_text": "AI assistant for supervisory, deployment and compliance questions",
-
   "faq_eyebrow": "FAQ",
   "faq_title": "Questions regulators",
   "faq_title_accent": "ask about SFTY",
@@ -130,11 +120,9 @@
   "faq_4_answer": "Yes. SFTY connects outputs from multiple providers, normalizes data and orchestrates workflows without replacing existing analytics or compliance systems.",
   "faq_5_question": "Does SFTY replace existing supervisory tools?",
   "faq_5_answer": "No. SFTY operates above existing supervisory tools, linking fragmented data sources into one evidence-ready, auditable government compliance environment.",
-
   "final_title": "Structure suspicious transaction workflows with SFTY",
   "final_description": "Review how SFTY connects suspicious signals, VASP context, case evidence and reporting for FIU and AML supervisory workflows.",
   "final_cta": "Plan sovereign rollout",
-
   "footer_description": "Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.",
   "footer_column_1_title": "Platform",
   "footer_column_1_link_1_label": "Platform",

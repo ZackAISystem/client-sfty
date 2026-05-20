@@ -2,20 +2,17 @@
   "slug": "biz_kyt_transaction_monitoring_source_of_funds_source_of_funds_for_vasps",
   "domain_main": "https://sourceoffundsvasp.com",
   "template": "template_22",
-
   "header_menu_item_1": "Business",
   "header_menu_item_2": "Government",
   "header_menu_item_3": "Platform",
   "header_menu_item_4": "About",
   "header_menu_item_5": "Ask SFTY",
   "header_cta": "Discuss Deployment",
-
   "hero_title": "Connect Source of Funds Insights",
   "hero_title_accent": "Compliance Control Layer for VASPs",
   "hero_subtitle": "SFTY helps compliance teams link source-of-funds checks to wallets and customers, preserving audit evidence and structuring transaction risk within one unified compliance workflow.",
   "hero_cta": "Review workflow",
   "hero_ask_cta": "Ask SFTY",
-
   "trust_title": "Workflow automation capabilities",
   "trust_card_1_label": "KYC",
   "trust_card_1_value": "Identity checks connected to onboarding decisions",
@@ -29,7 +26,6 @@
   "trust_card_5_value": "Regulatory changes mapped to internal rule",
   "trust_card_6_label": "Audit Trail",
   "trust_card_6_value": "Decision logs and evidence for every review",
-
   "problem_title": "Source of funds reviews lack clear linkage",
   "problem_description": "Compliance teams at VASPs struggle to connect source of funds checks directly to wallets and customer profiles. This disconnect slows risk assessment and weakens audit trails across transaction monitoring workflows.",
   "problem_cta": "See compliance workflow",
@@ -41,7 +37,6 @@
   "problem_point_3_value": "Regulatory changes are hard to map into internal workflows",
   "problem_point_4_label": "Weak audit trail",
   "problem_point_4_value": "Evidence and decision history are difficult to reconstruct later",
-
   "solution_eyebrow": "Workflow control",
   "solution_title": "SFTY links source",
   "solution_title_accent": "of funds to wallets",
@@ -60,7 +55,6 @@
   "solution_visual_output_2": "Decisions",
   "solution_visual_output_3": "Evidence",
   "solution_visual_output_4": "Reports",
-
   "workflow_eyebrow": "Workflow",
   "workflow_title": "From source of funds to review decisions",
   "workflow_description": "SFTY links source of funds risk signals with wallet activity, customer data and alerts to create cases that support structured compliance decisions.",
@@ -80,7 +74,6 @@
   "workflow_step_5_number": "05",
   "workflow_step_5_title": "Evidence",
   "workflow_step_5_description": "Logs, decisions and reports stay ready for audit",
-
   "why_sfty_title": "Beyond fragmented checks. One source-of-funds control",
   "why_sfty_description": "SFTY connects wallet activity, on-chain risk signals and source-of-funds reviews into structured cases, decisions and evidence for clearer VASP compliance control.",
   "why_sfty_card_1_title": "Provider-neutral layer",
@@ -91,7 +84,6 @@
   "why_sfty_card_3_description": "Preserve evidence, reviewer actions and decision history",
   "why_sfty_point_4": "Enterprise visibility",
   "why_sfty_card_4_description": "Give compliance, risk and leadership one operating view",
-
   "authority_eyebrow": "Provider-ready architecture",
   "authority_title": "Built for source of funds review",
   "authority_description": "SFTY supports VASPs in connecting source-of-funds signals to wallets and customers, supporting traceable evidence and controlled workflows for enhanced bank due diligence and deployment.",
@@ -104,7 +96,6 @@
   "authority_card_3_description": "Prepare clearer compliance evidence for banks, partners and external review",
   "authority_card_4_title": "Enterprise deployment",
   "authority_card_4_description": "Support private environments, permissions, integrations and internal governance",
-
   "ask_sfty_title_main": "Ask SFTY about",
   "ask_sfty_title_accent": "operational compliance",
   "ask_sfty_placeholder": "How can SFTY connect source of funds to wallet activity",
@@ -115,7 +106,6 @@
   "ask_sfty_chip_2_label": "Audit evidence",
   "ask_sfty_chip_3_label": "Compliance workflow",
   "ask_sfty_helper_text": "AI assistant for product, deployment and compliance questions",
-
   "faq_eyebrow": "FAQ",
   "faq_title": "Questions compliance teams",
   "faq_title_accent": "ask about SFTY",
@@ -130,11 +120,9 @@
   "faq_4_answer": "Yes. SFTY works above existing KYT and analytics vendors, connecting their outputs into a streamlined compliance layer without requiring changes to current provider relationships.",
   "faq_5_question": "Does SFTY replace source-of-funds analytics providers?",
   "faq_5_answer": "No. SFTY does not replace any analytics or source-of-funds providers; it layers workflows and evidence management atop those providers’ outputs for stronger operational control.",
-
   "final_title": "Connect source of funds to wallets and customers",
   "final_description": "Review how SFTY structures source-of-funds checks into connected KYT workflows, cases, evidence and compliance decisions.",
   "final_cta": "Request business demo",
-
   "footer_description": "Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.",
   "footer_column_1_title": "Platform",
   "footer_column_1_link_1_label": "Platform",

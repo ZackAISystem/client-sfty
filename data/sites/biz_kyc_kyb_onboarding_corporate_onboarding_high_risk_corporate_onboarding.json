@@ -2,20 +2,17 @@
   "slug": "biz_kyc_kyb_onboarding_corporate_onboarding_high_risk_corporate_onboarding",
   "domain_main": "https://corporateonboardinghub.com",
   "template": "template_2",
-
   "header_menu_item_1": "Business",
   "header_menu_item_2": "Government",
   "header_menu_item_3": "Platform",
   "header_menu_item_4": "About",
   "header_menu_item_5": "Ask SFTY",
   "header_cta": "Book Compliance Demo",
-
   "hero_title": "Structured High-Risk Corporate Onboarding",
   "hero_title_accent": "Compliance Workflow for VASPs",
   "hero_subtitle": "SFTY connects KYC and KYB providers into a unified onboarding workflow that organizes risk reviews, sanctions screening, and audit evidence for thorough corporate client due diligence.",
   "hero_cta": "Review workflow",
   "hero_ask_cta": "Ask SFTY",
-
   "trust_title": "Workflow automation capabilities",
   "trust_card_1_label": "KYC",
   "trust_card_1_value": "Identity checks connected to onboarding decisions",
@@ -29,7 +26,6 @@
   "trust_card_5_value": "Regulatory changes mapped to internal rule",
   "trust_card_6_label": "Audit Trail",
   "trust_card_6_value": "Decision logs and evidence for every review",
-
   "problem_title": "Onboarding delays increase with complex corporate risk",
   "problem_description": "High-risk corporate onboarding workflows often rely on fragmented checks from multiple providers, causing slow manual reviews and inconsistent risk assessments. Compliance teams struggle to maintain a clear audit trail and trace decisions amid disconnected KYC, KYB, sanctions screening and case management data.",
   "problem_cta": "Review onboarding challenges",
@@ -41,7 +37,6 @@
   "problem_point_3_value": "Regulatory changes are hard to map into internal workflows",
   "problem_point_4_label": "Weak audit trail",
   "problem_point_4_value": "Evidence and decision history are difficult to reconstruct later",
-
   "solution_eyebrow": "Compliance layer",
   "solution_title": "SFTY connects KYC",
   "solution_title_accent": "and KYB provider outputs",
@@ -60,7 +55,6 @@
   "solution_visual_output_2": "Decisions",
   "solution_visual_output_3": "Evidence",
   "solution_visual_output_4": "Reports",
-
   "workflow_eyebrow": "Workflow",
   "workflow_title": "From onboarding checks to risk-based approval",
   "workflow_description": "SFTY connects KYC and KYB provider results with screening and risk rules to route high-risk corporate cases through layered review and decision workflows.",
@@ -80,7 +74,6 @@
   "workflow_step_5_number": "05",
   "workflow_step_5_title": "Evidence",
   "workflow_step_5_description": "Logs, decisions and reports stay ready for audit",
-
   "why_sfty_title": "Beyond fragmented checks. One onboarding layer",
   "why_sfty_description": "SFTY connects KYC and KYB provider outputs into structured workflows, risk-based reviews, cases and audit-ready evidence for clear, defensible high-risk corporate onboarding.",
   "why_sfty_card_1_title": "Provider-neutral layer",
@@ -91,7 +84,6 @@
   "why_sfty_card_3_description": "Preserve evidence, reviewer actions and decision history",
   "why_sfty_point_4": "Enterprise visibility",
   "why_sfty_card_4_description": "Give compliance, risk and leadership one operating view",
-
   "authority_eyebrow": "Built for compliance",
   "authority_title": "Built for high-risk onboarding",
   "authority_description": "SFTY supports VASP compliance teams with controlled orchestration, audit-ready evidence and enterprise deployment for enhanced review and bank due diligence workflows.",
@@ -104,7 +96,6 @@
   "authority_card_3_description": "Prepare clearer compliance evidence for banks, partners and external review",
   "authority_card_4_title": "Enterprise deployment",
   "authority_card_4_description": "Support private environments, permissions, integrations and internal governance",
-
   "ask_sfty_title_main": "Ask SFTY about",
   "ask_sfty_title_accent": "operational compliance",
   "ask_sfty_placeholder": "How can SFTY support high-risk corporate onboarding reviews",
@@ -115,7 +106,6 @@
   "ask_sfty_chip_2_label": "Audit evidence",
   "ask_sfty_chip_3_label": "Compliance workflow",
   "ask_sfty_helper_text": "AI assistant for product, deployment and compliance questions",
-
   "faq_eyebrow": "FAQ",
   "faq_title": "Questions compliance teams",
   "faq_title_accent": "ask about SFTY",
@@ -130,11 +120,9 @@
   "faq_4_answer": "Yes. SFTY sits above existing KYC and KYB providers, connecting their outputs into connected workflows without requiring replacement or disruption of current provider integrations.",
   "faq_5_question": "Does SFTY replace providers in compliance workflows?",
   "faq_5_answer": "No. SFTY does not replace KYC, KYB or screening providers but instead connects their outputs into one operational compliance layer with structured evidence and decision management.",
-
   "final_title": "Structure high-risk corporate onboarding workflows",
   "final_description": "Review how SFTY connects KYC, KYB, sanctions and risk data into controlled cases and audit-ready onboarding evidence.",
   "final_cta": "Request business demo",
-
   "footer_description": "Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.",
   "footer_column_1_title": "Platform",
   "footer_column_1_link_1_label": "Platform",

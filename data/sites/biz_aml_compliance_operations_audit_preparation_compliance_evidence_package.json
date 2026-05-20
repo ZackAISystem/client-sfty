@@ -2,20 +2,17 @@
   "slug": "biz_aml_compliance_operations_audit_preparation_compliance_evidence_package",
   "domain_main": "https://evidencepackagehub.com",
   "template": "template_6",
-
   "header_menu_item_1": "Business",
   "header_menu_item_2": "Government",
   "header_menu_item_3": "Platform",
   "header_menu_item_4": "About",
   "header_menu_item_5": "Ask SFTY",
   "header_cta": "Book Compliance Demo",
-
   "hero_title": "Build AML Compliance Evidence",
   "hero_title_accent": "Operational Control for VASPs",
   "hero_subtitle": "SFTY structures provider outputs and case data into audit-ready evidence packages that connect customers, entities, wallets, transactions and internal compliance decisions.",
   "hero_cta": "Review evidence",
   "hero_ask_cta": "Ask SFTY",
-
   "trust_title": "Core compliance capabilities",
   "trust_card_1_label": "KYC",
   "trust_card_1_value": "Identity checks connected to onboarding decisions",
@@ -29,7 +26,6 @@
   "trust_card_5_value": "Regulatory changes mapped to internal rule",
   "trust_card_6_label": "Audit Trail",
   "trust_card_6_value": "Decision logs and evidence for every review",
-
   "problem_title": "Audit readiness weakens across scattered evidence",
   "problem_description": "Compliance teams struggle to assemble clear and consistent evidence packages due to fragmented data from multiple providers. This complicates audit preparation and weakens traceability across customers, wallets, transactions, and cases.",
   "problem_cta": "See audit trail",
@@ -41,7 +37,6 @@
   "problem_point_3_value": "Regulatory changes are hard to map into internal workflows",
   "problem_point_4_label": "Weak audit trail",
   "problem_point_4_value": "Evidence and decision history are difficult to reconstruct later",
-
   "solution_eyebrow": "Compliance layer",
   "solution_title": "SFTY creates one",
   "solution_title_accent": "audit evidence layer",
@@ -60,7 +55,6 @@
   "solution_visual_output_2": "Decisions",
   "solution_visual_output_3": "Evidence",
   "solution_visual_output_4": "Reports",
-
   "workflow_eyebrow": "Workflow",
   "workflow_title": "From alerts to audit-ready case evidence",
   "workflow_description": "SFTY organizes alerts from multiple providers into structured cases with preserved evidence and review logs to support audit preparedness and regulatory reporting.",
@@ -80,7 +74,6 @@
   "workflow_step_5_number": "05",
   "workflow_step_5_title": "Evidence",
   "workflow_step_5_description": "Logs, decisions and reports stay ready for audit",
-
   "why_sfty_title": "Beyond fragmented checks. One evidence-ready layer",
   "why_sfty_description": "SFTY transforms scattered provider outputs into structured evidence packages and case history, enabling compliance teams to prepare audit-ready reports with clear decision traceability.",
   "why_sfty_card_1_title": "Provider-neutral layer",
@@ -91,7 +84,6 @@
   "why_sfty_card_3_description": "Preserve evidence, reviewer actions and decision history",
   "why_sfty_point_4": "Enterprise visibility",
   "why_sfty_card_4_description": "Give compliance, risk and leadership one operating view",
-
   "authority_eyebrow": "Built for compliance",
   "authority_title": "Built for audit-ready compliance",
   "authority_description": "SFTY provides VASP compliance teams with a controlled layer for evidence preservation, provider orchestration and secure deployment to support audit and bank due diligence workflows.",
@@ -104,7 +96,6 @@
   "authority_card_3_description": "Prepare clearer compliance evidence for banks, partners and external review",
   "authority_card_4_title": "Enterprise deployment",
   "authority_card_4_description": "Support private environments, permissions, integrations and internal governance",
-
   "ask_sfty_title_main": "Ask SFTY about",
   "ask_sfty_title_accent": "compliance control",
   "ask_sfty_placeholder": "How can SFTY support building AML compliance evidence packages",
@@ -115,7 +106,6 @@
   "ask_sfty_chip_2_label": "Audit evidence",
   "ask_sfty_chip_3_label": "Compliance workflow",
   "ask_sfty_helper_text": "AI assistant for product, deployment and compliance questions",
-
   "faq_eyebrow": "FAQ",
   "faq_title": "Questions compliance teams",
   "faq_title_accent": "ask about SFTY",
@@ -130,11 +120,9 @@
   "faq_4_answer": "Yes, SFTY connects to multiple KYC, KYB, KYT, Travel Rule and screening providers, orchestrating their outputs into a single compliance stack without requiring replacement or disruption of existing systems.",
   "faq_5_question": "Does SFTY replace onboarding or monitoring providers?",
   "faq_5_answer": "No, SFTY sits above existing providers, structuring their outputs into workflows, cases, evidence and reports rather than replacing onboarding, monitoring or analytics vendors.",
-
   "final_title": "Prepare audit-ready AML evidence packages",
   "final_description": "Review how SFTY structures provider outputs and case data into connected, compliant-ready evidence for VASP operations.",
   "final_cta": "Request workflow review",
-
   "footer_description": "Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.",
   "footer_column_1_title": "Platform",
   "footer_column_1_link_1_label": "Platform",

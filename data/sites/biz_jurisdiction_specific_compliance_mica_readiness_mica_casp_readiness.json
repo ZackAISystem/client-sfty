@@ -2,20 +2,17 @@
   "slug": "biz_jurisdiction_specific_compliance_mica_readiness_mica_casp_readiness",
   "domain_main": "https://micacaspreadiness.com",
   "template": "template_1",
-
   "header_menu_item_1": "Business",
   "header_menu_item_2": "Government",
   "header_menu_item_3": "Platform",
   "header_menu_item_4": "About",
   "header_menu_item_5": "Ask SFTY",
   "header_cta": "Assess Your Stack",
-
   "hero_title": "Jurisdiction-Specific Compliance Workflows",
   "hero_title_accent": "MiCA Readiness for CASPs",
   "hero_subtitle": "SFTY helps CASPs structure operational compliance workflows that align with MiCA requirements by connecting jurisdictional rules, Travel Rule processes, case management, and audit evidence into one platform.",
   "hero_cta": "Review workflow",
   "hero_ask_cta": "Ask SFTY",
-
   "trust_title": "Core compliance capabilities",
   "trust_card_1_label": "KYC",
   "trust_card_1_value": "Identity checks connected to onboarding decisions",
@@ -29,7 +26,6 @@
   "trust_card_5_value": "Regulatory changes mapped to internal rule",
   "trust_card_6_label": "Audit Trail",
   "trust_card_6_value": "Decision logs and evidence for every review",
-
   "problem_title": "Compliance workflows stall without jurisdiction clarity",
   "problem_description": "CASPs struggle to align operational processes with evolving MiCA requirements across multiple jurisdictions. This leads to manual reconciliations, inconsistent rule application and gaps in audit-ready evidence for compliance reviews.",
   "problem_cta": "Explore compliance workflow",
@@ -41,7 +37,6 @@
   "problem_point_3_value": "Regulatory changes are hard to map into internal workflows",
   "problem_point_4_label": "Weak audit trail",
   "problem_point_4_value": "Evidence and decision history are difficult to reconstruct later",
-
   "solution_eyebrow": "Business solution",
   "solution_title": "SFTY structures CASP",
   "solution_title_accent": "compliance workflows for mica",
@@ -60,7 +55,6 @@
   "solution_visual_output_2": "Decisions",
   "solution_visual_output_3": "Evidence",
   "solution_visual_output_4": "Reports",
-
   "workflow_eyebrow": "Workflow",
   "workflow_title": "From onboarding checks to MiCA compliance",
   "workflow_description": "SFTY links jurisdiction-specific onboarding, screening and Travel Rule inputs through rules, cases, decisions and evidence to support MiCA readiness for CASPs.",
@@ -80,7 +74,6 @@
   "workflow_step_5_number": "05",
   "workflow_step_5_title": "Evidence",
   "workflow_step_5_description": "Logs, decisions and reports stay ready for audit",
-
   "why_sfty_title": "Beyond fragmented checks. One compliance layer",
   "why_sfty_description": "SFTY provides CASPs a provider-neutral compliance layer that connects jurisdiction-specific MiCA outputs into structured workflows, cases, decisions and audit-ready evidence.",
   "why_sfty_card_1_title": "Provider-neutral layer",
@@ -91,7 +84,6 @@
   "why_sfty_card_3_description": "Preserve evidence, reviewer actions and decision history",
   "why_sfty_point_4": "Enterprise visibility",
   "why_sfty_card_4_description": "Give compliance, risk and leadership one operating view",
-
   "authority_eyebrow": "Audit-ready infrastructure",
   "authority_title": "Built for MiCA CASP compliance",
   "authority_description": "SFTY supports CASPs preparing for MiCA by connecting local rules, preserving audit-ready evidence and enabling bank due diligence within controlled enterprise deployments.",
@@ -104,7 +96,6 @@
   "authority_card_3_description": "Prepare clearer compliance evidence for banks, partners and external review",
   "authority_card_4_title": "Enterprise deployment",
   "authority_card_4_description": "Support private environments, permissions, integrations and internal governance",
-
   "ask_sfty_title_main": "Ask SFTY about",
   "ask_sfty_title_accent": "compliance control",
   "ask_sfty_placeholder": "Ask SFTY how to prepare CASP workflows for MiCA compliance",
@@ -115,7 +106,6 @@
   "ask_sfty_chip_2_label": "Audit evidence",
   "ask_sfty_chip_3_label": "Compliance workflow",
   "ask_sfty_helper_text": "AI assistant for product, deployment and compliance questions",
-
   "faq_eyebrow": "FAQ",
   "faq_title": "Questions compliance teams",
   "faq_title_accent": "ask about SFTY",
@@ -130,11 +120,9 @@
   "faq_4_answer": "Yes. SFTY connects outputs from KYC, KYB, KYT, Travel Rule and screening providers into a single workflow without replacing any underlying tools.",
   "faq_5_question": "Does SFTY replace existing MiCA compliance tools?",
   "faq_5_answer": "No. SFTY acts as a control layer above existing providers, structuring their outputs into operational workflows, cases and reports for MiCA compliance readiness.",
-
   "final_title": "Structure MiCA compliance workflows with SFTY",
   "final_description": "Review how SFTY connects jurisdictional rules, Travel Rule exceptions, cases and audit evidence for MiCA-ready CASP operations.",
   "final_cta": "Review your stack",
-
   "footer_description": "Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.",
   "footer_column_1_title": "Platform",
   "footer_column_1_link_1_label": "Platform",

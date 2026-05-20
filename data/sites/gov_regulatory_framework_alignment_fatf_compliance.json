@@ -1,21 +1,18 @@
 {
   "slug": "gov_regulatory_framework_alignment_fatf_compliance",
-  "domain_main": "https://fatfcryptocompliance.com",
+  "domain_main": "https://cryptoassetcompliance.com",
   "template": "template_5",
-
   "header_menu_item_1": "Government",
   "header_menu_item_2": "Business",
   "header_menu_item_3": "Platform",
   "header_menu_item_4": "About",
   "header_menu_item_5": "Ask SFTY",
   "header_cta": "Discuss Deployment",
-
   "hero_title": "Align Supervisory Workflows with FATF",
   "hero_title_accent": "Regulatory Framework Oversight for Authorities",
   "hero_subtitle": "SFTY supports regulators with a secure supervisory layer that connects digital asset data, evidence, and case workflows to meet FATF-aligned risk-based oversight requirements.",
   "hero_cta": "Explore oversight",
   "hero_ask_cta": "Ask SFTY",
-
   "trust_title": "Supervisory infrastructure capabilities",
   "trust_card_1_label": "VASP Supervision",
   "trust_card_1_value": "Market participants, licensing data and risk profiles",
@@ -29,7 +26,6 @@
   "trust_card_5_value": "On-premise or private cloud for sensitive data",
   "trust_card_6_label": "Reporting",
   "trust_card_6_value": "Supervisory outputs, evidence and regulatory reports",
-
   "problem_title": "Supervisory workflows slow across fragmented data",
   "problem_description": "Regulators struggle to align market oversight when critical data on VASPs, transactions, and licensing remains siloed across multiple systems. This fragmentation delays case handling and weakens the traceability of risk-based supervisory actions under FATF standards.",
   "problem_cta": "Review supervisory framework",
@@ -41,7 +37,6 @@
   "problem_point_3_value": "Decisions are harder to explain without connected logs and case history",
   "problem_point_4_label": "Cross-agency gaps",
   "problem_point_4_value": "Regulatory teams lack one shared operating layer for supervision",
-
   "solution_eyebrow": "Market oversight layer",
   "solution_title": "SFTY connects data",
   "solution_title_accent": "into supervisory workflows",
@@ -60,7 +55,6 @@
   "solution_visual_output_2": "Cases",
   "solution_visual_output_3": "Actions",
   "solution_visual_output_4": "Reports",
-
   "workflow_eyebrow": "Workflow",
   "workflow_title": "From market signals to supervisory action",
   "workflow_description": "SFTY transforms fragmented market signals into structured alerts, linked cases, evidence records and supervisory decisions for FATF-aligned regulatory workflows.",
@@ -80,7 +74,6 @@
   "workflow_step_5_number": "05",
   "workflow_step_5_title": "Record",
   "workflow_step_5_description": "Evidence, actions and outcomes stay available for review",
-
   "why_sfty_title": "Not another analytics tool. A supervisory control plane",
   "why_sfty_description": "SFTY moves beyond isolated wallet analytics by connecting VASP data, licensing context, cases, evidence, and reporting into a unified supervisory operating layer for FATF compliance.",
   "why_sfty_card_1_title": "Market-level visibility",
@@ -91,7 +84,6 @@
   "why_sfty_card_3_description": "Move from alerts to investigations, actions and reporting",
   "why_sfty_point_4": "Supervisory posture",
   "why_sfty_card_4_description": "Understand not only single risks, but the condition of the market",
-
   "authority_eyebrow": "Built for regulators",
   "authority_title": "Built for FATF supervision",
   "authority_description": "SFTY provides regulators with a secure, auditable environment for sovereign deployment, controlled access and evidence-grade logging aligned with FATF frameworks.",
@@ -104,7 +96,6 @@
   "authority_card_3_description": "Control who can view, review, escalate and act across teams and agencies",
   "authority_card_4_title": "Procurement-safe architecture",
   "authority_card_4_description": "Support phased implementation, documentation, integrations and governance review",
-
   "ask_sfty_title_main": "Ask SFTY about",
   "ask_sfty_title_accent": "VASP supervision",
   "ask_sfty_placeholder": "Ask SFTY how it supports FATF-aligned supervision workflows",
@@ -115,7 +106,6 @@
   "ask_sfty_chip_2_label": "Case workflows",
   "ask_sfty_chip_3_label": "Risk signals",
   "ask_sfty_helper_text": "AI assistant for supervisory, deployment and compliance questions",
-
   "faq_eyebrow": "FAQ",
   "faq_title": "Questions regulators",
   "faq_title_accent": "ask about SFTY",
@@ -130,11 +120,9 @@
   "faq_4_answer": "Yes. SFTY supports secure, phased deployment with role-based access, audit logging and integration with government registries or reporting systems as required.",
   "faq_5_question": "Does SFTY replace regulatory analytics tools?",
   "faq_5_answer": "No. SFTY connects outputs from multiple analytics and compliance providers into a connected supervisory environment without replacing existing regulatory tools.",
-
   "final_title": "Review FATF-aligned supervisory workflows with SFTY",
   "final_description": "Explore how SFTY supports risk-based supervision, evidence logging, case management and reporting workflows for government authorities.",
   "final_cta": "Discuss government deployment",
-
   "footer_description": "Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.",
   "footer_column_1_title": "Platform",
   "footer_column_1_link_1_label": "Platform",

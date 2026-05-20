@@ -2,20 +2,17 @@
   "slug": "biz_provider_orchestration_blockchain_analytics_workflow_multi_provider_analytics_strategy",
   "domain_main": "https://multiprovideranalytics.com",
   "template": "template_1",
-
   "header_menu_item_1": "Business",
   "header_menu_item_2": "Government",
   "header_menu_item_3": "Platform",
   "header_menu_item_4": "About",
   "header_menu_item_5": "Ask SFTY",
   "header_cta": "Assess Your Stack",
-
   "hero_title": "Orchestrate Multi-Provider Analytics",
   "hero_title_accent": "Compliance Control Layer for VASPs",
   "hero_subtitle": "SFTY connects and normalizes blockchain analytics with KYC, KYB, KYT, and Travel Rule outputs to streamline compliance workflows and preserve audit-ready evidence.",
   "hero_cta": "Explore oversight",
   "hero_ask_cta": "Ask SFTY",
-
   "trust_title": "Digital asset compliance capabilities",
   "trust_card_1_label": "KYC",
   "trust_card_1_value": "Identity checks connected to onboarding decisions",
@@ -29,7 +26,6 @@
   "trust_card_5_value": "Regulatory changes mapped to internal rule",
   "trust_card_6_label": "Audit Trail",
   "trust_card_6_value": "Decision logs and evidence for every review",
-
   "problem_title": "Compliance slows when provider outputs diverge",
   "problem_description": "Digital asset compliance teams face fragmented blockchain analytics and KYT data that remain disconnected across multiple providers. This creates slow, manual workflows with weak risk visibility and fragmented case context that complicate operational decisions and audit readiness.",
   "problem_cta": "Explore provider orchestration",
@@ -41,7 +37,6 @@
   "problem_point_3_value": "Regulatory changes are hard to map into internal workflows",
   "problem_point_4_label": "Weak audit trail",
   "problem_point_4_value": "Evidence and decision history are difficult to reconstruct later",
-
   "solution_eyebrow": "Business solution",
   "solution_title": "SFTY connects provider",
   "solution_title_accent": "outputs into workflow",
@@ -60,7 +55,6 @@
   "solution_visual_output_2": "Decisions",
   "solution_visual_output_3": "Evidence",
   "solution_visual_output_4": "Reports",
-
   "workflow_eyebrow": "Workflow",
   "workflow_title": "From provider outputs to compliance decisions",
   "workflow_description": "SFTY integrates analytics and provider results through rules, case creation, review, evidence preservation and reporting to support a unified compliance workflow.",
@@ -80,7 +74,6 @@
   "workflow_step_5_number": "05",
   "workflow_step_5_title": "Evidence",
   "workflow_step_5_description": "Logs, decisions and reports stay ready for audit",
-
   "why_sfty_title": "Beyond provider outputs. Structured compliance decisions",
   "why_sfty_description": "SFTY connects and normalizes outputs from multiple providers into structured workflows, cases, decisions and audit-ready evidence for clearer compliance control and review.",
   "why_sfty_card_1_title": "Provider-neutral layer",
@@ -91,7 +84,6 @@
   "why_sfty_card_3_description": "Preserve evidence, reviewer actions and decision history",
   "why_sfty_point_4": "Enterprise visibility",
   "why_sfty_card_4_description": "Give compliance, risk and leadership one operating view",
-
   "authority_eyebrow": "Audit-ready infrastructure",
   "authority_title": "Built for multi-provider orchestration",
   "authority_description": "SFTY supports VASPs managing diverse blockchain analytics and compliance data with controlled workflows, audit-ready evidence and governance for reliable bank due diligence.",
@@ -104,7 +96,6 @@
   "authority_card_3_description": "Prepare clearer compliance evidence for banks, partners and external review",
   "authority_card_4_title": "Enterprise deployment",
   "authority_card_4_description": "Support private environments, permissions, integrations and internal governance",
-
   "ask_sfty_title_main": "Ask SFTY about",
   "ask_sfty_title_accent": "provider orchestration",
   "ask_sfty_placeholder": "How can SFTY connect blockchain analytics in compliance workflows",
@@ -115,7 +106,6 @@
   "ask_sfty_chip_2_label": "Audit evidence",
   "ask_sfty_chip_3_label": "Compliance workflow",
   "ask_sfty_helper_text": "AI assistant for product, deployment and compliance questions",
-
   "faq_eyebrow": "FAQ",
   "faq_title": "Questions compliance teams",
   "faq_title_accent": "ask about SFTY",
@@ -130,11 +120,9 @@
   "faq_4_answer": "Yes. SFTY works provider-neutrally by integrating with existing KYC, KYT, Travel Rule and blockchain analytics systems without requiring replacement.",
   "faq_5_question": "Does SFTY replace underlying blockchain analytics providers?",
   "faq_5_answer": "No. SFTY does not replace blockchain analytics providers but structures their outputs into connected workflows, evidence and reports above the existing systems.",
-
   "final_title": "Connect blockchain analytics into compliance workflows",
   "final_description": "Review how SFTY normalizes provider outputs to support case management, decision records and audit-ready evidence for VASP operations.",
   "final_cta": "Book compliance demo",
-
   "footer_description": "Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.",
   "footer_column_1_title": "Platform",
   "footer_column_1_link_1_label": "Platform",

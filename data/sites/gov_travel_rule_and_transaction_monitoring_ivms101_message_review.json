@@ -2,20 +2,17 @@
   "slug": "gov_travel_rule_and_transaction_monitoring_ivms101_message_review",
   "domain_main": "https://ivms101review.com",
   "template": "template_4",
-
   "header_menu_item_1": "Government",
   "header_menu_item_2": "Business",
   "header_menu_item_3": "Platform",
   "header_menu_item_4": "About",
   "header_menu_item_5": "Ask SFTY",
   "header_cta": "Contact SFTY",
-
   "hero_title": "Supervise Travel Rule Messages",
   "hero_title_accent": "IVMS101 Review for Regulators",
   "hero_subtitle": "SFTY helps regulator teams verify Travel Rule message completeness, route exceptions, and preserve audit-grade evidence within a connected supervisory workflow.",
   "hero_cta": "Explore oversight",
   "hero_ask_cta": "Ask SFTY",
-
   "trust_title": "Government oversight capabilities",
   "trust_card_1_label": "VASP Supervision",
   "trust_card_1_value": "Market participants, licensing data and risk profiles",
@@ -29,7 +26,6 @@
   "trust_card_5_value": "On-premise or private cloud for sensitive data",
   "trust_card_6_label": "Reporting",
   "trust_card_6_value": "Supervisory outputs, evidence and regulatory reports",
-
   "problem_title": "Supervisory gaps arise from incomplete Travel Rule messages",
   "problem_description": "Regulators face challenges when IVMS101 message data is missing or inconsistent across transaction monitoring workflows. This hinders exception routing and weakens the ability to preserve a clear audit trail for supervisory decisions involving digital asset transactions.",
   "problem_cta": "Review supervisory workflow",
@@ -41,7 +37,6 @@
   "problem_point_3_value": "Decisions are harder to explain without connected logs and case history",
   "problem_point_4_label": "Cross-agency gaps",
   "problem_point_4_value": "Regulatory teams lack one shared operating layer for supervision",
-
   "solution_eyebrow": "Connected supervision",
   "solution_title": "SFTY connects IVMS101",
   "solution_title_accent": "messages to cases",
@@ -60,7 +55,6 @@
   "solution_visual_output_2": "Cases",
   "solution_visual_output_3": "Actions",
   "solution_visual_output_4": "Reports",
-
   "workflow_eyebrow": "Workflow",
   "workflow_title": "From Travel Rule exceptions to supervisory evidence",
   "workflow_description": "SFTY organizes Travel Rule message reviews by routing exceptions into cases, linking originator and beneficiary data, and preserving evidence for supervisory decisions.",
@@ -80,7 +74,6 @@
   "workflow_step_5_number": "05",
   "workflow_step_5_title": "Record",
   "workflow_step_5_description": "Evidence, actions and outcomes stay available for review",
-
   "why_sfty_title": "Not another analytics tool. One supervisory layer",
   "why_sfty_description": "SFTY connects Travel Rule messages, wallet activity, cases and evidence into a secure supervisory layer that supports comprehensive review and exception routing workflows.",
   "why_sfty_card_1_title": "Market-level visibility",
@@ -91,7 +84,6 @@
   "why_sfty_card_3_description": "Move from alerts to investigations, actions and reporting",
   "why_sfty_point_4": "Supervisory posture",
   "why_sfty_card_4_description": "Understand not only single risks, but the condition of the market",
-
   "authority_eyebrow": "Secure supervisory infrastructure",
   "authority_title": "Built for sovereign supervision",
   "authority_description": "SFTY provides regulators with a secure, auditable environment supporting evidence-grade logging, controlled access and procurement-safe deployment for Travel Rule oversight and reviews.",
@@ -104,7 +96,6 @@
   "authority_card_3_description": "Control who can view, review, escalate and act across teams and agencies",
   "authority_card_4_title": "Procurement-safe architecture",
   "authority_card_4_description": "Support phased implementation, documentation, integrations and governance review",
-
   "ask_sfty_title_main": "Ask SFTY about",
   "ask_sfty_title_accent": "supervisory control",
   "ask_sfty_placeholder": "Ask SFTY how to review IVMS101 Travel Rule messages",
@@ -115,7 +106,6 @@
   "ask_sfty_chip_2_label": "Case workflows",
   "ask_sfty_chip_3_label": "Risk signals",
   "ask_sfty_helper_text": "AI assistant for supervisory, deployment and compliance questions",
-
   "faq_eyebrow": "FAQ",
   "faq_title": "Questions regulators",
   "faq_title_accent": "ask about SFTY",
@@ -130,11 +120,9 @@
   "faq_4_answer": "Yes. SFTY orchestrates multiple Travel Rule, KYT, and analytics providers, normalizing outputs into one operational supervisory platform without vendor lock-in or data silos.",
   "faq_5_question": "Does SFTY replace Travel Rule compliance tools?",
   "faq_5_answer": "No. SFTY sits above compliance providers, connecting their outputs into structured workflows and supervisory cases without replacing underlying Travel Rule or analytics tools.",
-
   "final_title": "Connect IVMS101 reviews to supervisory cases",
   "final_description": "Review how SFTY supports Travel Rule message completeness, exception routing and audit-ready evidence preservation for regulators.",
   "final_cta": "Request regulatory workshop",
-
   "footer_description": "Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.",
   "footer_column_1_title": "Platform",
   "footer_column_1_link_1_label": "Platform",

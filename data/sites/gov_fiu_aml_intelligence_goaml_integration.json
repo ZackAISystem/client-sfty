@@ -1,21 +1,18 @@
 {
   "slug": "gov_fiu_aml_intelligence_goaml_integration",
-  "domain_main": "https://goamlcrypto.com",
+  "domain_main": "https://amlreportingcrypto.com",
   "template": "template_16",
-
   "header_menu_item_1": "Government",
   "header_menu_item_2": "Business",
   "header_menu_item_3": "Platform",
   "header_menu_item_4": "About",
   "header_menu_item_5": "Ask SFTY",
   "header_cta": "Contact SFTY",
-
   "hero_title": "Supervisory Intelligence for FIUs",
   "hero_title_accent": "goAML-Ready Digital Asset Workflows",
   "hero_subtitle": "SFTY connects wallet data, risk signals, and case evidence into structured workflows that simplify suspicious transaction reporting and support goAML integration for regulators.",
   "hero_cta": "Review workflow",
   "hero_ask_cta": "Ask SFTY",
-
   "trust_title": "Digital asset supervision capabilities",
   "trust_card_1_label": "VASP Supervision",
   "trust_card_1_value": "Market participants, licensing data and risk profiles",
@@ -29,7 +26,6 @@
   "trust_card_5_value": "On-premise or private cloud for sensitive data",
   "trust_card_6_label": "Reporting",
   "trust_card_6_value": "Supervisory outputs, evidence and regulatory reports",
-
   "problem_title": "Evidence reconstruction slows FIU workflows",
   "problem_description": "Investigators face delays when digital asset data, risk signals and case evidence remain disconnected across systems. This fragmentation complicates SAR/STR preparation and weakens audit readiness for regulatory reporting in FIU and AML workflows.",
   "problem_cta": "Review evidence workflow",
@@ -41,7 +37,6 @@
   "problem_point_3_value": "Decisions are harder to explain without connected logs and case history",
   "problem_point_4_label": "Cross-agency gaps",
   "problem_point_4_value": "Regulatory teams lack one shared operating layer for supervision",
-
   "solution_eyebrow": "Connected supervision",
   "solution_title": "SFTY connects case",
   "solution_title_accent": "evidence to workflows",
@@ -60,7 +55,6 @@
   "solution_visual_output_2": "Cases",
   "solution_visual_output_3": "Actions",
   "solution_visual_output_4": "Reports",
-
   "workflow_eyebrow": "Workflow",
   "workflow_title": "From suspicious activity to reporting package",
   "workflow_description": "SFTY organizes digital asset signals into structured cases, links evidence and supports report preparation to streamline goAML-ready FIU workflows.",
@@ -80,7 +74,6 @@
   "workflow_step_5_number": "05",
   "workflow_step_5_title": "Record",
   "workflow_step_5_description": "Evidence, actions and outcomes stay available for review",
-
   "why_sfty_title": "Not another analytics tool. One supervisory layer",
   "why_sfty_description": "SFTY connects digital asset intelligence, risk signals, cases and evidence into a single operational environment designed for goAML-ready FIU reporting workflows.",
   "why_sfty_card_1_title": "Market-level visibility",
@@ -91,7 +84,6 @@
   "why_sfty_card_3_description": "Move from alerts to investigations, actions and reporting",
   "why_sfty_point_4": "Supervisory posture",
   "why_sfty_card_4_description": "Understand not only single risks, but the condition of the market",
-
   "authority_eyebrow": "Secure supervisory infrastructure",
   "authority_title": "Built for sovereign supervision",
   "authority_description": "SFTY supports regulators with secure deployment, role-based access and audit-grade evidence to support controlled workflows and procurement-ready governance from day one.",
@@ -104,7 +96,6 @@
   "authority_card_3_description": "Control who can view, review, escalate and act across teams and agencies",
   "authority_card_4_title": "Procurement-safe architecture",
   "authority_card_4_description": "Support phased implementation, documentation, integrations and governance review",
-
   "ask_sfty_title_main": "Ask SFTY about",
   "ask_sfty_title_accent": "digital asset oversight",
   "ask_sfty_placeholder": "How can SFTY support goAML reporting and case evidence",
@@ -115,7 +106,6 @@
   "ask_sfty_chip_2_label": "Case workflows",
   "ask_sfty_chip_3_label": "Risk signals",
   "ask_sfty_helper_text": "AI assistant for supervisory, deployment and compliance questions",
-
   "faq_eyebrow": "FAQ",
   "faq_title": "Questions regulators",
   "faq_title_accent": "ask about SFTY",
@@ -130,11 +120,9 @@
   "faq_4_answer": "Yes. SFTY orchestrates and normalizes outputs from multiple KYT, KYC, Travel Rule and blockchain analytics providers into a single supervisory workflow.",
   "faq_5_question": "Does SFTY replace existing analytics tools?",
   "faq_5_answer": "No. SFTY complements existing tools by connecting their outputs into structured supervisory workflows, without replacing underlying analytics or compliance providers.",
-
   "final_title": "Structure FIU workflows for goAML-ready reporting",
   "final_description": "Review how SFTY connects digital asset intelligence, case evidence and SAR workflows to support goAML integration for regulators.",
   "final_cta": "Book supervisory review",
-
   "footer_description": "Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.",
   "footer_column_1_title": "Platform",
   "footer_column_1_link_1_label": "Platform",

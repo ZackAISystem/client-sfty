@@ -2,20 +2,17 @@
   "slug": "biz_provider_fragmentation_fragmented_risk_profile_customer_360_risk_view",
   "domain_main": "https://customer360risk.com",
   "template": "template_17",
-
   "header_menu_item_1": "Business",
   "header_menu_item_2": "Government",
   "header_menu_item_3": "Platform",
   "header_menu_item_4": "About",
   "header_menu_item_5": "Ask SFTY",
   "header_cta": "Book Compliance Demo",
-
   "hero_title": "Unify Customer Risk Profiles",
   "hero_title_accent": "Compliance Operating Layer for VASPs",
   "hero_subtitle": "SFTY connects fragmented compliance data into a single operational workflow to give compliance teams clear, audit-ready visibility across customers, wallets and transactions.",
   "hero_cta": "Explore workflow",
   "hero_ask_cta": "Ask SFTY",
-
   "trust_title": "Core compliance capabilities",
   "trust_card_1_label": "KYC",
   "trust_card_1_value": "Identity checks connected to onboarding decisions",
@@ -29,7 +26,6 @@
   "trust_card_5_value": "Regulatory changes mapped to internal rule",
   "trust_card_6_label": "Audit Trail",
   "trust_card_6_value": "Decision logs and evidence for every review",
-
   "problem_title": "Compliance slows when provider outputs disconnect",
   "problem_description": "Operational workflows stall as KYC, KYB, KYT, Travel Rule, and screening data remain siloed across multiple tools. This fragmentation leaves compliance teams with fragmented risk views, duplicated reviews, and weak audit trails that complicate onboarding and ongoing customer risk monitoring.",
   "problem_cta": "See the workflow",
@@ -41,7 +37,6 @@
   "problem_point_3_value": "Regulatory changes are hard to map into internal workflows",
   "problem_point_4_label": "Weak audit trail",
   "problem_point_4_value": "Evidence and decision history are difficult to reconstruct later",
-
   "solution_eyebrow": "The SFTY approach",
   "solution_title": "SFTY connects fragmented",
   "solution_title_accent": "risk profiles into workflow",
@@ -60,7 +55,6 @@
   "solution_visual_output_2": "Decisions",
   "solution_visual_output_3": "Evidence",
   "solution_visual_output_4": "Reports",
-
   "workflow_eyebrow": "Workflow",
   "workflow_title": "From provider checks to unified risk view",
   "workflow_description": "SFTY aggregates fragmented provider outputs into a connected workflow that structures customer risk profiles, routes reviews, and preserves evidence for compliance decisions.",
@@ -80,7 +74,6 @@
   "workflow_step_5_number": "05",
   "workflow_step_5_title": "Evidence",
   "workflow_step_5_description": "Logs, decisions and reports stay ready for audit",
-
   "why_sfty_title": "Beyond fragmented checks. One risk control layer",
   "why_sfty_description": "SFTY connects fragmented provider outputs into structured workflows, risk decisions, case evidence and audit-ready records for a complete 360-degree customer risk view.",
   "why_sfty_card_1_title": "Provider-neutral layer",
@@ -91,7 +84,6 @@
   "why_sfty_card_3_description": "Preserve evidence, reviewer actions and decision history",
   "why_sfty_point_4": "Enterprise visibility",
   "why_sfty_card_4_description": "Give compliance, risk and leadership one operating view",
-
   "authority_eyebrow": "Enterprise & compliance trust",
   "authority_title": "Built for connected risk view",
   "authority_description": "SFTY supports VASPs building a consolidated 360-degree customer risk view with provider orchestration, audit evidence and controlled enterprise deployment from day one.",
@@ -104,7 +96,6 @@
   "authority_card_3_description": "Prepare clearer compliance evidence for banks, partners and external review",
   "authority_card_4_title": "Enterprise deployment",
   "authority_card_4_description": "Support private environments, permissions, integrations and internal governance",
-
   "ask_sfty_title_main": "Ask SFTY about",
   "ask_sfty_title_accent": "compliance control",
   "ask_sfty_placeholder": "How can SFTY create a connected 360-degree customer risk view",
@@ -115,7 +106,6 @@
   "ask_sfty_chip_2_label": "Audit evidence",
   "ask_sfty_chip_3_label": "Compliance workflow",
   "ask_sfty_helper_text": "AI assistant for product, deployment and compliance questions",
-
   "faq_eyebrow": "FAQ",
   "faq_title": "Questions compliance teams",
   "faq_title_accent": "ask about SFTY",
@@ -130,11 +120,9 @@
   "faq_4_answer": "Yes. SFTY sits above existing providers, connecting their outputs into cohesive workflows without requiring changes to current compliance tools or data sources.",
   "faq_5_question": "Does SFTY replace compliance providers or tools?",
   "faq_5_answer": "No. SFTY does not replace underlying KYC, KYB, KYT or Travel Rule providers but organizes their outputs into controlled compliance workflows and comprehensive audit records.",
-
   "final_title": "Turn fragmented risk profiles into connected views",
   "final_description": "Review how SFTY connects customer, wallet and transaction data into one controlled compliance workflow for clear risk visibility.",
   "final_cta": "Request workflow review",
-
   "footer_description": "Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.",
   "footer_column_1_title": "Platform",
   "footer_column_1_link_1_label": "Platform",

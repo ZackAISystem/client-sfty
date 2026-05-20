@@ -2,20 +2,17 @@
   "slug": "gov_sovereign_infrastructure_and_procurement_procurement_safe_design",
   "domain_main": "https://safeprocurementsfty.com",
   "template": "template_19",
-
   "header_menu_item_1": "Government",
   "header_menu_item_2": "Business",
   "header_menu_item_3": "Platform",
   "header_menu_item_4": "About",
   "header_menu_item_5": "Ask SFTY",
   "header_cta": "Contact SFTY",
-
   "hero_title": "Secure Infrastructure for Digital Asset Supervision",
   "hero_title_accent": "Designed for Government Procurement",
   "hero_subtitle": "SFTY Government supports regulated digital asset oversight with phased deployment, sovereign data control, audit-grade logging, and role-based access tailored for public sector security requirements.",
   "hero_cta": "Review setup",
   "hero_ask_cta": "Ask SFTY",
-
   "trust_title": "Sovereign oversight capabilities",
   "trust_card_1_label": "VASP Supervision",
   "trust_card_1_value": "Market participants, licensing data and risk profiles",
@@ -29,7 +26,6 @@
   "trust_card_5_value": "On-premise or private cloud for sensitive data",
   "trust_card_6_label": "Reporting",
   "trust_card_6_value": "Supervisory outputs, evidence and regulatory reports",
-
   "problem_title": "Procurement risks slow government adoption",
   "problem_description": "Government technology projects face delays when deployment models lack clear controls over data sovereignty, access governance and audit evidence. Without a procurement-safe design, authorities struggle to meet institutional requirements for secure, phased and auditable digital asset infrastructure.",
   "problem_cta": "Review procurement approach",
@@ -41,7 +37,6 @@
   "problem_point_3_value": "Decisions are harder to explain without connected logs and case history",
   "problem_point_4_label": "Cross-agency gaps",
   "problem_point_4_value": "Regulatory teams lack one shared operating layer for supervision",
-
   "solution_eyebrow": "Connected supervision",
   "solution_title": "SFTY supports procurement",
   "solution_title_accent": "safe sovereign deployment",
@@ -60,7 +55,6 @@
   "solution_visual_output_2": "Cases",
   "solution_visual_output_3": "Actions",
   "solution_visual_output_4": "Reports",
-
   "workflow_eyebrow": "Workflow",
   "workflow_title": "From access policy to audit log control",
   "workflow_description": "SFTY structures role-based access through permissions, audit logs, evidence retention and governance to support secure, phased government deployment and operational control.",
@@ -80,7 +74,6 @@
   "workflow_step_5_number": "05",
   "workflow_step_5_title": "Record",
   "workflow_step_5_description": "Evidence, actions and outcomes stay available for review",
-
   "why_sfty_title": "Not another analytics tool. Supervisory control plane",
   "why_sfty_description": "SFTY provides regulators a secure, connected supervisory layer that links licensing, entity, wallet, case, and reporting data for controlled government deployment.",
   "why_sfty_card_1_title": "Market-level visibility",
@@ -91,7 +84,6 @@
   "why_sfty_card_3_description": "Move from alerts to investigations, actions and reporting",
   "why_sfty_point_4": "Supervisory posture",
   "why_sfty_card_4_description": "Understand not only single risks, but the condition of the market",
-
   "authority_eyebrow": "Secure supervisory infrastructure",
   "authority_title": "Built for sovereign deployment",
   "authority_description": "SFTY provides regulators with secure, procurement-safe infrastructure featuring evidence-grade logging, role-based access, and controlled phased implementation for government environments.",
@@ -104,7 +96,6 @@
   "authority_card_3_description": "Control who can view, review, escalate and act across teams and agencies",
   "authority_card_4_title": "Procurement-safe architecture",
   "authority_card_4_description": "Support phased implementation, documentation, integrations and governance review",
-
   "ask_sfty_title_main": "Ask SFTY about",
   "ask_sfty_title_accent": "evidence-based supervision",
   "ask_sfty_placeholder": "How can SFTY support secure sovereign deployment for regulators",
@@ -115,7 +106,6 @@
   "ask_sfty_chip_2_label": "Case workflows",
   "ask_sfty_chip_3_label": "Risk signals",
   "ask_sfty_helper_text": "AI assistant for supervisory, deployment and compliance questions",
-
   "faq_eyebrow": "FAQ",
   "faq_title": "Questions regulators",
   "faq_title_accent": "ask about SFTY",
@@ -130,11 +120,9 @@
   "faq_4_answer": "Yes. SFTY connects with government registries, supervisory workflows and existing compliance systems using modular integration while respecting data sovereignty and deployment controls.",
   "faq_5_question": "Does SFTY replace existing supervisory tools?",
   "faq_5_answer": "No. SFTY operates as a supervisory layer that connects and structures provider outputs without replacing existing analytics or compliance tools used by government authorities.",
-
   "final_title": "Review secure deployment and procurement design",
   "final_description": "Explore how SFTY supports phased rollout, role-based access, audit logs and procurement-safe architecture for government adoption.",
   "final_cta": "Request regulator demo",
-
   "footer_description": "Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.",
   "footer_column_1_title": "Platform",
   "footer_column_1_link_1_label": "Platform",

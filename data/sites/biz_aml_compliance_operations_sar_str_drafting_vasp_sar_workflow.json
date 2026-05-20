@@ -2,20 +2,17 @@
   "slug": "biz_aml_compliance_operations_sar_str_drafting_vasp_sar_workflow",
   "domain_main": "https://vaspsarworkflow.com",
   "template": "template_1",
-
   "header_menu_item_1": "Business",
   "header_menu_item_2": "Government",
   "header_menu_item_3": "Platform",
   "header_menu_item_4": "About",
   "header_menu_item_5": "Ask SFTY",
   "header_cta": "Book Compliance Demo",
-
   "hero_title": "Integrated SAR and STR Compliance",
   "hero_title_accent": "Designed for VASP AML Operations",
   "hero_subtitle": "SFTY streamlines suspicious activity reviews by connecting alerts, provider data, case management, and SAR drafting into one auditable compliance workflow.",
   "hero_cta": "Explore workflow",
   "hero_ask_cta": "Ask SFTY",
-
   "trust_title": "Core compliance capabilities",
   "trust_card_1_label": "KYC",
   "trust_card_1_value": "Identity checks connected to onboarding decisions",
@@ -29,7 +26,6 @@
   "trust_card_5_value": "Regulatory changes mapped to internal rule",
   "trust_card_6_label": "Audit Trail",
   "trust_card_6_value": "Decision logs and evidence for every review",
-
   "problem_title": "Suspicious activity reviews slow compliance workflows",
   "problem_description": "VASP compliance teams struggle to connect fragmented alert triage with SAR and STR drafting processes. This gap creates manual delays, inconsistent case evidence, and weak audit readiness across suspicious transaction reporting workflows.",
   "problem_cta": "Review SAR workflow",
@@ -41,7 +37,6 @@
   "problem_point_3_value": "Regulatory changes are hard to map into internal workflows",
   "problem_point_4_label": "Weak audit trail",
   "problem_point_4_value": "Evidence and decision history are difficult to reconstruct later",
-
   "solution_eyebrow": "Compliance layer",
   "solution_title": "SFTY connects alert",
   "solution_title_accent": "triage to SAR workflows",
@@ -60,7 +55,6 @@
   "solution_visual_output_2": "Decisions",
   "solution_visual_output_3": "Evidence",
   "solution_visual_output_4": "Reports",
-
   "workflow_eyebrow": "Workflow",
   "workflow_title": "From alerts to SAR reporting workflow",
   "workflow_description": "SFTY structures alerts into cases routed for review with documented decisions and evidence preserved to prepare SAR-style reports for compliance teams.",
@@ -80,7 +74,6 @@
   "workflow_step_5_number": "05",
   "workflow_step_5_title": "Evidence",
   "workflow_step_5_description": "Logs, decisions and reports stay ready for audit",
-
   "why_sfty_title": "Not another provider. The compliance control layer",
   "why_sfty_description": "SFTY connects fragmented provider outputs into structured workflows, cases, decisions and audit-ready evidence to streamline suspicious activity review and SAR/STR reporting for VASPs.",
   "why_sfty_card_1_title": "Provider-neutral layer",
@@ -91,7 +84,6 @@
   "why_sfty_card_3_description": "Preserve evidence, reviewer actions and decision history",
   "why_sfty_point_4": "Enterprise visibility",
   "why_sfty_card_4_description": "Give compliance, risk and leadership one operating view",
-
   "authority_eyebrow": "Built for compliance",
   "authority_title": "Built for VASP SAR workflows",
   "authority_description": "SFTY supports VASPs with controlled provider orchestration and audit-ready evidence to support clear, governed compliance for SAR review and bank due diligence.",
@@ -104,7 +96,6 @@
   "authority_card_3_description": "Prepare clearer compliance evidence for banks, partners and external review",
   "authority_card_4_title": "Enterprise deployment",
   "authority_card_4_description": "Support private environments, permissions, integrations and internal governance",
-
   "ask_sfty_title_main": "Ask SFTY about",
   "ask_sfty_title_accent": "compliance control",
   "ask_sfty_placeholder": "Ask SFTY how SAR workflows connect to reporting drafts",
@@ -115,7 +106,6 @@
   "ask_sfty_chip_2_label": "Audit evidence",
   "ask_sfty_chip_3_label": "Compliance workflow",
   "ask_sfty_helper_text": "AI assistant for product, deployment and compliance questions",
-
   "faq_eyebrow": "FAQ",
   "faq_title": "Questions compliance teams",
   "faq_title_accent": "ask about SFTY",
@@ -130,11 +120,9 @@
   "faq_4_answer": "Yes. SFTY sits above existing KYC, KYT, Travel Rule and screening providers, connecting their outputs without replacement while providing role-based access, audit logs and configurable workflows.",
   "faq_5_question": "Does SFTY replace KYC or KYT providers?",
   "faq_5_answer": "No. SFTY does not replace KYC, KYT or screening providers but connects and structures their outputs into compliant workflows and evidence packages for VASPs to manage SAR reporting.",
-
   "final_title": "Structure VASP SAR workflows with SFTY",
   "final_description": "Review how SFTY connects suspicious activity alerts, case management and SAR drafting into one audit-ready compliance workflow.",
   "final_cta": "Request workflow review",
-
   "footer_description": "Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.",
   "footer_column_1_title": "Platform",
   "footer_column_1_link_1_label": "Platform",

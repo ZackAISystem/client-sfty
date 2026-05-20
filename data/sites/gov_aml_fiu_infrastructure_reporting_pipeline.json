@@ -2,20 +2,17 @@
   "slug": "gov_aml_fiu_infrastructure_reporting_pipeline",
   "domain_main": "https://fiupipeline.com",
   "template": "template_4",
-
   "header_menu_item_1": "Government",
   "header_menu_item_2": "Business",
   "header_menu_item_3": "Platform",
   "header_menu_item_4": "About",
   "header_menu_item_5": "Ask SFTY",
   "header_cta": "Discuss Deployment",
-
   "hero_title": "Supervisory Reporting for Digital Assets",
   "hero_title_accent": "Designed for Regulators and FIUs",
   "hero_subtitle": "SFTY connects risk signals, case management, and evidence to streamline suspicious activity reporting and support audit-ready FIU workflows within a secure supervisory layer.",
   "hero_cta": "Review pipeline",
   "hero_ask_cta": "Ask SFTY",
-
   "trust_title": "Regulatory oversight capabilities",
   "trust_card_1_label": "VASP Supervision",
   "trust_card_1_value": "Market participants, licensing data and risk profiles",
@@ -29,7 +26,6 @@
   "trust_card_5_value": "On-premise or private cloud for sensitive data",
   "trust_card_6_label": "Reporting",
   "trust_card_6_value": "Supervisory outputs, evidence and regulatory reports",
-
   "problem_title": "Reporting pipelines slow when data stays disconnected",
   "problem_description": "Regulators face operational delays and fragmented workflows when risk signals and case evidence remain isolated from formal reporting channels. This disconnection complicates audit readiness and hinders timely submission of defensible suspicious activity reports.",
   "problem_cta": "Explore reporting workflow",
@@ -41,7 +37,6 @@
   "problem_point_3_value": "Decisions are harder to explain without connected logs and case history",
   "problem_point_4_label": "Cross-agency gaps",
   "problem_point_4_value": "Regulatory teams lack one shared operating layer for supervision",
-
   "solution_eyebrow": "Market oversight layer",
   "solution_title": "SFTY organizes risk",
   "solution_title_accent": "signals into reports",
@@ -60,7 +55,6 @@
   "solution_visual_output_2": "Cases",
   "solution_visual_output_3": "Actions",
   "solution_visual_output_4": "Reports",
-
   "workflow_eyebrow": "Workflow",
   "workflow_title": "From suspicious activity to reporting package",
   "workflow_description": "SFTY structures risk signals into cases, gathers evidence and prepares comprehensive reports to support financial intelligence unit workflows and regulatory submissions.",
@@ -80,7 +74,6 @@
   "workflow_step_5_number": "05",
   "workflow_step_5_title": "Record",
   "workflow_step_5_description": "Evidence, actions and outcomes stay available for review",
-
   "why_sfty_title": "Not another analytics tool. One supervisory layer",
   "why_sfty_description": "SFTY connects fragmented risk signals, cases, evidence and reporting into a single secure supervisory environment for structured FIU workflows and audit-ready outputs.",
   "why_sfty_card_1_title": "Market-level visibility",
@@ -91,7 +84,6 @@
   "why_sfty_card_3_description": "Move from alerts to investigations, actions and reporting",
   "why_sfty_point_4": "Supervisory posture",
   "why_sfty_card_4_description": "Understand not only single risks, but the condition of the market",
-
   "authority_eyebrow": "Built for regulators",
   "authority_title": "Built for sovereign supervision",
   "authority_description": "SFTY delivers a secure, auditable platform tailored for government reporting pipelines where access governance, evidence-grade logging and procurement standards are critical.",
@@ -104,7 +96,6 @@
   "authority_card_3_description": "Control who can view, review, escalate and act across teams and agencies",
   "authority_card_4_title": "Procurement-safe architecture",
   "authority_card_4_description": "Support phased implementation, documentation, integrations and governance review",
-
   "ask_sfty_title_main": "Ask SFTY about",
   "ask_sfty_title_accent": "market supervision",
   "ask_sfty_placeholder": "Ask SFTY how reporting pipelines support FIU workflows",
@@ -115,7 +106,6 @@
   "ask_sfty_chip_2_label": "Case workflows",
   "ask_sfty_chip_3_label": "Risk signals",
   "ask_sfty_helper_text": "AI assistant for supervisory, deployment and compliance questions",
-
   "faq_eyebrow": "FAQ",
   "faq_title": "Questions regulators",
   "faq_title_accent": "ask about SFTY",
@@ -130,11 +120,9 @@
   "faq_4_answer": "Yes. SFTY supports modular integration with government registries, blockchain data, analytics providers and internal FIU systems via secure and governed interfaces.",
   "faq_5_question": "Does SFTY replace existing analytics or reporting tools?",
   "faq_5_answer": "No. SFTY operates above existing tools and data sources, connecting outputs into supervised workflows rather than replacing analytics or reporting platforms.",
-
   "final_title": "Review supervisory reporting workflows with SFTY",
   "final_description": "See how SFTY connects risk signals, cases and evidence into audit-ready FIU reporting pipelines and supervisory workflows.",
   "final_cta": "Review supervisory architecture",
-
   "footer_description": "Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.",
   "footer_column_1_title": "Platform",
   "footer_column_1_link_1_label": "Platform",

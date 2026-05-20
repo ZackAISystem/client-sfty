@@ -2,20 +2,17 @@
   "slug": "biz_kyc_kyb_onboarding_ongoing_monitoring_ongoing_kyb_monitoring",
   "domain_main": "https://ongoingkyb.com",
   "template": "template_12",
-
   "header_menu_item_1": "Business",
   "header_menu_item_2": "Government",
   "header_menu_item_3": "Platform",
   "header_menu_item_4": "About",
   "header_menu_item_5": "Ask SFTY",
   "header_cta": "Discuss Deployment",
-
   "hero_title": "Secure Ongoing Corporate Monitoring",
   "hero_title_accent": "Compliance Control Layer for VASPs",
   "hero_subtitle": "SFTY Business unifies KYB provider data and regulatory rules into a continuous, auditable workflow that streamlines corporate risk monitoring after onboarding.",
   "hero_cta": "Explore workflow",
   "hero_ask_cta": "Ask SFTY",
-
   "trust_title": "Core compliance capabilities",
   "trust_card_1_label": "KYC",
   "trust_card_1_value": "Identity checks connected to onboarding decisions",
@@ -29,7 +26,6 @@
   "trust_card_5_value": "Regulatory changes mapped to internal rule",
   "trust_card_6_label": "Audit Trail",
   "trust_card_6_value": "Decision logs and evidence for every review",
-
   "problem_title": "Ongoing corporate risk remains disconnected",
   "problem_description": "Compliance teams struggle to maintain clear visibility into evolving business risks after onboarding due to scattered KYB data and unlinked provider outputs. This fragmentation makes it harder to monitor changes effectively and preserve an audit-ready evidence trail for regulatory review.",
   "problem_cta": "Explore ongoing monitoring",
@@ -41,7 +37,6 @@
   "problem_point_3_value": "Regulatory changes are hard to map into internal workflows",
   "problem_point_4_label": "Weak audit trail",
   "problem_point_4_value": "Evidence and decision history are difficult to reconstruct later",
-
   "solution_eyebrow": "Workflow control",
   "solution_title": "SFTY connects ongoing",
   "solution_title_accent": "KYB data to workflow",
@@ -60,7 +55,6 @@
   "solution_visual_output_2": "Decisions",
   "solution_visual_output_3": "Evidence",
   "solution_visual_output_4": "Reports",
-
   "workflow_eyebrow": "Workflow",
   "workflow_title": "From ongoing KYB checks to approval",
   "workflow_description": "SFTY connects ongoing KYB provider updates through risk rules, case review, decision logging and evidence preservation for continuous compliance monitoring.",
@@ -80,7 +74,6 @@
   "workflow_step_5_number": "05",
   "workflow_step_5_title": "Evidence",
   "workflow_step_5_description": "Logs, decisions and reports stay ready for audit",
-
   "why_sfty_title": "Beyond onboarding checks. One ongoing control layer",
   "why_sfty_description": "SFTY links KYB provider outputs with regulatory rules, cases, decisions and audit evidence to support continuous, auditable corporate risk monitoring workflows.",
   "why_sfty_card_1_title": "Provider-neutral layer",
@@ -91,7 +84,6 @@
   "why_sfty_card_3_description": "Preserve evidence, reviewer actions and decision history",
   "why_sfty_point_4": "Enterprise visibility",
   "why_sfty_card_4_description": "Give compliance, risk and leadership one operating view",
-
   "authority_eyebrow": "Provider-ready architecture",
   "authority_title": "Built for ongoing KYB monitoring",
   "authority_description": "SFTY gives VASPs a compliant operational layer for ongoing corporate risk review with audit-ready evidence, provider orchestration and controlled enterprise deployment.",
@@ -104,7 +96,6 @@
   "authority_card_3_description": "Prepare clearer compliance evidence for banks, partners and external review",
   "authority_card_4_title": "Enterprise deployment",
   "authority_card_4_description": "Support private environments, permissions, integrations and internal governance",
-
   "ask_sfty_title_main": "Ask SFTY about",
   "ask_sfty_title_accent": "compliance control",
   "ask_sfty_placeholder": "How can SFTY support ongoing KYB monitoring workflows",
@@ -115,7 +106,6 @@
   "ask_sfty_chip_2_label": "Audit evidence",
   "ask_sfty_chip_3_label": "Compliance workflow",
   "ask_sfty_helper_text": "AI assistant for product, deployment and compliance questions",
-
   "faq_eyebrow": "FAQ",
   "faq_title": "Questions compliance teams",
   "faq_title_accent": "ask about SFTY",
@@ -130,11 +120,9 @@
   "faq_4_answer": "Yes, SFTY integrates with existing KYB providers and layers their outputs into one compliance workflow without requiring replacement, preserving operational continuity and provider neutrality.",
   "faq_5_question": "Does SFTY replace KYB or KYC providers?",
   "faq_5_answer": "No. SFTY does not replace KYB or KYC providers but connects their data into structured workflows, decisions and audit evidence to improve operational control and compliance scalability.",
-
   "final_title": "Structure ongoing KYB monitoring workflows",
   "final_description": "Review how SFTY connects provider data, regulatory rules and risk signals into an auditable corporate monitoring workflow.",
   "final_cta": "Request workflow review",
-
   "footer_description": "Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.",
   "footer_column_1_title": "Platform",
   "footer_column_1_link_1_label": "Platform",

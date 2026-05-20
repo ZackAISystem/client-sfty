@@ -2,20 +2,17 @@
   "slug": "biz_kyt_transaction_monitoring_blockchain_analytics_workflow_blockchain_analytics_integration",
   "domain_main": "https://blockchainanalyticsflow.com",
   "template": "template_13",
-
   "header_menu_item_1": "Business",
   "header_menu_item_2": "Government",
   "header_menu_item_3": "Platform",
   "header_menu_item_4": "About",
   "header_menu_item_5": "Ask SFTY",
   "header_cta": "Book Compliance Demo",
-
   "hero_title": "Unified Blockchain Analytics Workflow",
   "hero_title_accent": "For VASP Compliance Teams",
   "hero_subtitle": "SFTY Business integrates multiple blockchain analytics providers into one seamless KYT transaction monitoring workflow to enhance wallet risk aggregation and streamline case management.",
   "hero_cta": "Explore workflow",
   "hero_ask_cta": "Ask SFTY",
-
   "trust_title": "Digital asset compliance capabilities",
   "trust_card_1_label": "KYC",
   "trust_card_1_value": "Identity checks connected to onboarding decisions",
@@ -29,7 +26,6 @@
   "trust_card_5_value": "Regulatory changes mapped to internal rule",
   "trust_card_6_label": "Audit Trail",
   "trust_card_6_value": "Decision logs and evidence for every review",
-
   "problem_title": "Provider outputs remain disconnected in workflows",
   "problem_description": "Compliance teams struggle to correlate blockchain analytics data with wallet activity and transaction risk across multiple systems. This fragmentation creates delays, complicates source-of-funds reviews, and weakens audit readiness in transaction monitoring workflows.",
   "problem_cta": "See the workflow",
@@ -41,7 +37,6 @@
   "problem_point_3_value": "Regulatory changes are hard to map into internal workflows",
   "problem_point_4_label": "Weak audit trail",
   "problem_point_4_value": "Evidence and decision history are difficult to reconstruct later",
-
   "solution_eyebrow": "Compliance layer",
   "solution_title": "SFTY connects wallet",
   "solution_title_accent": "risk signals to workflow",
@@ -60,7 +55,6 @@
   "solution_visual_output_2": "Decisions",
   "solution_visual_output_3": "Evidence",
   "solution_visual_output_4": "Reports",
-
   "workflow_eyebrow": "Workflow",
   "workflow_title": "From wallet risk signals to case evidence",
   "workflow_description": "SFTY aggregates blockchain analytics outputs to link wallet risk, transactions and alerts into structured cases with preserved evidence for compliance review.",
@@ -80,7 +74,6 @@
   "workflow_step_5_number": "05",
   "workflow_step_5_title": "Evidence",
   "workflow_step_5_description": "Logs, decisions and reports stay ready for audit",
-
   "why_sfty_title": "Beyond wallet alerts. One risk review layer",
   "why_sfty_description": "SFTY consolidates blockchain analytics outputs into structured workflows, linking wallet risk, transactions, cases, decisions and evidence for clearer KYT transaction monitoring control.",
   "why_sfty_card_1_title": "Provider-neutral layer",
@@ -91,7 +84,6 @@
   "why_sfty_card_3_description": "Preserve evidence, reviewer actions and decision history",
   "why_sfty_point_4": "Enterprise visibility",
   "why_sfty_card_4_description": "Give compliance, risk and leadership one operating view",
-
   "authority_eyebrow": "Built for compliance",
   "authority_title": "Built for KYT compliance workflows",
   "authority_description": "SFTY supports regulated VASPs by connecting blockchain analytics, preserving audit evidence and enabling bank due diligence within scalable, controlled enterprise deployments.",
@@ -104,7 +96,6 @@
   "authority_card_3_description": "Prepare clearer compliance evidence for banks, partners and external review",
   "authority_card_4_title": "Enterprise deployment",
   "authority_card_4_description": "Support private environments, permissions, integrations and internal governance",
-
   "ask_sfty_title_main": "Ask SFTY about",
   "ask_sfty_title_accent": "provider orchestration",
   "ask_sfty_placeholder": "How does SFTY integrate blockchain analytics for KYT workflows",
@@ -115,7 +106,6 @@
   "ask_sfty_chip_2_label": "Audit evidence",
   "ask_sfty_chip_3_label": "Compliance workflow",
   "ask_sfty_helper_text": "AI assistant for product, deployment and compliance questions",
-
   "faq_eyebrow": "FAQ",
   "faq_title": "Questions compliance teams",
   "faq_title_accent": "ask about SFTY",
@@ -130,11 +120,9 @@
   "faq_4_answer": "Yes, SFTY orchestrates multiple KYT providers by combining their risk signals and screening results into a single compliance workflow for efficient case management.",
   "faq_5_question": "Does SFTY replace existing KYT providers?",
   "faq_5_answer": "No. SFTY sits above KYT and blockchain analytics providers, turning their outputs into structured compliance workflows without replacing the underlying providers.",
-
   "final_title": "Bring blockchain analytics into KYT workflows",
   "final_description": "Review how SFTY integrates wallet risk and transaction data into structured cases, alerts and audit-ready evidence for VASP compliance teams.",
   "final_cta": "Book compliance demo",
-
   "footer_description": "Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.",
   "footer_column_1_title": "Platform",
   "footer_column_1_link_1_label": "Platform",

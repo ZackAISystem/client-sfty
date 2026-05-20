@@ -1,21 +1,18 @@
 {
   "slug": "biz_institutional_trust_enterprise_readiness_role_based_access_role_based_access_control",
-  "domain_main": "https://rolebasedaccesscontrol.com",
+  "domain_main": "https://sftyrolebasedaccess.com",
   "template": "template_17",
-
   "header_menu_item_1": "Business",
   "header_menu_item_2": "Government",
   "header_menu_item_3": "Platform",
   "header_menu_item_4": "About",
   "header_menu_item_5": "Ask SFTY",
   "header_cta": "Book Compliance Demo",
-
   "hero_title": "Role-Based Access for Compliance",
   "hero_title_accent": "Control Permissions Across Teams",
   "hero_subtitle": "SFTY Business supports institutional compliance by managing role-based access, audit logs, and permissions to ensure secure, auditable workflows across digital asset compliance operations.",
   "hero_cta": "Review framework",
   "hero_ask_cta": "Ask SFTY",
-
   "trust_title": "Core compliance capabilities",
   "trust_card_1_label": "KYC",
   "trust_card_1_value": "Identity checks connected to onboarding decisions",
@@ -29,7 +26,6 @@
   "trust_card_5_value": "Regulatory changes mapped to internal rule",
   "trust_card_6_label": "Audit Trail",
   "trust_card_6_value": "Decision logs and evidence for every review",
-
   "problem_title": "Access control weakens enterprise compliance",
   "problem_description": "Without precise role-based access, compliance teams risk inconsistent permissions and audit gaps across workflows. This hinders governance, slows decision-making and complicates audit readiness in regulated digital asset environments.",
   "problem_cta": "Review governance controls",
@@ -41,7 +37,6 @@
   "problem_point_3_value": "Regulatory changes are hard to map into internal workflows",
   "problem_point_4_label": "Weak audit trail",
   "problem_point_4_value": "Evidence and decision history are difficult to reconstruct later",
-
   "solution_eyebrow": "The SFTY approach",
   "solution_title": "SFTY enforces",
   "solution_title_accent": "role-based access control",
@@ -60,7 +55,6 @@
   "solution_visual_output_2": "Decisions",
   "solution_visual_output_3": "Evidence",
   "solution_visual_output_4": "Reports",
-
   "workflow_eyebrow": "Workflow",
   "workflow_title": "From access policy to audit log",
   "workflow_description": "SFTY enforces role-based permissions that control user access across compliance workflows while preserving audit logs and evidence for governance and review.",
@@ -80,7 +74,6 @@
   "workflow_step_5_number": "05",
   "workflow_step_5_title": "Evidence",
   "workflow_step_5_description": "Logs, decisions and reports stay ready for audit",
-
   "why_sfty_title": "Beyond access systems. Governed permission control",
   "why_sfty_description": "SFTY provides regulated businesses a provider-neutral layer that connects role-based access, audit logs and permissions into a clear, auditable compliance governance framework.",
   "why_sfty_card_1_title": "Provider-neutral layer",
@@ -91,7 +84,6 @@
   "why_sfty_card_3_description": "Preserve evidence, reviewer actions and decision history",
   "why_sfty_point_4": "Enterprise visibility",
   "why_sfty_card_4_description": "Give compliance, risk and leadership one operating view",
-
   "authority_eyebrow": "Enterprise & compliance trust",
   "authority_title": "Built for role-based access",
   "authority_description": "SFTY supports regulated VASPs with controlled access governance, preserved evidence and enterprise deployment to maintain clear audit trails and strengthen bank due diligence.",
@@ -104,7 +96,6 @@
   "authority_card_3_description": "Prepare clearer compliance evidence for banks, partners and external review",
   "authority_card_4_title": "Enterprise deployment",
   "authority_card_4_description": "Support private environments, permissions, integrations and internal governance",
-
   "ask_sfty_title_main": "Ask SFTY about",
   "ask_sfty_title_accent": "compliance control",
   "ask_sfty_placeholder": "How can SFTY support role-based access for compliance teams",
@@ -115,7 +106,6 @@
   "ask_sfty_chip_2_label": "Audit evidence",
   "ask_sfty_chip_3_label": "Compliance workflow",
   "ask_sfty_helper_text": "AI assistant for product, deployment and compliance questions",
-
   "faq_eyebrow": "FAQ",
   "faq_title": "Questions compliance teams",
   "faq_title_accent": "ask about SFTY",
@@ -130,11 +120,9 @@
   "faq_4_answer": "Yes. SFTY connects without replacing existing providers by integrating KYC, KYB, KYT, Travel Rule and screening outputs into a connected compliance workflow.",
   "faq_5_question": "Does SFTY replace existing KYC or KYT providers?",
   "faq_5_answer": "No. SFTY operates above existing providers, aggregating their outputs into structured workflows without replacing KYC, KYB, KYT, screening or Travel Rule solutions.",
-
   "final_title": "Control compliance access with role-based permissions",
   "final_description": "Review how SFTY enforces role-based access, audit logs and governance across VASP compliance teams and workflows.",
   "final_cta": "Review your stack",
-
   "footer_description": "Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.",
   "footer_column_1_title": "Platform",
   "footer_column_1_link_1_label": "Platform",

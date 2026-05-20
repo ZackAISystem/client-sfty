@@ -2,20 +2,17 @@
   "slug": "biz_kyt_transaction_monitoring_suspicious_activity_suspicious_activity_monitoring_for_vasps",
   "domain_main": "https://vaspsuspiciousactivity.com",
   "template": "template_4",
-
   "header_menu_item_1": "Business",
   "header_menu_item_2": "Government",
   "header_menu_item_3": "Platform",
   "header_menu_item_4": "About",
   "header_menu_item_5": "Ask SFTY",
   "header_cta": "Book Compliance Demo",
-
   "hero_title": "Monitor Suspicious Activity Efficiently",
   "hero_title_accent": "Compliance Workflow for VASPs",
   "hero_subtitle": "SFTY helps VASP compliance teams consolidate wallet risk signals and transaction screening into audit-ready cases with connected evidence and rule-driven review workflows.",
   "hero_cta": "Review workflow",
   "hero_ask_cta": "Ask SFTY",
-
   "trust_title": "Compliance operating capabilities",
   "trust_card_1_label": "KYC",
   "trust_card_1_value": "Identity checks connected to onboarding decisions",
@@ -29,7 +26,6 @@
   "trust_card_5_value": "Regulatory changes mapped to internal rule",
   "trust_card_6_label": "Audit Trail",
   "trust_card_6_value": "Decision logs and evidence for every review",
-
   "problem_title": "Suspicious activity reviews depend on manual handoffs",
   "problem_description": "VASPs often struggle to monitor suspicious transactions because wallet and transaction risk signals remain isolated within separate provider systems. This disconnection slows investigations, weakens audit trails and complicates defensible compliance review.",
   "problem_cta": "See the monitoring workflow",
@@ -41,7 +37,6 @@
   "problem_point_3_value": "Regulatory changes are hard to map into internal workflows",
   "problem_point_4_label": "Weak audit trail",
   "problem_point_4_value": "Evidence and decision history are difficult to reconstruct later",
-
   "solution_eyebrow": "Compliance layer",
   "solution_title": "SFTY connects wallet",
   "solution_title_accent": "and transaction risk",
@@ -60,7 +55,6 @@
   "solution_visual_output_2": "Decisions",
   "solution_visual_output_3": "Evidence",
   "solution_visual_output_4": "Reports",
-
   "workflow_eyebrow": "Workflow",
   "workflow_title": "From wallet risk to case evidence",
   "workflow_description": "SFTY consolidates wallet and transaction risk signals, routes alerts into cases, supports investigative review and preserves evidence for compliant decision and reporting workflows.",
@@ -80,7 +74,6 @@
   "workflow_step_5_number": "05",
   "workflow_step_5_title": "Evidence",
   "workflow_step_5_description": "Logs, decisions and reports stay ready for audit",
-
   "why_sfty_title": "Beyond wallet alerts. One evidence-ready layer",
   "why_sfty_description": "SFTY connects wallet and transaction risk signals into cases, decisions and audit-ready evidence without replacing the KYT and analytics tools teams already use.",
   "why_sfty_card_1_title": "Provider-neutral layer",
@@ -91,7 +84,6 @@
   "why_sfty_card_3_description": "Preserve evidence, reviewer actions and decision history",
   "why_sfty_point_4": "Enterprise visibility",
   "why_sfty_card_4_description": "Give compliance, risk and leadership one operating view",
-
   "authority_eyebrow": "Built for compliance",
   "authority_title": "Built for suspicious activity monitoring",
   "authority_description": "SFTY supports VASP compliance teams by integrating provider signals with audit-ready evidence and controlled deployment to support scalable and defensible suspicious activity workflows.",
@@ -104,7 +96,6 @@
   "authority_card_3_description": "Prepare clearer compliance evidence for banks, partners and external review",
   "authority_card_4_title": "Enterprise deployment",
   "authority_card_4_description": "Support private environments, permissions, integrations and internal governance",
-
   "ask_sfty_title_main": "Ask SFTY about",
   "ask_sfty_title_accent": "risk operations",
   "ask_sfty_placeholder": "How can SFTY support suspicious activity monitoring workflows",
@@ -115,7 +106,6 @@
   "ask_sfty_chip_2_label": "Audit evidence",
   "ask_sfty_chip_3_label": "Compliance workflow",
   "ask_sfty_helper_text": "AI assistant for product, deployment and compliance questions",
-
   "faq_eyebrow": "FAQ",
   "faq_title": "Questions compliance teams",
   "faq_title_accent": "ask about SFTY",
@@ -130,11 +120,9 @@
   "faq_4_answer": "Yes. SFTY works above existing tools, connecting your current KYC, KYT, Travel Rule and screening systems into one controlled compliance operating layer without disrupting existing workflows.",
   "faq_5_question": "Does SFTY replace transaction monitoring providers?",
   "faq_5_answer": "No. SFTY does not replace underlying providers but connects their outputs into operational workflows, enabling compliance teams to manage suspicious activity more effectively and with stronger audit trails.",
-
   "final_title": "Connect suspicious activity into structured cases",
   "final_description": "Review how SFTY links wallet risk, transaction alerts and regulatory rules into audit-ready evidence and operational workflows.",
   "final_cta": "Discuss enterprise deployment",
-
   "footer_description": "Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.",
   "footer_column_1_title": "Platform",
   "footer_column_1_link_1_label": "Platform",

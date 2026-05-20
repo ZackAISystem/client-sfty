@@ -2,20 +2,17 @@
   "slug": "gov_central_bank_and_financial_authority_oversight_crypto_banking",
   "domain_main": "https://cryptobankingoversight.com",
   "template": "template_19",
-
   "header_menu_item_1": "Government",
   "header_menu_item_2": "Business",
   "header_menu_item_3": "Platform",
   "header_menu_item_4": "About",
   "header_menu_item_5": "Ask SFTY",
   "header_cta": "Request Demo",
-
   "hero_title": "Supervise Crypto Banking Activity",
   "hero_title_accent": "For Central Banks and Authorities",
   "hero_subtitle": "SFTY connects digital asset transactions, VASP profiles, licensing data and risk signals into a unified supervisory layer that supports evidence-based banking oversight.",
   "hero_cta": "Explore oversight",
   "hero_ask_cta": "Ask SFTY",
-
   "trust_title": "Regulatory oversight capabilities",
   "trust_card_1_label": "VASP Supervision",
   "trust_card_1_value": "Market participants, licensing data and risk profiles",
@@ -29,7 +26,6 @@
   "trust_card_5_value": "On-premise or private cloud for sensitive data",
   "trust_card_6_label": "Reporting",
   "trust_card_6_value": "Supervisory outputs, evidence and regulatory reports",
-
   "problem_title": "Supervisory gaps slow crypto banking oversight",
   "problem_description": "Regulators struggle to manage crypto banking risks when data on VASPs, CASPs, transactions and licenses remain disconnected across systems. This fragmentation complicates comprehensive oversight, delays risk detection and weakens supervisory response capabilities.",
   "problem_cta": "Explore supervisory workflow",
@@ -41,7 +37,6 @@
   "problem_point_3_value": "Decisions are harder to explain without connected logs and case history",
   "problem_point_4_label": "Cross-agency gaps",
   "problem_point_4_value": "Regulatory teams lack one shared operating layer for supervision",
-
   "solution_eyebrow": "The SFTY approach",
   "solution_title": "SFTY connects VASP",
   "solution_title_accent": "data to supervisory workflows",
@@ -60,7 +55,6 @@
   "solution_visual_output_2": "Cases",
   "solution_visual_output_3": "Actions",
   "solution_visual_output_4": "Reports",
-
   "workflow_eyebrow": "Workflow",
   "workflow_title": "From market signal to supervisory action",
   "workflow_description": "SFTY connects fragmented market and entity data into alerts that escalate to cases, investigations, supervisory decisions, and evidence-based regulatory reporting.",
@@ -80,7 +74,6 @@
   "workflow_step_5_number": "05",
   "workflow_step_5_title": "Record",
   "workflow_step_5_description": "Evidence, actions and outcomes stay available for review",
-
   "why_sfty_title": "Not another analytics tool. Supervisory control plane",
   "why_sfty_description": "SFTY helps regulators integrate crypto banking data with licensing, wallet activity, cases, evidence and reporting into a unified supervisory operating layer.",
   "why_sfty_card_1_title": "Market-level visibility",
@@ -91,7 +84,6 @@
   "why_sfty_card_3_description": "Move from alerts to investigations, actions and reporting",
   "why_sfty_point_4": "Supervisory posture",
   "why_sfty_card_4_description": "Understand not only single risks, but the condition of the market",
-
   "authority_eyebrow": "Authority & deployment trust",
   "authority_title": "Built for sovereign deployment",
   "authority_description": "SFTY supports regulated authorities with secure deployment, role-based access, evidence-grade logging and procurement-safe architecture for robust crypto banking supervision.",
@@ -104,7 +96,6 @@
   "authority_card_3_description": "Control who can view, review, escalate and act across teams and agencies",
   "authority_card_4_title": "Procurement-safe architecture",
   "authority_card_4_description": "Support phased implementation, documentation, integrations and governance review",
-
   "ask_sfty_title_main": "Ask SFTY about",
   "ask_sfty_title_accent": "market supervision",
   "ask_sfty_placeholder": "How can SFTY support crypto banking supervision workflows",
@@ -115,7 +106,6 @@
   "ask_sfty_chip_2_label": "Case workflows",
   "ask_sfty_chip_3_label": "Risk signals",
   "ask_sfty_helper_text": "AI assistant for supervisory, deployment and compliance questions",
-
   "faq_eyebrow": "FAQ",
   "faq_title": "Questions regulators",
   "faq_title_accent": "ask about SFTY",
@@ -130,11 +120,9 @@
   "faq_4_answer": "SFTY can integrate multiple KYT, KYC, KYB, Travel Rule and blockchain analytics providers into one controlled environment without disrupting existing supervisory technology stacks.",
   "faq_5_question": "Does SFTY replace existing analytics or providers?",
   "faq_5_answer": "No. SFTY sits above existing analytics and compliance providers, organizing their outputs into structured cases, evidence and supervisory reports rather than replacing them.",
-
   "final_title": "Review supervisory workflows for crypto banking",
   "final_description": "Explore how SFTY connects banking exposures, VASP data and risk signals into structured supervisory cases and evidence.",
   "final_cta": "Review supervisory architecture",
-
   "footer_description": "Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.",
   "footer_column_1_title": "Platform",
   "footer_column_1_link_1_label": "Platform",

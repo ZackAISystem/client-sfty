@@ -1,21 +1,18 @@
 {
   "slug": "biz_jurisdiction_specific_compliance_fatf_travel_rule_fatf_travel_rule_readiness",
-  "domain_main": "https://fatftravelrule.com",
+  "domain_main": "https://travelrulecompliancehub.com",
   "template": "template_5",
-
   "header_menu_item_1": "Business",
   "header_menu_item_2": "Government",
   "header_menu_item_3": "Platform",
   "header_menu_item_4": "About",
   "header_menu_item_5": "Ask SFTY",
   "header_cta": "Review Workflow",
-
   "hero_title": "Prepare for FATF Travel Rule",
   "hero_title_accent": "Compliance Control Layer for VASPs",
   "hero_subtitle": "SFTY helps digital asset businesses connect Travel Rule message routing, multi-jurisdiction policies, exception handling, and audit-ready evidence into one operational compliance workflow.",
   "hero_cta": "Review workflow",
   "hero_ask_cta": "Ask SFTY",
-
   "trust_title": "Provider orchestration capabilities",
   "trust_card_1_label": "KYC",
   "trust_card_1_value": "Identity checks connected to onboarding decisions",
@@ -29,7 +26,6 @@
   "trust_card_5_value": "Regulatory changes mapped to internal rule",
   "trust_card_6_label": "Audit Trail",
   "trust_card_6_value": "Decision logs and evidence for every review",
-
   "problem_title": "Travel Rule workflows remain fragmented and manual",
   "problem_description": "VASPs struggle to integrate jurisdiction-specific Travel Rule requirements into consistent compliance processes. This leads to slow exception handling, disconnected message tracking, and weak audit evidence for regulatory review across multiple jurisdictions.",
   "problem_cta": "See the Travel Rule workflow",
@@ -41,7 +37,6 @@
   "problem_point_3_value": "Regulatory changes are hard to map into internal workflows",
   "problem_point_4_label": "Weak audit trail",
   "problem_point_4_value": "Evidence and decision history are difficult to reconstruct later",
-
   "solution_eyebrow": "Compliance layer",
   "solution_title": "SFTY connects Travel Rule",
   "solution_title_accent": "workflows into compliance",
@@ -60,7 +55,6 @@
   "solution_visual_output_2": "Decisions",
   "solution_visual_output_3": "Evidence",
   "solution_visual_output_4": "Reports",
-
   "workflow_eyebrow": "Workflow",
   "workflow_title": "From Travel Rule exceptions to evidence",
   "workflow_description": "SFTY manages Travel Rule message routing, exception handling and case creation to preserve evidence and prepare reports for FATF-aligned compliance workflows.",
@@ -80,7 +74,6 @@
   "workflow_step_5_number": "05",
   "workflow_step_5_title": "Evidence",
   "workflow_step_5_description": "Logs, decisions and reports stay ready for audit",
-
   "why_sfty_title": "Beyond Travel Rule messages. Evidence-ready workflows",
   "why_sfty_description": "SFTY connects Travel Rule provider data into structured cases, decisions and audit evidence, enabling practical multi-jurisdiction compliance without replacing existing tools.",
   "why_sfty_card_1_title": "Provider-neutral layer",
@@ -91,7 +84,6 @@
   "why_sfty_card_3_description": "Preserve evidence, reviewer actions and decision history",
   "why_sfty_point_4": "Enterprise visibility",
   "why_sfty_card_4_description": "Give compliance, risk and leadership one operating view",
-
   "authority_eyebrow": "Built for compliance",
   "authority_title": "Built for Travel Rule readiness",
   "authority_description": "SFTY supports VASPs preparing for FATF Travel Rule by connecting provider outputs with audit-ready evidence and controlled deployment across multi-jurisdiction environments.",
@@ -104,7 +96,6 @@
   "authority_card_3_description": "Prepare clearer compliance evidence for banks, partners and external review",
   "authority_card_4_title": "Enterprise deployment",
   "authority_card_4_description": "Support private environments, permissions, integrations and internal governance",
-
   "ask_sfty_title_main": "Ask SFTY about",
   "ask_sfty_title_accent": "compliance evidence",
   "ask_sfty_placeholder": "How can SFTY support FATF Travel Rule readiness workflows",
@@ -115,7 +106,6 @@
   "ask_sfty_chip_2_label": "Audit evidence",
   "ask_sfty_chip_3_label": "Compliance workflow",
   "ask_sfty_helper_text": "AI assistant for product, deployment and compliance questions",
-
   "faq_eyebrow": "FAQ",
   "faq_title": "Questions compliance teams",
   "faq_title_accent": "ask about SFTY",
@@ -130,11 +120,9 @@
   "faq_4_answer": "Yes. SFTY integrates with existing Travel Rule providers by connecting their outputs into a connected compliance workflow without replacing or disrupting current messaging or validation systems.",
   "faq_5_question": "Does SFTY replace Travel Rule validation providers?",
   "faq_5_answer": "No. SFTY does not replace Travel Rule validation providers but acts as a compliance control layer that organizes and structures provider outputs into audit-ready workflows and cases.",
-
   "final_title": "Structure FATF Travel Rule workflows with SFTY",
   "final_description": "Review how SFTY connects Travel Rule routing, jurisdictional policies, exception cases and audit-ready evidence for VASP compliance.",
   "final_cta": "Request business demo",
-
   "footer_description": "Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.",
   "footer_column_1_title": "Platform",
   "footer_column_1_link_1_label": "Platform",

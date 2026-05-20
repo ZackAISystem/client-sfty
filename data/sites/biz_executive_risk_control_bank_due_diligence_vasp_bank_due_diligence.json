@@ -2,20 +2,17 @@
   "slug": "biz_executive_risk_control_bank_due_diligence_vasp_bank_due_diligence",
   "domain_main": "https://vaspbankduediligence.com",
   "template": "template_1",
-
   "header_menu_item_1": "Business",
   "header_menu_item_2": "Government",
   "header_menu_item_3": "Platform",
   "header_menu_item_4": "About",
   "header_menu_item_5": "Ask SFTY",
   "header_cta": "Discuss Deployment",
-
   "hero_title": "Centralize Bank Due Diligence",
   "hero_title_accent": "Executive Risk Control for VASPs",
   "hero_subtitle": "SFTY connects compliance data and regulatory rules into one audit-ready workflow to give banks clear visibility and control during VASP due diligence.",
   "hero_cta": "Review process",
   "hero_ask_cta": "Ask SFTY",
-
   "trust_title": "Digital asset compliance capabilities",
   "trust_card_1_label": "KYC",
   "trust_card_1_value": "Identity checks connected to onboarding decisions",
@@ -29,7 +26,6 @@
   "trust_card_5_value": "Regulatory changes mapped to internal rule",
   "trust_card_6_label": "Audit Trail",
   "trust_card_6_value": "Decision logs and evidence for every review",
-
   "problem_title": "Bank due diligence lacks centralized insight",
   "problem_description": "Banks face delays and increased risk when VASP compliance information remains scattered across separate systems. This fragmentation reduces operational visibility, weakens audit readiness and complicates defensible risk decisions during partner onboarding.",
   "problem_cta": "Review risk control view",
@@ -41,7 +37,6 @@
   "problem_point_3_value": "Regulatory changes are hard to map into internal workflows",
   "problem_point_4_label": "Weak audit trail",
   "problem_point_4_value": "Evidence and decision history are difficult to reconstruct later",
-
   "solution_eyebrow": "Provider orchestration",
   "solution_title": "SFTY gives banks",
   "solution_title_accent": "one compliance view",
@@ -60,7 +55,6 @@
   "solution_visual_output_2": "Decisions",
   "solution_visual_output_3": "Evidence",
   "solution_visual_output_4": "Reports",
-
   "workflow_eyebrow": "Workflow",
   "workflow_title": "From onboarding checks to bank approval",
   "workflow_description": "SFTY connects onboarding provider checks through risk review, case management, decision logging and evidence collection for clearer bank due diligence.",
@@ -80,7 +74,6 @@
   "workflow_step_5_number": "05",
   "workflow_step_5_title": "Evidence",
   "workflow_step_5_description": "Logs, decisions and reports stay ready for audit",
-
   "why_sfty_title": "Not another dashboard. One compliance view",
   "why_sfty_description": "SFTY gives executives a provider-neutral layer that connects due diligence data into audit-ready cases, decisions and evidence for clearer risk control and reporting.",
   "why_sfty_card_1_title": "Provider-neutral layer",
@@ -91,7 +84,6 @@
   "why_sfty_card_3_description": "Preserve evidence, reviewer actions and decision history",
   "why_sfty_point_4": "Enterprise visibility",
   "why_sfty_card_4_description": "Give compliance, risk and leadership one operating view",
-
   "authority_eyebrow": "Enterprise deployment",
   "authority_title": "Built for executive risk control",
   "authority_description": "SFTY equips banks and VASPs with a governed compliance layer that supports audit-ready evidence and operational clarity for bank due diligence workflows.",
@@ -104,7 +96,6 @@
   "authority_card_3_description": "Prepare clearer compliance evidence for banks, partners and external review",
   "authority_card_4_title": "Enterprise deployment",
   "authority_card_4_description": "Support private environments, permissions, integrations and internal governance",
-
   "ask_sfty_title_main": "Ask SFTY about",
   "ask_sfty_title_accent": "provider orchestration",
   "ask_sfty_placeholder": "How can SFTY support VASP bank due diligence workflows",
@@ -115,7 +106,6 @@
   "ask_sfty_chip_2_label": "Audit evidence",
   "ask_sfty_chip_3_label": "Compliance workflow",
   "ask_sfty_helper_text": "AI assistant for product, deployment and compliance questions",
-
   "faq_eyebrow": "FAQ",
   "faq_title": "Questions compliance teams",
   "faq_title_accent": "ask about SFTY",
@@ -130,11 +120,9 @@
   "faq_4_answer": "Yes. SFTY connects with existing KYC, KYB, KYT, Travel Rule and screening providers to connect outputs without disrupting current compliance ecosystems.",
   "faq_5_question": "Does SFTY replace current compliance providers?",
   "faq_5_answer": "No. SFTY complements existing providers by consolidating their outputs into operational workflows, without replacing the foundational compliance tools.",
-
   "final_title": "Prepare audit-ready evidence for VASP due diligence",
   "final_description": "Review how SFTY structures bank due diligence workflows with connected provider data, regulatory rules and compliance decisions.",
   "final_cta": "Book compliance demo",
-
   "footer_description": "Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.",
   "footer_column_1_title": "Platform",
   "footer_column_1_link_1_label": "Platform",

@@ -2,20 +2,17 @@
   "slug": "gov_travel_rule_and_transaction_monitoring_cross_border_flows",
   "domain_main": "https://crossborderflowsfty.com",
   "template": "template_12",
-
   "header_menu_item_1": "Government",
   "header_menu_item_2": "Business",
   "header_menu_item_3": "Platform",
   "header_menu_item_4": "About",
   "header_menu_item_5": "Ask SFTY",
   "header_cta": "Book Review",
-
   "hero_title": "Monitor Cross-Border Asset Flows",
   "hero_title_accent": "Supervisory Workflows for Regulators",
   "hero_subtitle": "SFTY helps public authorities link Travel Rule data with wallet transactions and KYT signals to monitor international digital asset flows and preserve evidence for case review.",
   "hero_cta": "Explore oversight",
   "hero_ask_cta": "Ask SFTY",
-
   "trust_title": "Regulatory oversight capabilities",
   "trust_card_1_label": "VASP Supervision",
   "trust_card_1_value": "Market participants, licensing data and risk profiles",
@@ -29,7 +26,6 @@
   "trust_card_5_value": "On-premise or private cloud for sensitive data",
   "trust_card_6_label": "Reporting",
   "trust_card_6_value": "Supervisory outputs, evidence and regulatory reports",
-
   "problem_title": "Supervision gaps slow cross-border flow review",
   "problem_description": "Regulators struggle to trace and assess digital asset movements when Travel Rule data and transaction monitoring remain disconnected across borders. This fragmentation delays risk detection, complicates case evidence collection and weakens supervisory responsiveness.",
   "problem_cta": "Explore supervisory workflow",
@@ -41,7 +37,6 @@
   "problem_point_3_value": "Decisions are harder to explain without connected logs and case history",
   "problem_point_4_label": "Cross-agency gaps",
   "problem_point_4_value": "Regulatory teams lack one shared operating layer for supervision",
-
   "solution_eyebrow": "Government solution",
   "solution_title": "SFTY connects cross-border",
   "solution_title_accent": "data into supervisory workflows",
@@ -60,7 +55,6 @@
   "solution_visual_output_2": "Cases",
   "solution_visual_output_3": "Actions",
   "solution_visual_output_4": "Reports",
-
   "workflow_eyebrow": "Workflow",
   "workflow_title": "From Travel Rule exceptions to supervisory action",
   "workflow_description": "SFTY connects Travel Rule message data, exception handling, wallet risk signals and KYT alerts into structured cases, evidence collection and regulatory actions.",
@@ -80,7 +74,6 @@
   "workflow_step_5_number": "05",
   "workflow_step_5_title": "Record",
   "workflow_step_5_description": "Evidence, actions and outcomes stay available for review",
-
   "why_sfty_title": "Not another analytics tool. A supervisory control plane",
   "why_sfty_description": "SFTY connects fragmented market data, Travel Rule messages, KYT signals, cases and evidence into one secure supervisory layer for structured regulatory oversight.",
   "why_sfty_card_1_title": "Market-level visibility",
@@ -91,7 +84,6 @@
   "why_sfty_card_3_description": "Move from alerts to investigations, actions and reporting",
   "why_sfty_point_4": "Supervisory posture",
   "why_sfty_card_4_description": "Understand not only single risks, but the condition of the market",
-
   "authority_eyebrow": "Sovereign deployment",
   "authority_title": "Built for sovereign supervision",
   "authority_description": "SFTY provides regulators with secure deployment, evidence-grade logging and access governance to support controlled oversight of cross-border digital asset flows and supervisory cases.",
@@ -104,7 +96,6 @@
   "authority_card_3_description": "Control who can view, review, escalate and act across teams and agencies",
   "authority_card_4_title": "Procurement-safe architecture",
   "authority_card_4_description": "Support phased implementation, documentation, integrations and governance review",
-
   "ask_sfty_title_main": "Ask SFTY about",
   "ask_sfty_title_accent": "market supervision",
   "ask_sfty_placeholder": "How can SFTY help monitor cross-border Travel Rule flows",
@@ -115,7 +106,6 @@
   "ask_sfty_chip_2_label": "Case workflows",
   "ask_sfty_chip_3_label": "Risk signals",
   "ask_sfty_helper_text": "AI assistant for supervisory, deployment and compliance questions",
-
   "faq_eyebrow": "FAQ",
   "faq_title": "Questions regulators",
   "faq_title_accent": "ask about SFTY",
@@ -130,11 +120,9 @@
   "faq_4_answer": "Yes, SFTY can integrate multiple KYT, KYC, Travel Rule and analytics providers while supporting secure deployment and role-based access within existing government infrastructures.",
   "faq_5_question": "Does SFTY replace existing analytics or compliance tools?",
   "faq_5_answer": "No. SFTY complements and connects existing analytics and compliance tools without replacing them, providing a connected, evidence-grade supervisory layer above fragmented data sources.",
-
   "final_title": "Review supervisory control of cross-border flows",
   "final_description": "Explore how SFTY connects Travel Rule, wallet activity and KYT signals into structured supervisory cases and evidence packages.",
   "final_cta": "Review supervisory architecture",
-
   "footer_description": "Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.",
   "footer_column_1_title": "Platform",
   "footer_column_1_link_1_label": "Platform",

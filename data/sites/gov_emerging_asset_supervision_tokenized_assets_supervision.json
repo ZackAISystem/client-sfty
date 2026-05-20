@@ -1,21 +1,18 @@
 {
   "slug": "gov_emerging_asset_supervision_tokenized_assets_supervision",
-  "domain_main": "https://tokenoversight.com",
+  "domain_main": "https://tokenoversightsfty.com",
   "template": "template_8",
-
   "header_menu_item_1": "Government",
   "header_menu_item_2": "Business",
   "header_menu_item_3": "Platform",
   "header_menu_item_4": "About",
   "header_menu_item_5": "Ask SFTY",
   "header_cta": "Contact SFTY",
-
   "hero_title": "Supervise Tokenized Asset Markets",
   "hero_title_accent": "Governments and Regulatory Authorities",
   "hero_subtitle": "SFTY connects participant data, transaction signals, ownership structures, and reporting workflows into one secure supervisory layer for comprehensive tokenized asset oversight.",
   "hero_cta": "Explore oversight",
   "hero_ask_cta": "Ask SFTY",
-
   "trust_title": "VASP supervision capabilities",
   "trust_card_1_label": "VASP Supervision",
   "trust_card_1_value": "Market participants, licensing data and risk profiles",
@@ -29,7 +26,6 @@
   "trust_card_5_value": "On-premise or private cloud for sensitive data",
   "trust_card_6_label": "Reporting",
   "trust_card_6_value": "Supervisory outputs, evidence and regulatory reports",
-
   "problem_title": "Supervision gaps create unclear market views",
   "problem_description": "Regulators struggle to connect tokenized asset activity with participant and ownership data across fragmented sources. This leads to delays in risk detection, incomplete evidence, and challenges in producing timely and defensible supervisory reports.",
   "problem_cta": "Explore supervisory workflow",
@@ -41,7 +37,6 @@
   "problem_point_3_value": "Decisions are harder to explain without connected logs and case history",
   "problem_point_4_label": "Cross-agency gaps",
   "problem_point_4_value": "Regulatory teams lack one shared operating layer for supervision",
-
   "solution_eyebrow": "Connected supervision",
   "solution_title": "SFTY creates one",
   "solution_title_accent": "supervisory operating layer",
@@ -60,7 +55,6 @@
   "solution_visual_output_2": "Cases",
   "solution_visual_output_3": "Actions",
   "solution_visual_output_4": "Reports",
-
   "workflow_eyebrow": "Workflow",
   "workflow_title": "From tokenized asset signals to actions",
   "workflow_description": "SFTY connects transaction signals, participant data and ownership links through case workflows to supervisory actions and evidence-based reporting for regulators.",
@@ -80,7 +74,6 @@
   "workflow_step_5_number": "05",
   "workflow_step_5_title": "Record",
   "workflow_step_5_description": "Evidence, actions and outcomes stay available for review",
-
   "why_sfty_title": "Not another analytics tool. The supervisory layer",
   "why_sfty_description": "SFTY connects fragmented tokenized asset data, market signals, ownership context and cases into one audit-ready supervisory environment for clearer regulatory oversight.",
   "why_sfty_card_1_title": "Market-level visibility",
@@ -91,7 +84,6 @@
   "why_sfty_card_3_description": "Move from alerts to investigations, actions and reporting",
   "why_sfty_point_4": "Supervisory posture",
   "why_sfty_card_4_description": "Understand not only single risks, but the condition of the market",
-
   "authority_eyebrow": "Secure supervisory infrastructure",
   "authority_title": "Built for sovereign supervision",
   "authority_description": "SFTY provides regulators with a secure, evidence-grade platform supporting controlled access, auditability and procurement-safe deployment in tokenized asset supervision environments.",
@@ -104,7 +96,6 @@
   "authority_card_3_description": "Control who can view, review, escalate and act across teams and agencies",
   "authority_card_4_title": "Procurement-safe architecture",
   "authority_card_4_description": "Support phased implementation, documentation, integrations and governance review",
-
   "ask_sfty_title_main": "Ask SFTY about",
   "ask_sfty_title_accent": "supervisory workflows",
   "ask_sfty_placeholder": "Ask SFTY how tokenized asset supervision workflows operate",
@@ -115,7 +106,6 @@
   "ask_sfty_chip_2_label": "Case workflows",
   "ask_sfty_chip_3_label": "Risk signals",
   "ask_sfty_helper_text": "AI assistant for supervisory, deployment and compliance questions",
-
   "faq_eyebrow": "FAQ",
   "faq_title": "Questions regulators",
   "faq_title_accent": "ask about SFTY",
@@ -130,11 +120,9 @@
   "faq_4_answer": "Yes. SFTY connects multiple KYT, KYC, KYB, Travel Rule and blockchain analytics providers without replacing them, normalizing their outputs into a consistent supervisory view.",
   "faq_5_question": "Does SFTY replace existing supervisory tools?",
   "faq_5_answer": "No. SFTY operates as a supervisory layer above existing tools and providers, enhancing data orchestration and workflow management without replacing core analytics or compliance systems.",
-
   "final_title": "Structure tokenized asset supervision workflows",
   "final_description": "Review how SFTY connects participant data, transaction signals, ownership, cases and reporting into one audit-ready supervisory layer.",
   "final_cta": "Plan sovereign rollout",
-
   "footer_description": "Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.",
   "footer_column_1_title": "Platform",
   "footer_column_1_link_1_label": "Platform",

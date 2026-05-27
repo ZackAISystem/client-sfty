@@ -14,34 +14,64 @@
 
       <div class="site-footer__columns">
         <div class="site-footer__column">
-          {{ with $d.footer_column_1_title }}<h3>{{ . }}</h3>{{ end }}
+          {{ with $d.footer_column_1_title }}
+            <h3>{{ . }}</h3>
+          {{ end }}
+
           {{ range $i := seq 1 5 }}
             {{ with index $d (printf "footer_column_1_link_%d_label" $i) }}
-              <a href="{{ if eq . "Platform" }}#hero{{ else if eq . "SFTY Control Layer" }}#solution{{ else if eq . "Ask SFTY" }}#ask-sfty{{ else if eq . "Workflow Automation" }}#workflow{{ else if eq . "Evidence & Reporting" }}#authority{{ else }}#hero{{ end }}">{{ . }}</a>
+              <a href="{{ if eq . "Platform" }}#hero{{ else if eq . "SFTY Control Layer" }}#solution{{ else if eq . "Ask SFTY" }}#ask-sfty{{ else if eq . "Workflow Automation" }}#workflow{{ else if eq . "Evidence & Reporting" }}#authority{{ else }}#hero{{ end }}">
+                {{ . }}
+              </a>
             {{ end }}
           {{ end }}
         </div>
 
         <div class="site-footer__column">
-          {{ with $d.footer_column_2_title }}<h3>{{ . }}</h3>{{ end }}
+          {{ with $d.footer_column_2_title }}
+            <h3>{{ . }}</h3>
+          {{ end }}
+
           {{ range $i := seq 1 5 }}
             {{ with index $d (printf "footer_column_2_link_%d_label" $i) }}
-              <a href="{{ if eq . "Solutions" }}#solution{{ else if eq . "Business" }}#why-sfty{{ else if eq . "Government" }}#authority{{ else if eq . "Travel Rule" }}#workflow{{ else if eq . "KYC / KYB / KYT" }}#problem{{ else }}#solution{{ end }}">{{ . }}</a>
+              <a href="{{ if eq . "Solutions" }}#solution{{ else if eq . "Business" }}#why-sfty{{ else if eq . "Government" }}#authority{{ else if eq . "Travel Rule" }}#workflow{{ else if eq . "KYC / KYB / KYT" }}#problem{{ else }}#solution{{ end }}">
+                {{ . }}
+              </a>
             {{ end }}
           {{ end }}
         </div>
 
         <div class="site-footer__column">
-          {{ with $d.footer_column_3_title }}<h3>{{ . }}</h3>{{ end }}
+          {{ with $d.footer_column_3_title }}
+            <h3>{{ . }}</h3>
+          {{ end }}
+
           {{ range $i := seq 1 4 }}
             {{ with index $d (printf "footer_column_3_link_%d_label" $i) }}
-              <a href="{{ if eq . "Company" }}#hero{{ else if eq . "About" }}#why-sfty{{ else if eq . "Contact" }}#final{{ else if eq . "Request Demo" }}#final{{ else }}#hero{{ end }}">{{ . }}</a>
+              {{ if eq . "Request Demo" }}
+                <a
+                  class="js-open-lead"
+                  href="#request-demo"
+                  data-lead-open
+                  data-cta-source="footer-nav-request-demo"
+                  data-cta-text="{{ . | htmlEscape }}"
+                >
+                  {{ . }}
+                </a>
+              {{ else }}
+                <a href="{{ if eq . "Company" }}#hero{{ else if eq . "About" }}#why-sfty{{ else if eq . "Contact" }}#final{{ else }}#hero{{ end }}">
+                  {{ . }}
+                </a>
+              {{ end }}
             {{ end }}
           {{ end }}
         </div>
 
         <div class="site-footer__column">
-          {{ with $d.footer_column_4_title }}<h3>{{ . }}</h3>{{ end }}
+          {{ with $d.footer_column_4_title }}
+            <h3>{{ . }}</h3>
+          {{ end }}
+
           {{ range $i := seq 1 5 }}
             {{ with index $d (printf "footer_column_4_link_%d_label" $i) }}
               <a href="#footer">{{ . }}</a>
@@ -62,7 +92,13 @@
         {{ end }}
 
         {{ with $d.footer_cta }}
-          <a class="site-footer__cta" href="#final">
+          <a
+            class="site-footer__cta js-open-lead"
+            href="#request-demo"
+            data-lead-open
+            data-cta-source="footer"
+            data-cta-text="{{ . | htmlEscape }}"
+          >
             <span>{{ . }}</span>
             <span class="site-footer__cta-arrow" aria-hidden="true"></span>
           </a>

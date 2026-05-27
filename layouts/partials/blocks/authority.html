@@ -16,7 +16,15 @@
       {{ end }}
 
       {{ with $d.authority_cta_label }}
-        <a class="authority__link" href="#final">{{ . }}</a>
+        <a
+          class="authority__link js-open-lead"
+          href="#request-demo"
+          data-lead-open
+          data-cta-source="authority"
+          data-cta-text="{{ . }}"
+        >
+          {{ . }}
+        </a>
       {{ end }}
     </div>
 

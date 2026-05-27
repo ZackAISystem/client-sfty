@@ -11,15 +11,37 @@
     </a>
 
     <nav class="site-header__nav" aria-label="Main navigation">
-      {{ with $d.header_menu_item_1 }}<a href="#">{{ . }}</a>{{ end }}
-      {{ with $d.header_menu_item_2 }}<a href="#">{{ . }}</a>{{ end }}
-      {{ with $d.header_menu_item_3 }}<a href="#">{{ . }}</a>{{ end }}
-      {{ with $d.header_menu_item_4 }}<a href="#">{{ . }}</a>{{ end }}
-      {{ with $d.header_menu_item_5 }}<a href="#ask-sfty">{{ . }}</a>{{ end }}
+      {{ with $d.header_menu_item_1 }}
+        <a href="#">{{ . }}</a>
+      {{ end }}
+
+      {{ with $d.header_menu_item_2 }}
+        <a href="#">{{ . }}</a>
+      {{ end }}
+
+      {{ with $d.header_menu_item_3 }}
+        <a href="#">{{ . }}</a>
+      {{ end }}
+
+      {{ with $d.header_menu_item_4 }}
+        <a href="#">{{ . }}</a>
+      {{ end }}
+
+      {{ with $d.header_menu_item_5 }}
+        <a href="#ask-sfty">{{ . }}</a>
+      {{ end }}
     </nav>
 
     {{ with $d.header_cta }}
-      <a class="site-header__cta" href="#final">{{ . }}</a>
+      <a
+        class="site-header__cta js-open-lead"
+        href="#request-demo"
+        data-lead-open
+        data-cta-source="header"
+        data-cta-text="{{ . }}"
+      >
+        {{ . }}
+      </a>
     {{ end }}
   </div>
 </header>

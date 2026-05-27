@@ -18,7 +18,15 @@
         {{ end }}
 
         {{ with $d.final_cta }}
-          <a class="final-cta__button" href="#">{{ . }}</a>
+          <a
+            class="final-cta__button js-open-lead"
+            href="#request-demo"
+            data-lead-open
+            data-cta-source="final"
+            data-cta-text="{{ . }}"
+          >
+            {{ . }}
+          </a>
         {{ end }}
       </div>
 

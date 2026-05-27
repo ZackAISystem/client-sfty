@@ -12,7 +12,15 @@
       {{ end }}
 
       {{ with $d.problem_cta }}
-        <a class="problem__cta" href="#solution">{{ . }}</a>
+        <a
+          class="problem__cta js-open-lead"
+          href="#request-demo"
+          data-lead-open
+          data-cta-source="problem"
+          data-cta-text="{{ . }}"
+        >
+          {{ . }}
+        </a>
       {{ end }}
     </div>
 

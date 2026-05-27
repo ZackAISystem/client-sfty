@@ -21,7 +21,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SFTY AI">
   <meta property="og:title" content="{{ if .Title }}{{ .Title }}{{ else }}SFTY AI{{ end }}">
-  <meta property="og:description" content="Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.">
+  <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.{{ end }}">
   <meta property="og:image" content="{{ "og-image.jpg" | absURL }}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -30,12 +30,14 @@
   <!-- Twitter / X preview -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ if .Title }}{{ .Title }}{{ else }}SFTY AI{{ end }}">
-  <meta name="twitter:description" content="Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.">
+  <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}Supervisory and compliance control layer for digital asset markets, businesses and regulated institutions.{{ end }}">
   <meta name="twitter:image" content="{{ "og-image.jpg" | absURL }}">
 </head>
 
 <body>
   {{ block "main" . }}{{ end }}
+
+  {{ partial "lead-modal.html" . }}
 
   <!-- Header scroll state -->
   <script>

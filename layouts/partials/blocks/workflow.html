@@ -3,7 +3,9 @@
 <section class="workflow section section--dark" id="workflow">
   <div class="container workflow__inner">
     <div class="workflow__intro">
-      {{ with $d.workflow_eyebrow }}<p class="eyebrow">{{ . }}</p>{{ end }}
+      {{ with $d.workflow_eyebrow }}
+        <p class="eyebrow">{{ . }}</p>
+      {{ end }}
 
       {{ with $d.workflow_title }}
         <h2 class="section-title">{{ . }}</h2>
@@ -14,7 +16,15 @@
       {{ end }}
 
       {{ with $d.workflow_cta_label }}
-        <a class="inline-link" href="#ask-sfty">{{ . }}</a>
+        <a
+          class="inline-link js-open-lead"
+          href="#request-demo"
+          data-lead-open
+          data-cta-source="workflow"
+          data-cta-text="{{ . }}"
+        >
+          {{ . }}
+        </a>
       {{ end }}
     </div>
 
@@ -26,9 +36,17 @@
 
         {{ if or $number $title $description }}
           <article class="workflow-card">
-            {{ with $number }}<span class="workflow-card__number">{{ . }}</span>{{ end }}
-            {{ with $title }}<h3 class="workflow-card__title">{{ . }}</h3>{{ end }}
-            {{ with $description }}<p class="workflow-card__description">{{ . }}</p>{{ end }}
+            {{ with $number }}
+              <span class="workflow-card__number">{{ . }}</span>
+            {{ end }}
+
+            {{ with $title }}
+              <h3 class="workflow-card__title">{{ . }}</h3>
+            {{ end }}
+
+            {{ with $description }}
+              <p class="workflow-card__description">{{ . }}</p>
+            {{ end }}
           </article>
         {{ end }}
       {{ end }}

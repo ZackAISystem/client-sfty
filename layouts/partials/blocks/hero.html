@@ -19,7 +19,15 @@
 
       <div class="hero__actions">
         {{ with $d.hero_cta }}
-          <a class="hero__btn hero__btn--primary" href="#workflow">{{ . }}</a>
+          <a
+            class="hero__btn hero__btn--primary js-open-lead"
+            href="#request-demo"
+            data-lead-open
+            data-cta-source="hero"
+            data-cta-text="{{ . }}"
+          >
+            {{ . }}
+          </a>
         {{ end }}
 
         <div

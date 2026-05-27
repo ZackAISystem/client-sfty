@@ -1,199 +1,1812 @@
-{{ $site := site.Data.site }}
+{{ $pageSlug := .Params.slug | default .Params.data_slug | default "" }}
+{{ $pageTemplate := .Params.template | default "" }}
+{{ $pageUrl := .Permalink }}
 
-<div class="lead-modal" id="leadModal" aria-hidden="true">
-  <div class="lead-modal__overlay" data-lead-close></div>
+<div
+  class="sfty-lead-modal"
+  id="sftyLeadModal"
+  aria-hidden="true"
+  data-page-slug="{{ $pageSlug }}"
+  data-page-template="{{ $pageTemplate }}"
+  data-page-url="{{ $pageUrl }}"
+>
+  <div class="sfty-lead-modal__overlay" data-sfty-lead-close></div>
 
-  <div class="lead-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
-    <button class="lead-modal__close" type="button" aria-label="Закрыть" data-lead-close>×</button>
+  <div class="sfty-lead-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="sftyLeadTitle">
+    <button class="sfty-lead-modal__close" type="button" aria-label="Close" data-sfty-lead-close>
+      <span></span>
+      <span></span>
+    </button>
 
-    <div class="lead-modal__inner">
+    <div class="sfty-lead-modal__shell">
+      <aside class="sfty-lead-modal__side">
+        <div class="sfty-lead-modal__logo">SFTY.AI</div>
 
-      <h3 class="lead-modal__title" id="leadModalTitle">
-        {{ with $site.contact_form_title_agent }}{{ . }}{{ else }}Оцените преимущества вашего инвестиционного бюджета{{ end }}
-      </h3>
-
-      <form class="lead-form" id="leadForm">
-
-        <div class="lead-form__grid" id="leadFields">
-
-          <label class="lead-field">
-            <input class="lead-input" name="name" type="text" placeholder="Ваше имя" autocomplete="name" required>
-          </label>
-
-          <label class="lead-field">
-            <input class="lead-input" name="phone" type="tel" placeholder="Ваш телефон" autocomplete="tel" required>
-          </label>
-
-          <label class="lead-field lead-field--full">
-            <input class="lead-input" name="message" type="text" placeholder="Ваше обращение">
-          </label>
-
+        <div class="sfty-lead-modal__side-copy">
+          <p class="sfty-lead-modal__eyebrow">SFTY request routing</p>
+          <h3>One request. Routed to the right team.</h3>
+          <p>
+            Choose your segment and we’ll tailor the next questions for business,
+            government, FIU or partner requests.
+          </p>
         </div>
 
-        <div class="lead-form__bottom">
+        <div class="sfty-lead-modal__route">
+          <div class="sfty-lead-route-card"><span></span>Business demo</div>
+          <div class="sfty-lead-route-card"><span></span>Supervisory briefing</div>
+          <div class="sfty-lead-route-card"><span></span>Partner request</div>
+        </div>
+      </aside>
 
-          <div class="lead-consents">
-            <label class="lead-check">
-              <input type="checkbox" name="privacy" required>
-              <span>
-                Я согласен с
-                <a href="/pdf/privacy-policy.pdf" target="_blank" rel="noopener noreferrer">
-                  Политикой обработки персональных данных
-                </a>
-              </span>
-            </label>
-
-            <label class="lead-check">
-              <input type="checkbox" name="consent" required>
-              <span>
-                Даю
-                <a href="/pdf/personal-data-consent.pdf" target="_blank" rel="noopener noreferrer">
-                  Согласие на обработку персональных данных
-                </a>
-              </span>
-            </label>
+      <section class="sfty-lead-modal__main">
+        <div class="sfty-lead-modal__top">
+          <div>
+            <p class="sfty-lead-step" id="sftyLeadStep">Step 1 of 4</p>
+            <h2 class="sfty-lead-modal__title" id="sftyLeadTitle">Get started with SFTY.AI</h2>
+            <p class="sfty-lead-modal__subtitle" id="sftyLeadSubtitle">
+              Tell us what you want to solve. We’ll route your request to the right team.
+            </p>
           </div>
 
-          <button class="lead-submit" type="submit" id="leadSubmit">
-            {{ with $site.contact_form_button_text_fixed }}{{ . }}{{ else }}Начать путь{{ end }}
-          </button>
-
+          <div class="sfty-lead-progress" aria-hidden="true">
+            <span class="is-active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
 
-        <input type="hidden" name="cta_source" id="leadCtaSource">
-        <input type="hidden" name="cta_text" id="leadCtaText">
-        <input type="hidden" name="page_url" id="leadPageUrl">
+        <form class="sfty-lead-form" id="sftyLeadForm" novalidate>
+          <div class="sfty-lead-content" id="sftyLeadContent"></div>
 
-      </form>
-
+          <div class="sfty-lead-bottom" id="sftyLeadBottom">
+            <button class="sfty-lead-back" id="sftyLeadBack" type="button">Back</button>
+            <button class="sfty-lead-next" id="sftyLeadNext" type="button">Continue</button>
+          </div>
+        </form>
+      </section>
     </div>
   </div>
 </div>
 
 <script>
 (function(){
-
-if (window.__LEAD_MODAL_INIT__) return;
-window.__LEAD_MODAL_INIT__ = true;
-
-const modal = document.getElementById("leadModal");
-if (!modal) return;
-
-const titleEl = modal.querySelector("#leadModalTitle");
-const submitBtn = modal.querySelector("#leadSubmit");
-
-const hiddenSource = modal.querySelector("#leadCtaSource");
-const hiddenText = modal.querySelector("#leadCtaText");
-const hiddenUrl = modal.querySelector("#leadPageUrl");
-
-function closeModal(){
-  modal.setAttribute("aria-hidden","true");
-  document.body.classList.remove("is-modal-open");
-}
-
-function openModal(btn){
-
-  const ctaText = (btn.getAttribute("data-cta-text") || btn.textContent || "").trim();
-  const ctaTitle = btn.getAttribute("data-modal-title");
-  const ctaColor = btn.getAttribute("data-cta-color");
-  const ctaSource = btn.getAttribute("data-source");
-
-  if (ctaTitle) titleEl.textContent = ctaTitle;
-  if (ctaText) submitBtn.textContent = ctaText;
-
-  if (ctaColor){
-    submitBtn.style.background = ctaColor;
-    submitBtn.style.color = "#fff";
-  } else {
-    submitBtn.style.background = "";
-    submitBtn.style.color = "";
+  if (window.__SFTY_LEAD_MODAL_ABORT__) {
+    try {
+      window.__SFTY_LEAD_MODAL_ABORT__.abort();
+    } catch(error) {}
   }
 
-  hiddenSource.value = ctaSource || "";
-  hiddenText.value = ctaText || "";
-  hiddenUrl.value = window.location.href;
+  const sftyLeadAbort = "AbortController" in window ? new AbortController() : null;
+  const sftyLeadListenOptions = sftyLeadAbort ? { signal: sftyLeadAbort.signal } : false;
 
-  modal.setAttribute("aria-hidden","false");
-  document.body.classList.add("is-modal-open");
-}
+  window.__SFTY_LEAD_MODAL_ABORT__ = sftyLeadAbort;
+  window.__SFTY_LEAD_MODAL_ACTIVE__ = true;
 
-document.addEventListener("click",(e)=>{
-  const btn = e.target.closest(".js-open-lead");
-  if (!btn) return;
+  const modal = document.getElementById("sftyLeadModal");
+  if (!modal) return;
 
-  e.preventDefault();
-  openModal(btn);
-});
+  const content = document.getElementById("sftyLeadContent");
+  const backBtn = document.getElementById("sftyLeadBack");
+  const nextBtn = document.getElementById("sftyLeadNext");
+  const titleEl = document.getElementById("sftyLeadTitle");
+  const subtitleEl = document.getElementById("sftyLeadSubtitle");
+  const stepEl = document.getElementById("sftyLeadStep");
+  const progressEls = Array.from(modal.querySelectorAll(".sfty-lead-progress span"));
 
-modal.addEventListener("click",(e)=>{
-  if (e.target.closest("[data-lead-close]")){
-    closeModal();
-  }
-});
+  let speechRecognition = null;
+  let isListening = false;
+  let speechSessionStarted = false;
 
-document.addEventListener("keydown",(e)=>{
-  if (e.key === "Escape"){
-    closeModal();
-  }
-});
+  const publicEmailDomains = [
+    "gmail.com",
+    "googlemail.com",
+    "yahoo.com",
+    "outlook.com",
+    "hotmail.com",
+    "live.com",
+    "icloud.com",
+    "me.com",
+    "proton.me",
+    "protonmail.com",
+    "aol.com",
+    "mail.com",
+    "gmx.com",
+    "yandex.ru",
+    "mail.ru"
+  ];
 
-const form = modal.querySelector("#leadForm");
+  const disposableEmailHints = [
+    "tempmail",
+    "10minutemail",
+    "guerrillamail",
+    "mailinator",
+    "trashmail",
+    "yopmail",
+    "getnada",
+    "sharklasers"
+  ];
 
-form.addEventListener("submit", async (e)=>{
-  e.preventDefault();
+  const segments = [
+    {
+      value: "business",
+      label: "Business / VASP / CASP",
+      flow: "business"
+    },
+    {
+      value: "bank",
+      label: "Bank / Financial Institution",
+      flow: "business"
+    },
+    {
+      value: "government",
+      label: "Government / Regulator",
+      flow: "government"
+    },
+    {
+      value: "fiu",
+      label: "FIU / Law Enforcement",
+      flow: "government"
+    },
+    {
+      value: "partner",
+      label: "Partner / Advisor",
+      flow: "partner"
+    }
+  ];
 
-  const submitBtn = modal.querySelector("#leadSubmit");
-  const oldText = submitBtn.textContent;
+  const businessProducts = [
+    {
+      value: "user_verification",
+      label: "User Verification"
+    },
+    {
+      value: "business_verification",
+      label: "Business Verification"
+    },
+    {
+      value: "transaction_monitoring",
+      label: "Transaction Monitoring"
+    },
+    {
+      value: "fraud_prevention",
+      label: "Fraud Prevention"
+    },
+    {
+      value: "travel_rule_hub",
+      label: "Travel Rule Hub"
+    },
+    {
+      value: "aml_case_management",
+      label: "AML Case Management"
+    },
+    {
+      value: "sar_str_reporting",
+      label: "SAR / STR Reporting"
+    },
+    {
+      value: "full_compliance_platform",
+      label: "Full Compliance Platform"
+    }
+  ];
 
-  const formData = new FormData(form);
+  const governmentUseCases = [
+    {
+      value: "virtual_asset_market_supervision",
+      label: "Virtual Asset Market Supervision"
+    },
+    {
+      value: "vasp_casp_licensing_registry",
+      label: "VASP / CASP Licensing & Registry"
+    },
+    {
+      value: "aml_cft_intelligence",
+      label: "AML/CFT Intelligence"
+    },
+    {
+      value: "travel_rule_supervision",
+      label: "Travel Rule Supervision"
+    },
+    {
+      value: "sar_str_review",
+      label: "SAR / STR Review"
+    },
+    {
+      value: "unlicensed_activity_detection",
+      label: "Unlicensed Activity Detection"
+    },
+    {
+      value: "cbdc_stablecoin_oversight",
+      label: "CBDC / Stablecoin Oversight"
+    },
+    {
+      value: "rwa_tokenized_asset_supervision",
+      label: "RWA / Tokenized Asset Supervision"
+    },
+    {
+      value: "on_premise_deployment",
+      label: "On-premise Deployment"
+    }
+  ];
 
-  const payload = {
-    name: formData.get("name") || "",
-    phone: formData.get("phone") || "",
-    message: formData.get("message") || "",
-    cta_source: hiddenSource.value || "",
-    cta_text: hiddenText.value || "",
-    page_url: window.location.href
+  const partnerOptions = [
+    {
+      value: "legal_compliance_partner",
+      label: "Legal / Compliance Partner"
+    },
+    {
+      value: "technology_partner",
+      label: "Technology Partner"
+    },
+    {
+      value: "system_integrator",
+      label: "System Integrator"
+    },
+    {
+      value: "data_kyt_provider",
+      label: "Data / KYT Provider"
+    },
+    {
+      value: "government_relations_partner",
+      label: "Government Relations Partner"
+    },
+    {
+      value: "investor_strategic_partner",
+      label: "Investor / Strategic Partner"
+    },
+    {
+      value: "other",
+      label: "Other"
+    }
+  ];
+
+  const dynamicBlocks = {
+    user_verification: {
+      field: "monthly_kyc_volume",
+      question: "What is your planned monthly user verification volume?",
+      options: ["50,000+", "20,001–50,000", "1,001–20,000", "0–1,000"]
+    },
+    business_verification: {
+      field: "monthly_kyb_volume",
+      question: "What is your planned monthly business verification volume?",
+      options: ["500+", "251–500", "101–250", "0–100"]
+    },
+    transaction_monitoring: {
+      field: "monthly_transaction_monitoring_volume",
+      question: "What is your planned monthly transaction monitoring volume?",
+      options: ["500,000+", "100,001–500,000", "10,001–100,000", "0–10,000"]
+    },
+    fraud_prevention: {
+      field: "monthly_fraud_screening_volume",
+      question: "What is your planned monthly fraud screening volume?",
+      helper: "Events may include signups, logins, transactions, withdrawals or other risk-triggering actions.",
+      options: ["50,000+", "20,001–50,000", "5,001–20,000", "0–5,000"]
+    },
+    travel_rule_hub: {
+      field: "monthly_travel_rule_transfer_volume",
+      question: "What is your planned monthly Travel Rule transfer volume?",
+      options: ["5,000+", "2,001–5,000", "501–2,000", "0–500"]
+    },
+    aml_case_management: {
+      field: "monthly_case_volume",
+      question: "What is your estimated monthly alert or case volume?",
+      options: ["1,000+", "251–1,000", "51–250", "0–50"]
+    },
+    sar_str_reporting: {
+      field: "monthly_reporting_volume",
+      question: "What is your estimated monthly reporting or case review volume?",
+      options: ["1,000+", "251–1,000", "51–250", "0–50"],
+      extraField: "reporting_channels",
+      extraQuestion: "Which reporting channels are relevant to you?",
+      extraOptions: ["goAML", "FinCEN", "UK NCA", "EU FIU", "Internal MLRO reporting", "Other"]
+    },
+    full_compliance_platform: {
+      field: "monthly_compliance_operation_volume",
+      question: "What is your approximate monthly compliance operation volume?",
+      options: ["100,000+", "10,001–100,000", "1,001–10,000", "0–1,000", "Not sure yet"]
+    },
+    virtual_asset_market_supervision: {
+      field: "supervised_entities_count",
+      question: "What is the approximate size of the supervised digital asset market?",
+      options: ["100+ entities", "31–100 entities", "1–30 entities", "Framework not yet launched"]
+    },
+    vasp_casp_licensing_registry: {
+      field: "vasp_registry_entity_count",
+      question: "How many VASP / CASP applicants or licensed entities do you expect to manage?",
+      options: ["100+ entities", "31–100", "1–30", "Not defined yet"]
+    },
+    aml_cft_intelligence: {
+      field: "aml_cft_supervisory_scope",
+      question: "What level of AML/CFT monitoring capability are you exploring?",
+      options: ["National-level intelligence platform", "Regulator / FIU internal analytics", "Pilot or sandbox", "Policy research / early exploration"]
+    },
+    travel_rule_supervision: {
+      field: "travel_rule_supervision_stage",
+      question: "What is your Travel Rule supervision stage?",
+      options: ["Already implemented", "Implementation in progress", "Framework being prepared", "Not yet defined"]
+    },
+    sar_str_review: {
+      field: "sar_str_review_scope",
+      question: "What type of reporting review capability are you exploring?",
+      options: ["National SAR/STR review layer", "FIU intelligence support", "VASP reporting quality control", "Internal supervisory analytics", "Not defined yet"]
+    },
+    unlicensed_activity_detection: {
+      field: "unlicensed_activity_detection_scope",
+      question: "What is your current priority for unlicensed activity detection?",
+      options: ["Market-wide detection", "Cross-border flow monitoring", "Known entity / wallet investigation", "Offshore VASP activity review", "Exploratory analysis"]
+    },
+    cbdc_stablecoin_oversight: {
+      field: "cbdc_stablecoin_supervision_scope",
+      question: "What type of digital asset activity do you need to supervise?",
+      options: ["CBDC", "Stablecoins", "Tokenized deposits", "Payment tokens", "Multiple asset classes", "Not defined yet"]
+    },
+    rwa_tokenized_asset_supervision: {
+      field: "rwa_supervision_scope",
+      question: "What type of tokenized asset activity are you focused on?",
+      options: ["Tokenized securities", "Tokenized funds", "Real estate tokenization", "Commodity-backed tokens", "Multiple RWA classes", "Not defined yet"]
+    },
+    on_premise_deployment: {
+      field: "deployment_preference",
+      question: "What deployment model are you considering?",
+      options: ["Government on-premise", "Sovereign cloud", "Hybrid deployment", "Not decided yet"]
+    },
+    default_partner: {
+      field: "partnership_scope",
+      question: "What best describes the partnership opportunity?",
+      options: ["Commercial cooperation", "Technology integration", "Government project support", "Strategic partnership", "Not sure yet"]
+    }
   };
 
-  submitBtn.disabled = true;
-  submitBtn.textContent = "Отправляем...";
+  const messageSuggestions = {
+    business: [
+      "We need KYT, Travel Rule and SAR/STR reporting for a licensed VASP operating in multiple markets.",
+      "We are preparing our compliance stack and want to review user verification, transaction monitoring and case workflows.",
+      "We need a practical demo focused on onboarding, risk scoring, alerts and regulatory reporting."
+    ],
+    government: [
+      "We are exploring a supervisory platform for VASP oversight, AML/CFT intelligence and unlicensed activity detection.",
+      "We need a briefing on digital asset market supervision, reporting workflows and sovereign deployment options.",
+      "We are preparing a framework for virtual asset supervision and want to understand possible system architecture."
+    ],
+    partner: [
+      "We want to discuss a technology, compliance or market partnership with SFTY.AI.",
+      "We may support government or regulated clients and want to explore cooperation with your team.",
+      "We would like to understand partnership options around data, integration or regional implementation."
+    ]
+  };
 
-  try {
-    const response = await fetch("/api/lead", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(payload)
+  const state = {
+    step: 1,
+    segment: "",
+    segmentLabel: "",
+    flow: "",
+    interest: "",
+    interestLabel: "",
+    email: "",
+    emailType: "",
+    leadConfidence: "",
+    dynamicField: "",
+    dynamicValue: "",
+    reportingChannels: [],
+    fullName: "",
+    organizationName: "",
+    jobTitle: "",
+    website: "",
+    countryCode: "+971",
+    phone: "",
+    whatsapp: false,
+    businessType: "",
+    hq: "",
+    markets: "",
+    licensedStatus: "",
+    institutionType: "",
+    jurisdiction: "",
+    projectStage: "",
+    deploymentModel: "",
+    timeline: "",
+    message: "",
+    consentData: false,
+    consentUpdates: false,
+    ctaSource: "",
+    ctaText: "",
+    pageUrl: ""
+  };
+
+  const defaultState = JSON.parse(JSON.stringify(state));
+
+  function resetLeadState(){
+    stopSpeechRecognition();
+
+    Object.keys(defaultState).forEach(function(key){
+      state[key] = Array.isArray(defaultState[key])
+        ? defaultState[key].slice()
+        : defaultState[key];
+    });
+  }
+
+  function escapeHtml(value){
+    return String(value || "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  function normalize(value){
+    return String(value || "").trim().toLowerCase();
+  }
+
+  function dedupeTranscript(text){
+    let cleaned = String(text || "")
+      .replace(/\s+/g, " ")
+      .replace(/\s+([,.!?;:])/g, "$1")
+      .trim();
+
+    if (!cleaned) return "";
+
+    let words = cleaned.split(" ");
+
+    words = words.filter(function(word, index){
+      if (index === 0) return true;
+      return word.toLowerCase() !== words[index - 1].toLowerCase();
     });
 
-    const result = await response.json();
+    let changed = true;
+    let safety = 0;
 
-    if (!response.ok || !result.ok) {
-      throw new Error(result.error || "Ошибка отправки");
+    while (changed && safety < 12){
+      changed = false;
+      safety += 1;
+
+      for (let size = Math.min(10, Math.floor(words.length / 2)); size >= 2; size -= 1){
+        for (let i = 0; i <= words.length - size * 2; i += 1){
+          const a = words.slice(i, i + size).join(" ").toLowerCase();
+          const b = words.slice(i + size, i + size * 2).join(" ").toLowerCase();
+
+          if (a === b){
+            words.splice(i + size, size);
+            changed = true;
+            break;
+          }
+        }
+
+        if (changed) break;
+      }
     }
 
-    submitBtn.textContent = "Заявка отправлена";
-    form.reset();
+    cleaned = words.join(" ").replace(/\s+/g, " ").trim();
 
-    setTimeout(() => {
-      closeModal();
-      submitBtn.disabled = false;
-      submitBtn.textContent = oldText;
-    }, 900);
+    const repeatedTailPattern = /\b(.{10,80}?)\s+\1\b/gi;
+    let previous = "";
 
-  } catch (error) {
-    console.error(error);
+    while (previous !== cleaned){
+      previous = cleaned;
+      cleaned = cleaned.replace(repeatedTailPattern, "$1").trim();
+    }
 
-    submitBtn.disabled = false;
-    submitBtn.textContent = "Ошибка. Попробуйте ещё раз";
-
-    setTimeout(() => {
-      submitBtn.textContent = oldText;
-    }, 1800);
+    return cleaned;
   }
-});
 
+  function option(label){
+    return {
+      value: label,
+      label: label
+    };
+  }
+
+  function emailInfo(email){
+    const value = normalize(email);
+    const validFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+
+    if (!validFormat){
+      return {
+        valid: false,
+        type: "",
+        confidence: "",
+        message: "Please enter a valid email address."
+      };
+    }
+
+    const domain = value.split("@")[1] || "";
+    const isPublic = publicEmailDomains.includes(domain);
+    const isDisposable = disposableEmailHints.some(function(hint){
+      return domain.includes(hint);
+    });
+
+    if (isDisposable){
+      return {
+        valid: false,
+        type: "disposable",
+        confidence: "blocked",
+        message: "Please use a business or institutional email address."
+      };
+    }
+
+    if (isPublic){
+      return {
+        valid: true,
+        type: "personal",
+        confidence: "low / needs review",
+        message: "Please use your business or institutional email address. This helps us verify your request and route it to the correct team."
+      };
+    }
+
+    return {
+      valid: true,
+      type: "corporate",
+      confidence: "normal",
+      message: "Email verified. Please complete a few details so we can personalize your request."
+    };
+  }
+
+  function setHeader(){
+    const data = {
+      1: {
+        step: "Step 1 of 4",
+        title: "Get started with SFTY.AI",
+        subtitle: "Tell us what you want to solve. We’ll route your request to the right team."
+      },
+      2: {
+        step: "Step 2 of 4",
+        title: "Tell us a bit more",
+        subtitle: state.flow === "government"
+          ? "Share your institutional details so we can prepare the right supervisory briefing."
+          : "Share your contact details so we can personalize the next step."
+      },
+      3: {
+        step: "Step 3 of 4",
+        title: state.flow === "government" ? "Personalize your supervisory briefing" : "Personalize your demo experience",
+        subtitle: "A few quick details help us route your request correctly."
+      },
+      4: {
+        step: "Step 4 of 4",
+        title: "Confirm your request",
+        subtitle: "Review your request and confirm how SFTY.AI may contact you."
+      },
+      5: {
+        step: "Request received",
+        title: thankYouTitle(),
+        subtitle: thankYouSubtitle()
+      }
+    };
+
+    const current = data[state.step] || data[1];
+
+    stepEl.textContent = current.step;
+    titleEl.textContent = current.title;
+    subtitleEl.textContent = current.subtitle;
+
+    progressEls.forEach(function(el, index){
+      el.classList.toggle("is-active", index < Math.min(state.step, 4));
+    });
+  }
+
+  function selectedClass(value, selected){
+    return value === selected ? " is-selected" : "";
+  }
+
+  function chips(items, group, selected){
+    return `
+      <div class="sfty-lead-chips">
+        ${items.map(function(item){
+          return `
+            <button
+              class="sfty-lead-chip${selectedClass(item.value, selected)}"
+              type="button"
+              data-chip-group="${escapeHtml(group)}"
+              data-chip-value="${escapeHtml(item.value)}"
+              data-chip-label="${escapeHtml(item.label)}"
+            >
+              ${escapeHtml(item.label)}
+            </button>
+          `;
+        }).join("")}
+      </div>
+    `;
+  }
+
+  function interestList(){
+    if (state.flow === "business") return businessProducts;
+    if (state.flow === "government") return governmentUseCases;
+    return partnerOptions;
+  }
+
+  function interestQuestion(){
+    if (state.flow === "business") return "What product are you interested in?";
+    if (state.flow === "government") return "What supervisory capability are you interested in?";
+    return "What type of partnership are you interested in?";
+  }
+
+  function emailQuestion(){
+    if (state.flow === "government") return "Institutional email address";
+    return "Business email address";
+  }
+
+  function currentDynamicBlock(){
+    return dynamicBlocks[state.interest] || dynamicBlocks.default_partner;
+  }
+
+  function canContinueStep1(){
+    return Boolean(
+      state.segment &&
+      state.interest &&
+      state.email &&
+      state.emailType &&
+      state.dynamicValue
+    );
+  }
+
+  function scrollToLatestReveal(){
+    requestAnimationFrame(function(){
+      const visibleBlocks = Array.from(content.querySelectorAll(
+        ".sfty-lead-section.is-visible, .sfty-lead-grid, .sfty-lead-field, .sfty-lead-summary, .sfty-lead-message-block"
+      ));
+
+      const target = visibleBlocks[visibleBlocks.length - 1];
+      if (!target) return;
+
+      const contentRect = content.getBoundingClientRect();
+      const targetRect = target.getBoundingClientRect();
+      const overflowBottom = targetRect.bottom - contentRect.bottom;
+
+      if (overflowBottom > -42){
+        content.scrollTo({
+          top: content.scrollTop + overflowBottom + 58,
+          behavior: "smooth"
+        });
+      }
+    });
+  }
+
+  function scrollContentTop(){
+    requestAnimationFrame(function(){
+      content.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  }
+
+  function messageComposer(placeholder, suggestions){
+    const items = suggestions || messageSuggestions.business;
+
+    return `
+      <div class="sfty-lead-message-block">
+        <div class="sfty-lead-message-head">
+          <div>
+            <span class="sfty-lead-ai-pill">SFTY AI</span>
+            <p class="sfty-lead-question">Want to share more?</p>
+          </div>
+          <p class="sfty-lead-message-microcopy">Type or dictate a short context note.</p>
+        </div>
+
+        <div class="sfty-lead-message-box">
+          <textarea
+            class="sfty-lead-textarea sfty-lead-textarea--ai"
+            name="message"
+            data-lead-message
+            placeholder="${escapeHtml(placeholder)}"
+          >${escapeHtml(state.message)}</textarea>
+
+          <button
+            class="sfty-lead-mic"
+            type="button"
+            aria-label="Dictate message"
+            title="Dictate message"
+            data-lead-mic
+          >
+            <span class="sfty-lead-mic__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M12 14.2c1.85 0 3.35-1.5 3.35-3.35V6.2c0-1.85-1.5-3.35-3.35-3.35S8.65 4.35 8.65 6.2v4.65c0 1.85 1.5 3.35 3.35 3.35Z"></path>
+                <path d="M5.85 10.35c0 3.4 2.75 6.15 6.15 6.15s6.15-2.75 6.15-6.15"></path>
+                <path d="M12 16.5v4.05"></path>
+                <path d="M8.75 20.55h6.5"></path>
+              </svg>
+            </span>
+            <span class="sfty-lead-mic__pulse"></span>
+          </button>
+
+          <div class="sfty-lead-typing-hint" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div class="sfty-lead-suggestions" aria-label="Message examples">
+          ${items.map(function(item, index){
+            return `
+              <button
+                class="sfty-lead-suggestion"
+                type="button"
+                data-message-suggestion="${escapeHtml(item)}"
+              >
+                <span>Example ${index + 1}</span>
+                <strong>${escapeHtml(item)}</strong>
+              </button>
+            `;
+          }).join("")}
+        </div>
+
+        <p class="sfty-lead-voice-note" data-voice-note>
+          Press the microphone to dictate. Voice input replaces the current message, so examples do not mix with your text.
+        </p>
+      </div>
+    `;
+  }
+
+  function renderStep1(){
+    let html = `
+      <div class="sfty-lead-section is-visible">
+        <p class="sfty-lead-question">Who are you representing? <span>*</span></p>
+        ${chips(segments, "segment", state.segment)}
+      </div>
+    `;
+
+    if (state.segment){
+      html += `
+        <div class="sfty-lead-section is-visible">
+          <p class="sfty-lead-question">${interestQuestion()} <span>*</span></p>
+          ${chips(interestList(), "interest", state.interest)}
+        </div>
+      `;
+    }
+
+    if (state.interest){
+      html += `
+        <div class="sfty-lead-section is-visible">
+          <div class="sfty-lead-field-head">
+            <p class="sfty-lead-question">${emailQuestion()} <span>*</span></p>
+            <span class="sfty-lead-tooltip" title="Please use your business or institutional email so we can verify and route your request correctly.">?</span>
+          </div>
+
+          <label class="sfty-lead-input-wrap" data-email-wrap>
+            <input
+              class="sfty-lead-input"
+              type="email"
+              name="email"
+              value="${escapeHtml(state.email)}"
+              placeholder="name@company.com"
+              autocomplete="email"
+              data-lead-email
+            >
+            <span class="sfty-lead-input-status" data-email-status></span>
+          </label>
+
+          <div class="sfty-lead-note" data-email-note></div>
+        </div>
+      `;
+    }
+
+    if (state.emailType){
+      const block = currentDynamicBlock();
+
+      html += `
+        <div class="sfty-lead-section is-visible">
+          <p class="sfty-lead-question">${escapeHtml(block.question)} <span>*</span></p>
+          ${block.helper ? `<p class="sfty-lead-helper">${escapeHtml(block.helper)}</p>` : ""}
+          ${chips(block.options.map(option), "dynamic", state.dynamicValue)}
+        </div>
+      `;
+
+      if (block.extraField && state.dynamicValue){
+        html += `
+          <div class="sfty-lead-section is-visible">
+            <p class="sfty-lead-question">${escapeHtml(block.extraQuestion)}</p>
+            <div class="sfty-lead-chips">
+              ${block.extraOptions.map(function(item){
+                return `
+                  <button
+                    class="sfty-lead-chip${state.reportingChannels.includes(item) ? " is-selected" : ""}"
+                    type="button"
+                    data-chip-group="reporting_channels"
+                    data-chip-value="${escapeHtml(item)}"
+                    data-chip-label="${escapeHtml(item)}"
+                  >
+                    ${escapeHtml(item)}
+                  </button>
+                `;
+              }).join("")}
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    content.innerHTML = html;
+    updateEmailState();
+    updateBottom();
+  }
+
+  function renderStep2(){
+    const organizationLabel = state.flow === "government"
+      ? "Institution name"
+      : state.flow === "partner"
+        ? "Organization name"
+        : "Company name";
+
+    const titleLabel = state.flow === "government"
+      ? "Job title / department"
+      : state.flow === "partner"
+        ? "Role"
+        : "Job title";
+
+    const websiteLabel = state.flow === "government"
+      ? "Official website"
+      : "Company website";
+
+    content.innerHTML = `
+      <div class="sfty-lead-grid">
+        <label class="sfty-lead-field">
+          <span>Full name *</span>
+          <input class="sfty-lead-input" name="fullName" type="text" value="${escapeHtml(state.fullName)}" placeholder="Your full name" autocomplete="name">
+        </label>
+
+        <label class="sfty-lead-field">
+          <span>${organizationLabel} *</span>
+          <input class="sfty-lead-input" name="organizationName" type="text" value="${escapeHtml(state.organizationName)}" placeholder="${organizationLabel}" autocomplete="organization">
+        </label>
+
+        <label class="sfty-lead-field">
+          <span>${titleLabel} *</span>
+          <input class="sfty-lead-input" name="jobTitle" type="text" value="${escapeHtml(state.jobTitle)}" placeholder="${titleLabel}">
+        </label>
+
+        <label class="sfty-lead-field">
+          <span>${websiteLabel}</span>
+          <input class="sfty-lead-input" name="website" type="url" value="${escapeHtml(state.website)}" placeholder="https://company.com">
+        </label>
+
+        <label class="sfty-lead-field sfty-lead-field--phone">
+          <span>Phone number *</span>
+          <div class="sfty-lead-phone">
+            <select class="sfty-lead-select" name="countryCode">
+              ${["+971", "+44", "+1", "+65", "+41", "+49", "+33", "+966", "+974", "+973"].map(function(code){
+                return `<option value="${code}" ${state.countryCode === code ? "selected" : ""}>${code}</option>`;
+              }).join("")}
+            </select>
+            <input class="sfty-lead-input" name="phone" type="tel" value="${escapeHtml(state.phone)}" placeholder="Phone number" autocomplete="tel">
+          </div>
+          <em class="sfty-lead-error" data-phone-error>Please enter a valid phone number for the selected country.</em>
+        </label>
+
+        <label class="sfty-lead-check sfty-lead-check--soft">
+          <input type="checkbox" name="whatsapp" ${state.whatsapp ? "checked" : ""}>
+          <span>WhatsApp available</span>
+        </label>
+      </div>
+    `;
+
+    updateBottom();
+  }
+
+  function renderStep3(){
+    if (state.flow === "government"){
+      content.innerHTML = `
+        <div class="sfty-lead-section is-visible">
+          <p class="sfty-lead-question">What type of institution do you represent? <span>*</span></p>
+          ${chips([
+            "Central Bank",
+            "Virtual Asset Regulator",
+            "Financial Market Regulator",
+            "FIU",
+            "Ministry of Finance",
+            "Tax Authority",
+            "Law Enforcement",
+            "Other Competent Authority"
+          ].map(option), "institutionType", state.institutionType)}
+        </div>
+
+        <div class="sfty-lead-grid sfty-lead-grid--single">
+          <label class="sfty-lead-field">
+            <span>Country / jurisdiction *</span>
+            <input class="sfty-lead-input" name="jurisdiction" type="text" value="${escapeHtml(state.jurisdiction)}" placeholder="United Arab Emirates">
+          </label>
+        </div>
+
+        <div class="sfty-lead-section is-visible">
+          <p class="sfty-lead-question">What stage are you at? <span>*</span></p>
+          ${chips([
+            "Exploring market solutions",
+            "Preparing regulatory framework",
+            "Preparing RFI / RFP / tender",
+            "Looking for pilot / sandbox",
+            "Planning national-level deployment",
+            "Other"
+          ].map(option), "projectStage", state.projectStage)}
+        </div>
+
+        <div class="sfty-lead-section is-visible">
+          <p class="sfty-lead-question">Preferred deployment model</p>
+          ${chips(["On-premise", "Sovereign cloud", "Hybrid", "Not decided yet"].map(option), "deploymentModel", state.deploymentModel)}
+        </div>
+
+        <div class="sfty-lead-section is-visible">
+          <p class="sfty-lead-question">Expected timeline</p>
+          ${chips(["Immediately", "1–3 months", "3–6 months", "6–12 months", "Exploratory"].map(option), "timeline", state.timeline)}
+        </div>
+
+        ${messageComposer(
+          "Example: We are exploring a supervisory platform for VASP oversight, AML/CFT intelligence and unlicensed activity detection.",
+          messageSuggestions.government
+        )}
+      `;
+    } else if (state.flow === "partner"){
+      content.innerHTML = `
+        <div class="sfty-lead-section is-visible">
+          <p class="sfty-lead-question">What is the most relevant next step? <span>*</span></p>
+          ${chips([
+            "Commercial partnership",
+            "Technology integration",
+            "Government project support",
+            "Data / KYT cooperation",
+            "Strategic discussion"
+          ].map(option), "businessType", state.businessType)}
+        </div>
+
+        <div class="sfty-lead-section is-visible">
+          <p class="sfty-lead-question">Expected timeline</p>
+          ${chips(["Immediately", "1–3 months", "3–6 months", "Exploratory"].map(option), "timeline", state.timeline)}
+        </div>
+
+        ${messageComposer(
+          "Example: We want to discuss a technology or market partnership with SFTY.AI.",
+          messageSuggestions.partner
+        )}
+      `;
+    } else {
+      content.innerHTML = `
+        <div class="sfty-lead-section is-visible">
+          <p class="sfty-lead-question">What type of business are you? <span>*</span></p>
+          ${chips([
+            "VASP / Crypto Exchange",
+            "OTC / Broker",
+            "Wallet / Custody",
+            "Fintech / Payments",
+            "Bank / EMI",
+            "RWA / Tokenization Platform",
+            "Other"
+          ].map(option), "businessType", state.businessType)}
+        </div>
+
+        <div class="sfty-lead-section is-visible">
+          <p class="sfty-lead-question">Where is your company headquartered? <span>*</span></p>
+          ${chips(["United Arab Emirates", "United Kingdom", "European Union", "Singapore", "United States", "Switzerland", "Other"].map(option), "hq", state.hq)}
+        </div>
+
+        <div class="sfty-lead-section is-visible">
+          <p class="sfty-lead-question">How many markets do you operate in? <span>*</span></p>
+          ${chips(["Not yet operating", "1 market", "2–3 markets", "4–10 markets", "10+ markets"].map(option), "markets", state.markets)}
+        </div>
+
+        <div class="sfty-lead-section is-visible">
+          <p class="sfty-lead-question">Are you currently licensed or regulated?</p>
+          ${chips(["Licensed", "Applying for license", "Operating under exemption", "Not yet licensed", "Not sure"].map(option), "licensedStatus", state.licensedStatus)}
+        </div>
+
+        ${messageComposer(
+          "Example: We need KYT, Travel Rule and SAR/STR reporting for a licensed VASP operating in the UAE and EU.",
+          messageSuggestions.business
+        )}
+      `;
+    }
+
+    updateBottom();
+  }
+
+  function renderStep4(){
+    content.innerHTML = `
+      <div class="sfty-lead-summary">
+        <p class="sfty-lead-summary__label">You are requesting:</p>
+        <h3>${escapeHtml(summaryTitle())}</h3>
+
+        <dl>
+          <div>
+            <dt>Segment</dt>
+            <dd>${escapeHtml(state.segmentLabel || "—")}</dd>
+          </div>
+          <div>
+            <dt>Product / use case</dt>
+            <dd>${escapeHtml(state.interestLabel || "—")}</dd>
+          </div>
+          <div>
+            <dt>Company / institution</dt>
+            <dd>${escapeHtml(state.organizationName || "—")}</dd>
+          </div>
+          <div>
+            <dt>Country / jurisdiction</dt>
+            <dd>${escapeHtml(state.jurisdiction || state.hq || "—")}</dd>
+          </div>
+          <div>
+            <dt>Selected volume / scope</dt>
+            <dd>${escapeHtml(state.dynamicValue || "—")}</dd>
+          </div>
+          <div>
+            <dt>Timeline</dt>
+            <dd>${escapeHtml(state.timeline || "—")}</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="sfty-lead-consents">
+        <label class="sfty-lead-check">
+          <input type="checkbox" name="consentData" ${state.consentData ? "checked" : ""}>
+          <span>I agree that SFTY.AI may process my data to respond to this request and provide a tailored product demo or supervisory briefing. *</span>
+        </label>
+
+        <label class="sfty-lead-check">
+          <input type="checkbox" name="consentUpdates" ${state.consentUpdates ? "checked" : ""}>
+          <span>I agree to receive relevant product and regulatory updates from SFTY.AI.</span>
+        </label>
+      </div>
+
+      <p class="sfty-lead-submit-note" data-submit-note></p>
+    `;
+
+    updateBottom();
+  }
+
+  function renderThankYou(){
+    const cards = thankYouCards();
+
+    content.innerHTML = `
+      <div class="sfty-lead-thanks">
+        <div class="sfty-lead-thanks__mark">✓</div>
+        <h3>${escapeHtml(thankYouTitle())}</h3>
+        <p>${escapeHtml(thankYouSubtitle())}</p>
+
+        <div class="sfty-lead-resource-grid">
+          ${cards.map(function(card){
+            return `
+              <article class="sfty-lead-resource">
+                <span></span>
+                <h4>${escapeHtml(card)}</h4>
+              </article>
+            `;
+          }).join("")}
+        </div>
+
+        <div class="sfty-lead-thanks__actions">
+          <button class="sfty-lead-thanks__button" type="button" data-sfty-lead-close>Close</button>
+        </div>
+      </div>
+    `;
+
+    backBtn.hidden = true;
+    nextBtn.hidden = true;
+  }
+
+  function summaryTitle(){
+    if (state.flow === "government"){
+      return "Government supervisory briefing for " + (state.interestLabel || "SFTY.AI");
+    }
+
+    if (state.flow === "partner"){
+      return "Partnership discussion for " + (state.interestLabel || "SFTY.AI");
+    }
+
+    return "Business demo for " + (state.interestLabel || "SFTY.AI");
+  }
+
+  function thankYouTitle(){
+    if (state.flow === "government"){
+      return "Thank you. Your supervisory briefing request has been received.";
+    }
+
+    if (state.flow === "partner"){
+      return "Thank you. Your partnership request has been received.";
+    }
+
+    return "Thank you. Your SFTY.AI demo request has been received.";
+  }
+
+  function thankYouSubtitle(){
+    if (state.flow === "government"){
+      return "Our team will contact you to discuss how SFTY.AI can support digital asset supervision, AML/CFT intelligence, reporting and sovereign deployment.";
+    }
+
+    if (state.flow === "partner"){
+      return "Our team will review your request and contact you to discuss potential cooperation.";
+    }
+
+    return "Our team will review your compliance needs and contact you to arrange a tailored product walkthrough.";
+  }
+
+  function thankYouCards(){
+    if (state.flow === "government"){
+      return [
+        "SFTY for Government Overview",
+        "Virtual Asset Surveillance System",
+        "Unlicensed Activity Detection",
+        "CBDC, Stablecoin & RWA Oversight",
+        "On-premise Deployment & Data Sovereignty"
+      ];
+    }
+
+    if (state.flow === "partner"){
+      return [
+        "SFTY.AI Partner Overview",
+        "SFTY for Government",
+        "SFTY for Business",
+        "Integration & Data Provider Model"
+      ];
+    }
+
+    return [
+      "SFTY for Business Overview",
+      "KYT & Transaction Monitoring",
+      "Travel Rule Hub",
+      "AML Case Management",
+      "SAR / STR Reporting"
+    ];
+  }
+
+  function submitButtonText(){
+    if (state.segment === "government") return "Request supervisory briefing";
+    if (state.segment === "fiu") return "Request intelligence briefing";
+    if (state.flow === "partner") return "Discuss partnership";
+    if (state.flow === "business") return "Book a tailored demo";
+    return "Submit request";
+  }
+
+  function saveInputs(){
+    Array.from(content.querySelectorAll("input, textarea, select")).forEach(function(input){
+      if (!input.name) return;
+
+      if (input.type === "checkbox"){
+        state[input.name] = input.checked;
+      } else {
+        state[input.name] = input.value.trim();
+      }
+    });
+  }
+
+  function validateStep2(showError){
+    const phoneDigits = state.phone.replace(/[^\d]/g, "");
+    const phoneOk = phoneDigits.length >= 7;
+    const ok = Boolean(state.fullName && state.organizationName && state.jobTitle && phoneOk);
+
+    const phoneError = content.querySelector("[data-phone-error]");
+    if (phoneError){
+      phoneError.classList.toggle("is-visible", showError && !phoneOk);
+    }
+
+    return ok;
+  }
+
+  function validateStep3(){
+    if (state.flow === "government"){
+      return Boolean(state.institutionType && state.jurisdiction && state.projectStage);
+    }
+
+    if (state.flow === "partner"){
+      return Boolean(state.businessType);
+    }
+
+    return Boolean(state.businessType && state.hq && state.markets);
+  }
+
+  function updateBottom(){
+    backBtn.hidden = state.step <= 1 || state.step >= 5;
+    nextBtn.hidden = state.step >= 5;
+
+    if (state.step === 1){
+      nextBtn.textContent = "Continue";
+      nextBtn.disabled = !canContinueStep1();
+    }
+
+    if (state.step === 2){
+      nextBtn.textContent = "Continue";
+      nextBtn.disabled = !validateStep2(false);
+    }
+
+    if (state.step === 3){
+      nextBtn.textContent = "Continue";
+      nextBtn.disabled = !validateStep3();
+    }
+
+    if (state.step === 4){
+      nextBtn.textContent = submitButtonText();
+      nextBtn.disabled = !state.consentData;
+    }
+  }
+
+  function updateEmailState(){
+    const input = content.querySelector("[data-lead-email]");
+    const note = content.querySelector("[data-email-note]");
+    const status = content.querySelector("[data-email-status]");
+    const wrap = content.querySelector("[data-email-wrap]");
+
+    if (!input || !note || !status || !wrap) return;
+
+    wrap.classList.remove("is-valid", "is-warning", "is-invalid");
+    note.classList.remove("is-valid", "is-warning", "is-error");
+    note.innerHTML = "";
+    status.textContent = "";
+
+    if (!input.value.trim()){
+      state.emailType = "";
+      state.leadConfidence = "";
+      state.dynamicValue = "";
+      updateBottom();
+      return;
+    }
+
+    const info = emailInfo(input.value);
+
+    if (!info.valid){
+      wrap.classList.add("is-invalid");
+      note.classList.add("is-error");
+      status.textContent = "!";
+      note.innerHTML = escapeHtml(info.message);
+      state.emailType = "";
+      state.leadConfidence = "";
+      state.dynamicValue = "";
+      updateBottom();
+      return;
+    }
+
+    if (info.type === "personal"){
+      wrap.classList.add("is-warning");
+      note.classList.add("is-warning");
+      status.textContent = "!";
+      note.innerHTML = `
+        ${escapeHtml(info.message)}
+        <div class="sfty-lead-email-actions">
+          <button type="button" data-email-change>Change email</button>
+          <button type="button" data-email-continue>Continue with this email</button>
+        </div>
+      `;
+
+      state.emailType = "";
+      state.leadConfidence = "";
+      state.dynamicValue = "";
+      updateBottom();
+      return;
+    }
+
+    wrap.classList.add("is-valid");
+    note.classList.add("is-valid");
+    status.textContent = "✓";
+    note.innerHTML = escapeHtml(info.message);
+
+    state.emailType = "corporate";
+    state.leadConfidence = "normal";
+    state.dynamicField = currentDynamicBlock().field;
+
+    updateBottom();
+  }
+
+  function updateVoiceNote(message, type){
+    const note = content.querySelector("[data-voice-note]");
+    if (!note) return;
+
+    note.textContent = message;
+    note.classList.remove("is-active", "is-error");
+
+    if (type){
+      note.classList.add(type);
+    }
+  }
+
+  function stopSpeechRecognition(){
+    if (speechRecognition && isListening){
+      try {
+        speechRecognition.stop();
+      } catch(error){}
+    }
+
+    isListening = false;
+    speechSessionStarted = false;
+
+    const mic = content.querySelector("[data-lead-mic]");
+    if (mic){
+      mic.classList.remove("is-listening");
+    }
+  }
+
+  function toggleSpeechRecognition(){
+    const textarea = content.querySelector("[data-lead-message]");
+    const mic = content.querySelector("[data-lead-mic]");
+    const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (!textarea || !mic) return;
+
+    if (!Recognition){
+      updateVoiceNote("Voice dictation is available in Chrome or Edge. You can still type your message manually.", "is-error");
+      return;
+    }
+
+    if (isListening){
+      stopSpeechRecognition();
+      updateVoiceNote("Dictation stopped. You can edit the text manually.", "");
+      return;
+    }
+
+    try {
+      speechRecognition = new Recognition();
+    } catch(error) {
+      updateVoiceNote("Voice dictation could not start in this browser. Please type your message manually.", "is-error");
+      return;
+    }
+
+    speechRecognition.lang = "en-US";
+    speechRecognition.interimResults = true;
+    speechRecognition.continuous = false;
+    speechRecognition.maxAlternatives = 1;
+
+    speechRecognition.onstart = function(){
+      isListening = true;
+      speechSessionStarted = true;
+      mic.classList.add("is-listening");
+
+      textarea.value = "";
+      state.message = "";
+
+      updateVoiceNote("Listening… speak naturally. Voice input will replace the current text.", "is-active");
+      updateBottom();
+    };
+
+    speechRecognition.onresult = function(event){
+      if (!speechSessionStarted) return;
+
+      const finalParts = [];
+      const interimParts = [];
+
+      for (let i = 0; i < event.results.length; i += 1){
+        const result = event.results[i];
+
+        if (!result || !result[0]) continue;
+
+        const transcript = String(result[0].transcript || "").trim();
+
+        if (!transcript) continue;
+
+        if (result.isFinal){
+          finalParts.push(transcript);
+        } else {
+          interimParts.push(transcript);
+        }
+      }
+
+      const combined = finalParts.concat(interimParts.slice(-1)).join(" ");
+      const cleaned = dedupeTranscript(combined);
+
+      textarea.value = cleaned;
+      state.message = cleaned;
+
+      updateBottom();
+    };
+
+    speechRecognition.onerror = function(event){
+      const error = event && event.error ? event.error : "";
+
+      if (error === "not-allowed" || error === "service-not-allowed"){
+        updateVoiceNote("Microphone permission is blocked. Allow microphone access in Chrome, then try again.", "is-error");
+      } else if (error === "no-speech"){
+        updateVoiceNote("No speech detected. Press the microphone and try again.", "is-error");
+      } else if (error === "network"){
+        updateVoiceNote("Voice service is temporarily unavailable. Please try again or type manually.", "is-error");
+      } else {
+        updateVoiceNote("Could not capture voice input. Please try again or type your message manually.", "is-error");
+      }
+
+      stopSpeechRecognition();
+    };
+
+    speechRecognition.onend = function(){
+      isListening = false;
+      speechSessionStarted = false;
+      mic.classList.remove("is-listening");
+
+      state.message = dedupeTranscript(textarea.value);
+      textarea.value = state.message;
+
+      if (state.message){
+        updateVoiceNote("Voice note added. You can edit it before continuing.", "");
+      } else {
+        updateVoiceNote("No voice text captured. You can try again or type manually.", "");
+      }
+
+      updateBottom();
+    };
+
+    try {
+      speechRecognition.start();
+    } catch(error){
+      updateVoiceNote("Voice dictation could not start. Please refresh the page and try again.", "is-error");
+      stopSpeechRecognition();
+    }
+  }
+
+  function render(){
+    stopSpeechRecognition();
+    modal.classList.toggle("is-complete", state.step === 5);
+    setHeader();
+
+    backBtn.hidden = false;
+    nextBtn.hidden = false;
+
+    if (state.step === 1) renderStep1();
+    if (state.step === 2) renderStep2();
+    if (state.step === 3) renderStep3();
+    if (state.step === 4) renderStep4();
+    if (state.step === 5) renderThankYou();
+  }
+
+  function openModal(trigger){
+    resetLeadState();
+
+    state.step = 1;
+    state.ctaText = (trigger && (trigger.getAttribute("data-cta-text") || trigger.textContent) || "").trim();
+    state.ctaSource = trigger && (trigger.getAttribute("data-source") || trigger.getAttribute("data-cta-source") || "") || "";
+    state.pageUrl = window.location.href;
+
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("is-sfty-lead-open");
+
+    render();
+    scrollContentTop();
+  }
+
+  function closeModal(){
+    stopSpeechRecognition();
+    modal.setAttribute("aria-hidden", "true");
+    modal.classList.remove("is-complete");
+    document.body.classList.remove("is-sfty-lead-open");
+  }
+
+  async function submitLead(){
+    saveInputs();
+
+    if (!state.consentData){
+      updateBottom();
+      return;
+    }
+
+    nextBtn.disabled = true;
+    nextBtn.textContent = "Submitting...";
+
+    const payload = {
+      segment: state.segment,
+      segment_label: state.segmentLabel,
+      flow: state.flow,
+      product_or_use_case: state.interest,
+      product_or_use_case_label: state.interestLabel,
+      email: state.email,
+      email_type: state.emailType,
+      lead_confidence: state.leadConfidence,
+      dynamic_field: state.dynamicField,
+      dynamic_value: state.dynamicValue,
+      reporting_channels: state.reportingChannels,
+      full_name: state.fullName,
+      organization_name: state.organizationName,
+      job_title: state.jobTitle,
+      website: state.website,
+      country_code: state.countryCode,
+      phone: state.phone,
+      whatsapp_available: state.whatsapp,
+      business_type: state.businessType,
+      hq: state.hq,
+      markets: state.markets,
+      licensed_status: state.licensedStatus,
+      institution_type: state.institutionType,
+      jurisdiction: state.jurisdiction,
+      project_stage: state.projectStage,
+      deployment_model: state.deploymentModel,
+      timeline: state.timeline,
+      message: state.message,
+      consent_data: state.consentData,
+      consent_updates: state.consentUpdates,
+      cta_source: state.ctaSource,
+      cta_text: state.ctaText,
+      page_url: state.pageUrl || window.location.href,
+      page_slug: modal.dataset.pageSlug || document.querySelector("main[data-slug]")?.dataset.slug || "",
+      page_template: modal.dataset.pageTemplate || document.querySelector("main[data-template]")?.dataset.template || "",
+      submitted_at: new Date().toISOString()
+    };
+
+    try {
+      const isLocal = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+      if (isLocal){
+        console.log("SFTY lead payload:", payload);
+      } else {
+        const response = await fetch("/api/lead", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        let result = {};
+        try {
+          result = await response.json();
+        } catch(error){}
+
+        if (!response.ok || result.ok === false){
+          throw new Error(result.error || "Lead submit failed");
+        }
+      }
+
+      state.step = 5;
+      render();
+      scrollContentTop();
+    } catch(error){
+      console.error(error);
+      nextBtn.disabled = false;
+      nextBtn.textContent = submitButtonText();
+
+      const note = content.querySelector("[data-submit-note]");
+      if (note){
+        note.textContent = "Something went wrong. Please try again or contact us directly.";
+      }
+    }
+  }
+
+  function handleDocumentClick(event){
+    const opener = event.target.closest(".js-open-lead, [data-lead-open], a[href='#lead'], a[href='#request-demo']");
+
+    if (opener){
+      event.preventDefault();
+      openModal(opener);
+      return;
+    }
+
+    const possibleCta = event.target.closest("a, button");
+    if (!possibleCta || modal.contains(possibleCta)) return;
+
+    const text = normalize(possibleCta.textContent);
+    const href = possibleCta.getAttribute("href") || "";
+
+    const looksLikeLeadCta =
+      text.includes("request demo") ||
+      text.includes("request briefing") ||
+      text.includes("book a demo") ||
+      text.includes("contact sfty") ||
+      text.includes("discuss partnership") ||
+      text.includes("review framework") ||
+      text.includes("review supervisory") ||
+      text.includes("plan sovereign") ||
+      text.includes("request regulator");
+
+    if (looksLikeLeadCta && (!href || href === "#" || href.startsWith("#"))){
+      event.preventDefault();
+      openModal(possibleCta);
+    }
+  }
+
+  function handleModalClick(event){
+    const micButton = event.target.closest("[data-lead-mic]");
+
+    if (micButton){
+      event.preventDefault();
+      event.stopPropagation();
+      toggleSpeechRecognition();
+      return;
+    }
+
+    if (event.target.closest("[data-sfty-lead-close]")){
+      closeModal();
+      return;
+    }
+
+    const emailChange = event.target.closest("[data-email-change]");
+    if (emailChange){
+      event.preventDefault();
+
+      state.email = "";
+      state.emailType = "";
+      state.leadConfidence = "";
+      state.dynamicValue = "";
+
+      render();
+      return;
+    }
+
+    const emailContinue = event.target.closest("[data-email-continue]");
+    if (emailContinue){
+      event.preventDefault();
+
+      const info = emailInfo(state.email);
+
+      state.emailType = info.type || "personal";
+      state.leadConfidence = info.confidence || "low / needs review";
+      state.dynamicField = currentDynamicBlock().field;
+
+      render();
+      scrollToLatestReveal();
+      return;
+    }
+
+    const suggestion = event.target.closest("[data-message-suggestion]");
+    if (suggestion){
+      event.preventDefault();
+
+      const value = suggestion.dataset.messageSuggestion || "";
+      const textarea = content.querySelector("[data-lead-message]");
+
+      if (textarea){
+        stopSpeechRecognition();
+        textarea.value = value;
+        state.message = value;
+        textarea.focus();
+        updateVoiceNote("Example added. You can edit it before continuing.", "");
+      }
+
+      updateBottom();
+      return;
+    }
+
+    const chip = event.target.closest("[data-chip-group]");
+    if (!chip) return;
+
+    const group = chip.dataset.chipGroup;
+    const value = chip.dataset.chipValue;
+    const label = chip.dataset.chipLabel || value;
+
+    if (group === "segment"){
+      const found = segments.find(function(item){
+        return item.value === value;
+      });
+
+      state.segment = value;
+      state.segmentLabel = label;
+      state.flow = found ? found.flow : "";
+      state.interest = "";
+      state.interestLabel = "";
+      state.emailType = "";
+      state.leadConfidence = "";
+      state.dynamicField = "";
+      state.dynamicValue = "";
+      state.reportingChannels = [];
+
+      render();
+      scrollToLatestReveal();
+      return;
+    }
+
+    if (group === "interest"){
+      state.interest = value;
+      state.interestLabel = label;
+      state.emailType = "";
+      state.leadConfidence = "";
+      state.dynamicField = currentDynamicBlock().field;
+      state.dynamicValue = "";
+      state.reportingChannels = [];
+
+      render();
+      scrollToLatestReveal();
+      return;
+    }
+
+    if (group === "dynamic"){
+      state.dynamicValue = value;
+      state.dynamicField = currentDynamicBlock().field;
+
+      render();
+      scrollToLatestReveal();
+      return;
+    }
+
+    if (group === "reporting_channels"){
+      if (state.reportingChannels.includes(value)){
+        state.reportingChannels = state.reportingChannels.filter(function(item){
+          return item !== value;
+        });
+      } else {
+        state.reportingChannels.push(value);
+      }
+
+      render();
+      scrollToLatestReveal();
+      return;
+    }
+
+    state[group] = value;
+    render();
+  }
+
+  function handleModalInput(event){
+    const emailInput = event.target.closest("[data-lead-email]");
+
+    if (emailInput){
+      const previousEmailType = state.emailType;
+
+      state.email = emailInput.value.trim();
+      updateEmailState();
+
+      if (state.emailType){
+        render();
+        scrollToLatestReveal();
+      } else if (previousEmailType){
+        render();
+      }
+
+      return;
+    }
+
+    const messageInput = event.target.closest("[data-lead-message]");
+    if (messageInput){
+      state.message = messageInput.value;
+      updateBottom();
+      return;
+    }
+
+    saveInputs();
+    updateBottom();
+  }
+
+  function handleModalChange(){
+    saveInputs();
+    updateBottom();
+  }
+
+  function handleBackClick(){
+    saveInputs();
+
+    if (state.step > 1){
+      state.step -= 1;
+      render();
+      scrollContentTop();
+    }
+  }
+
+  function handleNextClick(){
+    saveInputs();
+
+    if (state.step === 1){
+      if (!canContinueStep1()) return;
+
+      state.step = 2;
+      render();
+      scrollContentTop();
+      return;
+    }
+
+    if (state.step === 2){
+      if (!validateStep2(true)){
+        updateBottom();
+        return;
+      }
+
+      state.step = 3;
+      render();
+      scrollContentTop();
+      return;
+    }
+
+    if (state.step === 3){
+      if (!validateStep3()){
+        updateBottom();
+        return;
+      }
+
+      state.step = 4;
+      render();
+      scrollContentTop();
+      return;
+    }
+
+    if (state.step === 4){
+      submitLead();
+    }
+  }
+
+  function handleKeydown(event){
+    if (event.key === "Escape" && modal.getAttribute("aria-hidden") === "false"){
+      closeModal();
+    }
+  }
+
+  document.addEventListener("click", handleDocumentClick, sftyLeadListenOptions);
+  modal.addEventListener("click", handleModalClick, sftyLeadListenOptions);
+  modal.addEventListener("input", handleModalInput, sftyLeadListenOptions);
+  modal.addEventListener("change", handleModalChange, sftyLeadListenOptions);
+  backBtn.addEventListener("click", handleBackClick, sftyLeadListenOptions);
+  nextBtn.addEventListener("click", handleNextClick, sftyLeadListenOptions);
+  document.addEventListener("keydown", handleKeydown, sftyLeadListenOptions);
 })();
 </script>

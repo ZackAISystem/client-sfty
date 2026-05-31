@@ -4285,7 +4285,10 @@ a{
     gap: 28px;
     margin: 0 0 52px 0;
   }
-}/* =========================
+}
+
+
+/* =========================
    SFTY LEAD MODAL
 ========================= */
 
@@ -4687,6 +4690,7 @@ body.is-sfty-lead-open{
   scrollbar-width: thin;
   scrollbar-color: rgba(0,229,158,0.48) rgba(255,255,255,0.055);
   -webkit-overflow-scrolling: touch;
+  scroll-behavior: auto;
 }
 
 .sfty-lead-content::-webkit-scrollbar{
@@ -4719,7 +4723,7 @@ body.is-sfty-lead-open{
   box-shadow:
     0 14px 34px rgba(0,0,0,0.10),
     inset 0 1px 0 rgba(255,255,255,0.035);
-  animation: sftyLeadReveal 0.24s ease both;
+  animation: sftyLeadReveal 0.20s ease both;
 }
 
 .sfty-lead-section:first-child{
@@ -4729,7 +4733,7 @@ body.is-sfty-lead-open{
 @keyframes sftyLeadReveal{
   from{
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(4px);
   }
 
   to{
@@ -4750,12 +4754,14 @@ body.is-sfty-lead-open{
   color: #00E59E;
 }
 
-.sfty-lead-helper{
+.sfty-lead-helper,
+.sfty-lead-choice-hint{
   margin: -6px 0 14px;
-  max-width: 620px;
+  max-width: 640px;
   color: rgba(255,255,255,0.58);
   font-size: 12px;
   line-height: 1.4;
+  font-weight: 550;
 }
 
 .sfty-lead-chips{
@@ -4778,11 +4784,11 @@ body.is-sfty-lead-open{
   white-space: nowrap;
   cursor: pointer;
   transition:
-    transform 0.22s ease,
-    background 0.22s ease,
-    border-color 0.22s ease,
-    color 0.22s ease,
-    box-shadow 0.22s ease;
+    transform 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    box-shadow 0.18s ease;
 }
 
 .sfty-lead-chip:hover,
@@ -4801,6 +4807,22 @@ body.is-sfty-lead-open{
   box-shadow:
     0 14px 30px rgba(0,0,0,0.20),
     0 0 24px rgba(0,229,158,0.12);
+}
+
+.sfty-lead-chip.is-selected::after{
+  content: "✓";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.18);
+  color: #ffffff;
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 900;
 }
 
 .sfty-lead-field-head{
@@ -4867,9 +4889,9 @@ body.is-sfty-lead-open{
   line-height: 1.2;
   outline: none;
   transition:
-    border-color 0.22s ease,
-    background 0.22s ease,
-    box-shadow 0.22s ease;
+    border-color 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease;
 }
 
 .sfty-lead-input{
@@ -4986,23 +5008,59 @@ body.is-sfty-lead-open{
   cursor: pointer;
 }
 
+/* =========================
+   PHONE CARD FIX
+========================= */
+
+.sfty-lead-phone-card{
+  position: relative;
+  margin-top: 28px;
+  padding: 22px;
+  border-radius: 26px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(0,229,158,0.08), rgba(0,229,158,0) 34%),
+    linear-gradient(180deg, rgba(255,255,255,0.070), rgba(255,255,255,0.044));
+  box-shadow:
+    0 18px 46px rgba(0,0,0,0.14),
+    inset 0 1px 0 rgba(255,255,255,0.045);
+  animation: sftyLeadReveal 0.20s ease both;
+  clear: both;
+}
+
+.sfty-lead-phone-card__inner{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+}
+
+.sfty-lead-field--phone{
+  display: block;
+}
+
 .sfty-lead-phone{
   display: grid;
-  grid-template-columns: 110px minmax(0, 1fr);
-  gap: 10px;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 12px;
+  align-items: stretch;
 }
 
-.sfty-lead-error{
-  display: none;
-  margin-top: 8px;
-  color: #FF8A8A;
-  font-size: 11px;
-  line-height: 1.3;
-  font-style: normal;
+.sfty-lead-phone .sfty-lead-select,
+.sfty-lead-phone .sfty-lead-input{
+  min-height: 58px;
+  border-radius: 20px;
+  font-size: 16px;
 }
 
-.sfty-lead-error.is-visible{
-  display: block;
+.sfty-lead-phone .sfty-lead-select{
+  text-align: center;
+  font-weight: 650;
+  background: rgba(255,255,255,0.09);
+}
+
+.sfty-lead-phone .sfty-lead-input{
+  padding-left: 18px;
+  font-weight: 560;
 }
 
 .sfty-lead-check{
@@ -5024,13 +5082,46 @@ body.is-sfty-lead-open{
 }
 
 .sfty-lead-check--soft{
-  align-self: end;
-  min-height: 50px;
+  width: 100%;
+  min-height: 58px;
   align-items: center;
-  padding: 0 14px;
-  border-radius: 17px;
+  padding: 0 16px;
+  border-radius: 20px;
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.08);
+}
+
+.sfty-lead-check--soft span{
+  margin: 0;
+  color: rgba(255,255,255,0.76);
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.sfty-lead-check--soft input{
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+.sfty-lead-check--phone{
+  margin-top: 12px;
+  width: fit-content;
+  min-height: 42px;
+}
+
+.sfty-lead-error{
+  display: none;
+  margin-top: 8px;
+  color: #FF8A8A;
+  font-size: 11px;
+  line-height: 1.3;
+  font-style: normal;
+}
+
+.sfty-lead-error.is-visible{
+  display: block;
 }
 
 /* =========================
@@ -5049,7 +5140,7 @@ body.is-sfty-lead-open{
   box-shadow:
     0 18px 46px rgba(0,0,0,0.14),
     inset 0 1px 0 rgba(255,255,255,0.045);
-  animation: sftyLeadReveal 0.24s ease both;
+  animation: sftyLeadReveal 0.20s ease both;
 }
 
 .sfty-lead-message-block::before{
@@ -5275,11 +5366,11 @@ body.is-sfty-lead-open{
   align-items: center;
   gap: 12px;
   transition:
-    transform 0.22s ease,
-    color 0.22s ease,
-    background 0.22s ease,
-    border-color 0.22s ease,
-    box-shadow 0.22s ease;
+    transform 0.18s ease,
+    color 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
 }
 
 .sfty-lead-suggestion span{
@@ -5336,6 +5427,10 @@ body.is-sfty-lead-open{
   color: #FF8A8A;
 }
 
+/* =========================
+   STEP 4 SUMMARY / CONSENTS
+========================= */
+
 .sfty-lead-summary{
   padding: 24px;
   border-radius: 26px;
@@ -5377,6 +5472,10 @@ body.is-sfty-lead-open{
   background: rgba(0,0,0,0.16);
 }
 
+.sfty-lead-summary dl div:last-child:nth-child(odd){
+  grid-column: 1 / -1;
+}
+
 .sfty-lead-summary dt{
   margin: 0 0 6px;
   color: rgba(255,255,255,0.48);
@@ -5390,6 +5489,7 @@ body.is-sfty-lead-open{
   font-size: 13px;
   line-height: 1.34;
   font-weight: 650;
+  word-break: break-word;
 }
 
 .sfty-lead-consents{
@@ -5404,59 +5504,237 @@ body.is-sfty-lead-open{
   font-size: 12px;
 }
 
+/* =========================
+   THANK YOU SCREEN — FINAL
+========================= */
+
+.sfty-lead-modal.is-complete .sfty-lead-modal__top{
+  display: none;
+}
+
+.sfty-lead-modal.is-complete .sfty-lead-content{
+  padding-top: 0;
+  padding-bottom: 18px;
+}
+
+.sfty-lead-modal.is-complete .sfty-lead-bottom{
+  display: none;
+}
+
 .sfty-lead-thanks{
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+}
+
+.sfty-lead-thanks--rich{
+  padding: 2px 4px 24px 0;
+}
+
+.sfty-lead-thanks__hero{
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+  margin-bottom: 22px;
 }
 
 .sfty-lead-thanks__mark{
   width: 58px;
   height: 58px;
-  margin-bottom: 24px;
+  margin: 0;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(90deg, #007F58 0%, #00E59E 100%);
   color: #ffffff;
-  font-size: 26px;
+  font-size: 27px;
   font-weight: 900;
-  box-shadow: 0 0 34px rgba(0,229,158,0.20);
+  box-shadow:
+    0 18px 36px rgba(0,0,0,0.24),
+    0 0 34px rgba(0,229,158,0.22);
+}
+
+.sfty-lead-thanks__eyebrow{
+  margin: 0 0 8px;
+  color: rgba(255,255,255,0.64);
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: 700;
 }
 
 .sfty-lead-thanks h3{
   margin: 0;
-  max-width: 620px;
+  max-width: 650px;
   color: #ffffff;
   font-size: 30px;
-  line-height: 1.14;
-  font-weight: 650;
-  letter-spacing: -0.02em;
+  line-height: 1.12;
+  font-weight: 720;
+  letter-spacing: -0.035em;
 }
 
-.sfty-lead-thanks > p{
-  margin: 18px 0 0;
-  max-width: 620px;
+.sfty-lead-thanks__hero p:not(.sfty-lead-thanks__eyebrow){
+  margin: 12px 0 0;
+  max-width: 680px;
   color: rgba(255,255,255,0.70);
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.48;
+  font-weight: 500;
+}
+
+/* 
+  THANK YOU FIX:
+  верхние 4 раскрытые блока идут широкими горизонтальными карточками друг под другом:
+  1) Request context
+  2) What happens next
+  3) Segment fit
+  4) Based on your selected interest
+  Relevant materials ниже остаётся сеткой.
+*/
+.sfty-lead-thanks__layout,
+.sfty-lead-thanks__layout--top{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.sfty-lead-thanks-card{
+  width: 100%;
+  padding: 18px 20px;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(0,229,158,0.08), rgba(0,229,158,0) 36%),
+    linear-gradient(180deg, rgba(255,255,255,0.070), rgba(255,255,255,0.045));
+  box-shadow:
+    0 16px 40px rgba(0,0,0,0.13),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.sfty-lead-thanks-card--context{
+  border-color: rgba(0,229,158,0.16);
+}
+
+.sfty-lead-thanks-card--next{
+  background:
+    radial-gradient(circle at 100% 0%, rgba(0,229,158,0.06), rgba(0,229,158,0) 36%),
+    rgba(255,255,255,0.052);
+}
+
+.sfty-lead-thanks-card--value{
+  grid-column: auto;
+}
+
+.sfty-lead-thanks-card--interest{
+  background:
+    radial-gradient(circle at 100% 0%, rgba(157,211,255,0.08), rgba(157,211,255,0) 36%),
+    rgba(255,255,255,0.052);
+}
+
+.sfty-lead-thanks-card h4{
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 760;
+  letter-spacing: -0.015em;
+}
+
+/* Request context: строки горизонтальные, одна под другой */
+.sfty-lead-thanks-context{
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 9px;
+}
+
+.sfty-lead-thanks-context div{
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  min-height: 46px;
+  padding: 11px 14px;
+  border-radius: 14px;
+  background: rgba(0,0,0,0.15);
+}
+
+.sfty-lead-thanks-context dt{
+  margin: 0;
+  color: rgba(255,255,255,0.46);
+  font-size: 11px;
+  line-height: 1.3;
+  font-weight: 650;
+}
+
+.sfty-lead-thanks-context dd{
+  margin: 0;
+  color: rgba(255,255,255,0.88);
+  font-size: 12px;
+  line-height: 1.35;
+  font-weight: 700;
+  word-break: break-word;
+}
+
+/* Остальные раскрытые блоки — широкие, но содержание аккуратно внутри */
+.sfty-lead-thanks-card--next .sfty-lead-thanks-list,
+.sfty-lead-thanks-card--value .sfty-lead-thanks-list,
+.sfty-lead-thanks-card--interest .sfty-lead-thanks-list{
+  grid-template-columns: 1fr;
+}
+
+.sfty-lead-thanks-list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 9px;
+}
+
+.sfty-lead-thanks-list li{
+  position: relative;
+  padding-left: 21px;
+  color: rgba(255,255,255,0.70);
+  font-size: 12px;
+  line-height: 1.45;
+  font-weight: 560;
+}
+
+.sfty-lead-thanks-list li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00E59E;
+  box-shadow:
+    0 0 0 5px rgba(0,229,158,0.10),
+    0 0 18px rgba(0,229,158,0.18);
+}
+
+.sfty-lead-materials{
+  margin-top: 18px;
 }
 
 .sfty-lead-resource-grid{
-  margin-top: 26px;
+  margin-top: 12px;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
 }
 
 .sfty-lead-resource{
-  min-height: 72px;
+  min-height: 76px;
   padding: 16px;
   border-radius: 20px;
   border: 1px solid rgba(255,255,255,0.08);
-  background: rgba(255,255,255,0.055);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.065), rgba(255,255,255,0.042));
 }
 
 .sfty-lead-resource span{
@@ -5477,10 +5755,11 @@ body.is-sfty-lead-open{
 }
 
 .sfty-lead-thanks__actions{
-  margin-top: 28px;
+  margin-top: 22px;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  align-items: center;
 }
 
 .sfty-lead-thanks__button{
@@ -5495,7 +5774,29 @@ body.is-sfty-lead-open{
   line-height: 1;
   font-weight: 800;
   cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease;
 }
+
+.sfty-lead-thanks__button--primary{
+  border: 0;
+  background: linear-gradient(90deg, #007F58 0%, #00E59E 100%);
+  box-shadow:
+    0 16px 34px rgba(0,0,0,0.22),
+    0 0 24px rgba(0,229,158,0.12);
+}
+
+.sfty-lead-thanks__button:hover,
+.sfty-lead-thanks__button:focus-visible{
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* =========================
+   BOTTOM NAV
+========================= */
 
 .sfty-lead-bottom{
   flex: 0 0 auto;
@@ -5517,10 +5818,10 @@ body.is-sfty-lead-open{
   font-weight: 800;
   cursor: pointer;
   transition:
-    transform 0.22s ease,
-    box-shadow 0.22s ease,
-    background 0.22s ease,
-    opacity 0.22s ease;
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease,
+    opacity 0.18s ease;
 }
 
 .sfty-lead-back{
@@ -5565,36 +5866,7 @@ body.is-sfty-lead-open{
 }
 
 /* =========================
-   FINAL SCREEN FIX
-========================= */
-
-.sfty-lead-modal.is-complete .sfty-lead-modal__top{
-  display: none;
-}
-
-.sfty-lead-modal.is-complete .sfty-lead-content{
-  padding-top: 0;
-}
-
-.sfty-lead-modal.is-complete .sfty-lead-bottom{
-  display: none;
-}
-
-.sfty-lead-modal.is-complete .sfty-lead-thanks{
-  min-height: 100%;
-  justify-content: flex-start;
-  padding-top: 18px;
-}
-
-.sfty-lead-modal.is-complete .sfty-lead-thanks__mark{
-  width: 52px;
-  height: 52px;
-  margin-bottom: 22px;
-  font-size: 24px;
-}
-
-/* =========================
-   SFTY LEAD MODAL RESPONSIVE
+   RESPONSIVE
 ========================= */
 
 @media (max-width: 980px){
@@ -5618,6 +5890,15 @@ body.is-sfty-lead-open{
 
   .sfty-lead-modal__main::after{
     right: 15px;
+  }
+
+  .sfty-lead-thanks__layout,
+  .sfty-lead-thanks__layout--top{
+    grid-template-columns: 1fr;
+  }
+
+  .sfty-lead-resource-grid{
+    grid-template-columns: 1fr;
   }
 }
 
@@ -5663,7 +5944,9 @@ body.is-sfty-lead-open{
     margin-right: -4px;
   }
 
-  .sfty-lead-section{
+  .sfty-lead-section,
+  .sfty-lead-phone-card,
+  .sfty-lead-message-block{
     padding: 18px;
     border-radius: 22px;
   }
@@ -5676,13 +5959,22 @@ body.is-sfty-lead-open{
   }
 
   .sfty-lead-grid,
-  .sfty-lead-summary dl,
-  .sfty-lead-resource-grid{
+  .sfty-lead-summary dl{
     grid-template-columns: 1fr;
+  }
+
+  .sfty-lead-summary dl div:last-child:nth-child(odd){
+    grid-column: auto;
   }
 
   .sfty-lead-phone{
     grid-template-columns: 96px minmax(0, 1fr);
+  }
+
+  .sfty-lead-phone .sfty-lead-select,
+  .sfty-lead-phone .sfty-lead-input{
+    min-height: 52px;
+    font-size: 14px;
   }
 
   .sfty-lead-message-head{
@@ -5741,8 +6033,26 @@ body.is-sfty-lead-open{
     flex: 1;
   }
 
+  .sfty-lead-thanks__hero{
+    grid-template-columns: 1fr;
+  }
+
   .sfty-lead-thanks h3{
-    font-size: 24px;
+    font-size: 22px;
+  }
+
+  .sfty-lead-thanks-context div{
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .sfty-lead-thanks-card{
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .sfty-lead-resource-grid{
+    grid-template-columns: 1fr;
   }
 }
 
@@ -5752,7 +6062,8 @@ body.is-sfty-lead-open{
   .sfty-lead-next:hover,
   .sfty-lead-modal__close:hover,
   .sfty-lead-mic:hover,
-  .sfty-lead-suggestion:hover{
+  .sfty-lead-suggestion:hover,
+  .sfty-lead-thanks__button:hover{
     transform: none;
   }
 }
